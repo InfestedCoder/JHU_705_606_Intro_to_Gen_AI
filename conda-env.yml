@@ -1,0 +1,17 @@
+name: jhu-intro-to-genai
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12  
+  - jupyter 
+  - matplotlib 
+  - scikit-learn 
+  - nltk
+  - pytorch
+  - transformers
+  - accelerate
+  - safetensors
+  - huggingface_hub
+  - tqdm
+  - pmdarima
+  - torchvision

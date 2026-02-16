@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\title{A Generative AI Copilot for Diagnosing Optimization Solver Performance from Logs}
+\author{Jeff Ginn}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction and Project Goals}
+
+Modern optimization solvers for linear programming (LP) and mixed-integer linear programming (MILP) produce logs describing solver progress, presolve activity, cut generation, heuristic behavior, branching decisions, and termination status. While these logs contain valuable diagnostic information, they are difficult to interpret without domain expertise.
+
+As a result, users often struggle to understand why a solver run is slow, fails to converge, or exhibits unstable behavior. Diagnosing these issues typically requires manual inspection, which limits accessibility and productivity.
+The goal of this project is to design and evaluate a generative AI system that analyzes raw solver logs and produces structured summaries and diagnoses likely performance bottlenecks.
+
+\section{Outline}
+
+\subsection*{Intro}
+Describe challenges with analyzing solver logs as well as LLM-based techniques for log analysis
+from other domains, such as those discussed in \cite{akhtar2025llmbasedeventloganalysis} \cite{landauer2023deeplearningloganomaly}, that are relevant to this research.
+
+\subsection*{Hypothesis and Method}
+Discuss the method used and the math behind it.
+
+\subsection*{Research}
+Discuss in detail related work in LLM-based log analysis, \cite{akhtar2025llmbasedeventloganalysis} \cite{landauer2023deeplearningloganomaly}, and in combiining ML and optimization \cite{bengio2018mlforcombinatorial} \cite{kotary2021endtoend} \cite{yazdani2025evocut}.
+
+\subsection*{Application}
+Present the solution with supporting metrics. Describe how log data was gathered, the role of supervised learning in applying expert labels to logs,
+the training process, and how results were validated.
+
+\subsection*{What is Learned?}
+Tie learning back to the methods. Answer the questions: Why are the results interesting? What additional avenues are there for further research?
+
+\section{Problem Description, Candidate Solution, and Research Hypotheses}
+
+\subsection{Problem Description}
+
+Solver logs are semi-structured sequences containing solver events and domain-specific terminology. Solvers internally adapt their behavior based on problem structure, but this information is not easily accessible to users. The problem addressed in this project is:
+\begin{quote}
+\emph{Given a raw solver log, can a machine learning model generate a structured summary and diagnose likely performance bottlenecks?}
+\end{quote}
+
+Typical performance issues include weak presolve reductions, degeneracy, ineffective cut generation, excessive branching, and numerical instability.
+
+\subsection{Candidate Solution}
+
+The proposed Solver Log Copilot operates as a post-processing and advisory layer:
+\begin{enumerate}
+    \item Parse and preprocess raw solver log text.
+    \item Encode the log using a language model or text representation.
+    \item Predict structured diagnostic labels (e.g., bottleneck category).
+    \item Generate a concise natural-language explanation.
+\end{enumerate}
+
+The system does not modify solver internals and can be used with existing commercial or open-source solvers.
+
+\subsection{Research Hypotheses}
+
+\begin{itemize}
+    \item \textbf{H1:} Solver logs contain sufficient information to classify the cause of poor solver performance.
+    \item \textbf{H2:} A learned model can generate diagnoses that correlate with measurable solver performance metrics such as solve time and node count.
+\end{itemize}
+
+
+\section{Machine Learning Method and Dataset}
+
+\subsection{Machine Learning Method}
+Solver log diagnosis will be a combination of:
+\begin{itemize}
+    \item Sequence-to-structure learning
+    \item Multi-label classification
+    \item Conditional text generation
+\end{itemize}
+
+\noindent Models that may be explored include:
+\begin{itemize}
+    \item Sequence models (e.g., Transformers) for log understanding
+    \item Classification models for bottleneck detection
+    \item Generative models for explanation and recommendation
+\end{itemize}
+
+\subsection{Data Set}
+
+The dataset will consist of solver logs generated from linear and mixed-integer programming solcer, including:
+\begin{itemize}
+    \item Rose, Gurobi, HiGHS, or SCIP solver logs
+    \item Multiple problem instances, e.g., MIPLIB, NetLib, and parameter settings
+    \item Labels derived from expert annotations or controlled experiments
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+
+\begin{thebibliography}{99}
+
+    \bibitem{akhtar2025llmbasedeventloganalysis}
+    S.~Akhtar, S.~Khan, and S.~Parkinson, ``LLM-based event log analysis techniques: A survey,'' 
+    \emph{arXiv preprint arXiv:2502.00677}, 2025. 
+    [Online]. Available: \url{https://arxiv.org/abs/2502.00677}
+    
+    \bibitem{landauer2023deeplearningloganomaly}
+    M.~Landauer, S.~Onder, F.~Skopik, and M.~Wurzenberger, ``Deep learning for anomaly detection in log data: A survey,'' 
+    \emph{Machine Learning with Applications}, vol.~12, p.~100470, 2023. 
+    [Online]. Available: \url{https://www.sciencedirect.com/science/article/pii/S2666827023000233}
+    
+    \bibitem{bengio2018mlforcombinatorial}
+    Y.~Bengio, A.~Lodi, and A.~Prouvost, ``Machine learning for combinatorial optimization: A methodological tour d'horizon,'' 
+    \emph{arXiv preprint arXiv:1811.06128}, 2018. 
+    [Online]. Available: \url{https://arxiv.org/abs/1811.06128}
+    
+    \bibitem{kotary2021endtoend}
+    J.~Kotary, F.~Fioretto, P.~Van~Hentenryck, and B.~Wilder, ``End-to-end constrained optimization learning: A survey,'' 
+    in \emph{Proceedings of the International Joint Conference on Artificial Intelligence (IJCAI)}, 2021. 
+    [Online]. Available: \url{https://arxiv.org/abs/2103.16378}
+    
+    \bibitem{yazdani2025evocut}
+    M.~Yazdani, M.~Mostajabdaveh, S.~Aref, and Z.~Zhou, ``EvoCut: strengthening integer programs via evolution-guided language models,'' 
+    \emph{arXiv preprint arXiv:2508.11850}, 2025. 
+    [Online]. Available: \url{https://arxiv.org/abs/2508.11850}
+    
+\end{thebibliography}
+
+\end{document}

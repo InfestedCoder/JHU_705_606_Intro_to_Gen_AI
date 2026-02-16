@@ -1,0 +1,5 @@
+.DS_Store
+datasets/
+models
+output/
+output*/
