@@ -1,17 +1,18 @@
 name: jhu-intro-to-genai
 channels:
+  - pytorch
   - conda-forge
 dependencies:
-  - python=3.12  
-  - jupyter 
-  - matplotlib 
-  - scikit-learn 
+  - python=3.12
+  - jupyter
+  - matplotlib
+  - scikit-learn
   - nltk
   - pytorch
+  - torchvision
   - transformers
   - accelerate
   - safetensors
   - huggingface_hub
   - tqdm
   - pmdarima
-  - torchvision
