@@ -16,3 +16,5 @@ dependencies:
   - huggingface_hub
   - tqdm
   - pmdarima
+  - seaborn
+  - distfit

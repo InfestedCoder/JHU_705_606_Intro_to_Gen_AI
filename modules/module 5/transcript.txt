@@ -1,0 +1,185 @@
+00:00:00 Speaker 1
+Generative AI, where we explore classical generative models and autoregressive techniques. Generative AI aims to create new data instances that resemble existing ones, allowing applications in data synthesis, anomaly detection and more. We have been covering these lectures in accordance. Today we will examine key classical models such as Gaussian mixture models, hidden Markov models, Bayesian networks and time series methods. Providing a foundation to understand modern generative techniques. This lecture, We will cover classical generative AI models, including Gaussian mixture models and Hidden Markov Models, autoregressive models for time series forecasting, Introduction to recurrent neural networks, and we will look at autoregressive models in terms of these mathematical models. Model learning. 
+
+00:00:57 Speaker 1
+Objectives, model learning objectives as in here. Classical generative models include Gaussian mixture models used in clustering, speaker identification and anomaly detection. These are classical models. It's been several decades we have been using Gaussian mixture models. Hidden Markov Models applied in speech cognition and sequence prediction. Latent Dirichlet Allocation for topic modeling and document classification. Variational autoencoders, we looked at this, used for image generation and data augmentation. Restricted Boltzmann Machines, RBM, employed in collaborative filtering and feature extraction similar to LDA. Gaussian mixture models. 
+
+00:01:47 Speaker 1
+Gaussian mixture models are fundamental statistical tools for modeling complex multidimensional data distributions. They assume the data is generated from a mixture of multiple Gaussian distributions. In my opinion, generally data is not Gaussian at all. However, this model assumes the features are mixtures or features are coming from Gaussian distributions, so mixture of Features would be Gaussian distributions mixed. Each of these features are characterized by a mean and covariance matrix, and of course it's very explainable when we approach in this fashion. Even though I do not agree that the features would exhibit Gaussian behavior, it is highly explainable. This probabilistic approach allows GMMs to capture the underlying structure of data. 
+
+00:02:43 Speaker 1
+So, we can easily generate new samples accordingly. Define a Gaussian mixture model. GMM models are combination of multiple Gaussian distributions. Each Gaussian distribution or component is defined by a mean vector mu, a covariance matrix sigma, and mixing coefficient where the sum of all coefficients equals to one. And of course this is a linear combination of. 
+
+00:03:13 Speaker 1
+Gaussian distributions. Then the probability density function of a GMM is computed as a weighted sum of individual Gaussian distributions. This makes GMM highly versatile for clustering and density estimation tasks. Expectation Maximization Algorithm The EM algorithm is an iterative approach for estimating GMM parameters. E-step, Computes the responsibility of each data point for each Gaussian component. And M-step, maximization, updates parameters: means, covariance and mixing coefficients. The pi that we used. Using the computed responsibilities. These steps alternate until convergence. Expect maximize expect maximize ensuring an optimal fit for the data.
+
+00:04:13 Speaker 1
+Now, this can take a very long time. This optimization is not easy. The GMM algorithm has a computational complexity of N times K, capital K, times D square. N is the number of data points, K is the number of Gaussian components, and D is the dimensionality of the data.
+
+00:04:42 Speaker 1
+The complexity arises because EM algorithm iteratively computes probabilities for each data point belonging to each Gaussian component, requiring matrix operations such as inversion of covariance matrices in the M-step. I believe you can use a neural network to approximate this, but then it would be a neural network. When using a full covariance matrix, the computational cost increases significantly due to the inversion operation, which is basically, Theta d to the power of three per component. So in a way, you can assume it's minimum number of features to the power of three. Simpler versions like diagonal spherical covariance matrices reduce the computational burden, but then I don't think they will fit the data even less. I mean they will fit even less, making the algorithm more efficient if I assume. 
+
+00:05:41 Speaker 1
+Diagonal or spherical covariance matrices. GMMs can model complex, multidimensional, multimodal distributions very effectively. Their computational cost unfortunately grows quadratically with the number of dimensions and linearly with the number of data points. At least it's linear in terms of data points. So, it is less scalable for very high dimensional datasets, but more scalable if the number of dimensions are less.
+
+00:06:12 Speaker 1
+Types of GMMs. Different types of GMMs exist based on the covariance matrix constraints: diagonal, tied, spherical, full. Each variation provides different levels of complexity and flexibility and of course explainability. From left to right here the complexity and the flexibility increases. Flexibility also assumes it can fit to many variants of data Let's say, but then it is more difficult to fit this. GMMs and generative AI. GMMs contribute to generative AI by modeling complex data distributions for synthesis. They can generate new data points through probabilistic sampling. It enables unsupervised learning such as clustering, obviously because you fit a density, facilitating anomaly detection of course.
+
+00:07:10 Speaker 1
+Just look at the three standard deviation, for example, to identify deviation from learned distribution. And serving as a foundation for more advanced generative models like VAEs. If you remember, the latent space in the VAE was Gaussian. Why don't I fix or fit a GMM right there? In fact, you can even call that latent space as a linear combination of some GMM, some other densities or distributions.
+
+00:07:42 Speaker 1
+Hidden Markov Models, HMMs model systems where states are hidden but produce observable outputs. These states generate certain outputs, and in every state, the output probabilities will be different. So, they consist of hidden states, such as phonemes in speech recognition or artifacts in image observations associated with each state.
+
+00:08:12 Speaker 1
+Especially strong for natural language processing. State transition probabilities, For example, each state can be one of the part of speech tag, such as verb or noun or preposition, and these state transition probabilities from one state, One tag to another can be easily measured by looking at the data and counting. Emission probabilities determining observable outputs again, Within each state there are emission probabilities and initial state distributions. This would be a priori. The hidden Markov model basically, given a sequence of observations, HMMs estimate the likelihood of different hidden state sequences. It involves computing state transition probabilities, Estimating most likely sequence using the forward and backward algorithm and utilizing the Viterbi algorithm.
+
+00:09:09 Speaker 1
+Which is based on dynamic programming for optimal state sequence decoding. We should not implement these, as we will see in our lectures, we can easily use NLP libraries to implement HMMs. Now the sequence generation after the training, basically we will generate sequences by sampling hidden states using learned transition probabilities, State one transition to state two, state two transition to state two, etc. such as in this probability. Emitting observations based on the emission probability matrix B matrix. So this can produce realistic sequences that mimic training data such as a sequence of tokens, a sequence of words. The Viterbi algorithm. 
+
+00:10:06 Speaker 1
+Initializes, assigns probabilities, iteratively updates probabilities based on transitions. That's the recursion. But this recursion will be iterative and termination identifies the most probable final states. This algorithm can be done in N square sequence length square complexity algorithm using dynamic programming matrix, and the backtracking is necessary to. Traces back to the optimal state path. Once the dynamic programming matrix is generated, we use the backtracking to generate the optimal state path. Now these slides are high level, just pointing to the classical autoregressive generative algorithms. And here is the decoding example.
+
+00:11:07 Speaker 1
+The algorithm's effectiveness is illustrated here. It correctly identifies the sequence of hidden states from observed data. A very simple example. We covered this in algorithms course. Now, HMMs and generative AI. HMMs enhance generative AI by generating probabilistic sequences representing latent structures, Handling sequential dependencies in language modeling such as classical NLP and bioinformatics. In bioinformatics, the states can be exon and intron. The emission probabilities of proteins or base nucleotides will be different when the state is exon or intron. And, it will provide a foundation for deep learning models like RNN, as we will see next.
+
+00:12:06 Speaker 1
+Bayesian networks. A Bayesian network is a directed acyclic graph, DAG, to model probabilistic dependencies between variables. So we enable by using Bayesian networks the efficient probabilistic inference. It's also very explainable representation of latent variables and accurate data synthesis through sampling. When we have the probabilities that's very easy to generate New data through sampling. And here, an example is medical diagnosis. So the disease will be true/false, test result will be positive/negative and symptom will be present/absent. A very simple example representing the medical diagnosis. There are three variables here. For the disease to work, it will use both the test variable and the symptom variable.
+
+00:13:04 Speaker 1
+Here we continue more. And as you see, even the D, disease, true, is dependent on test being positive and symptoms being present. Plugging in the probabilities and it will be only actually 26.7% positive. Variables affect each other in this fashion.
+
+00:13:39 Speaker 1
+Bayesian networks play a crucial role in generative AI by modeling probabilistic relationships between variables using DAGs. They provide a structured representation of dependencies, so we generate data that maintain realistic correlations. One of their key advantages is the ability to explicitly capture conditional dependencies, meaning they can generate new samples that align with real-world probability distributions. Additionally, Bayesian networks incorporate latent variables, which help model hidden factors influencing observable data. Similar to the VAEs or GANs. They also enable efficient inference, explainable inference making useful for prediction, data imputation and decision-making more than generative AI.
+
+00:15:33 Speaker 2
+Dog barking. 
+
+00:17:05 Speaker 2
+Bark. 
+
+00:18:51 Speaker 2
+Dog barking. 
+
+00:19:27 Speaker 1
+Time series analysis. Autoregressive models predict future values based on past observations. So, The method uses the time series data itself to fit a model and then predict with a moving window. Example: first known 12, let's say discrete time slots, which can be hourly, which can be monthly for example, are used to fit and predict the next four. Four time slots.
+
+00:19:57 Speaker 1
+And then move the window by four, add the predicted four as the recent data points, and do the same. The predictions are reused for the prediction again by moving the window. So we use predictions to fit and predict following time slots. Note that the error variance will go up as we move along in the time axis. Well, key techniques include Holt-Winters, Models, ARIMA autoregressive integrated moving average, and we evaluate the models using RMSE or MAE. Now time series models use the time series data itself to fit a model. And then it uses this data to predict with a moving window. We can continue like this but and again repeating, this error will grow if we do if we continuously do this instead of. 
+
+00:20:56 Speaker 1
+Getting new data points, real data points. We will cover these models as we continue in our lectures. Please make sure that you follow this model exactly. T0 is the moving window length, And here, the probability of output Y is a sequence, given the input sequence T is equal to the multiplication of these products. And v is the encoded input vector. This is the basis representation for transformers for sequence learning. We will cover these models as we continue our lectures. Recurrent neural networks are modern examples, even more state-of-the-art, generative pre-trained transformer is an exact sequence-to-sequence learner.
+
+00:21:55 Speaker 1
+Gpt is not exactly an autoregressive model because we can have output sequences given these input sequences, probability of some output sequences. So consider GPT, a transformer as X and Y as input and output. However, transformer can be also used exactly like an autoregressive model.
+
+00:22:27 Speaker 1
+The slides compare here the autoregressive models and latent space models in generative AI, highlighting their differences in sequence generation. Efficiency, interpretability and training complexity are some other model characteristics. Autoregressive models generate output sequentially, where each new data point depends on the previous ones. This makes them more interpretable.
+
+00:22:57 Speaker 1
+Any autoregressive model is much more interpretable, and each step follows a clear dependency structure. But they can be slower due to their sequential nature. We cannot parallelize them like a transformer. The latent space model, on the other hand, can generate data in parallel, so making them more efficient but often less interpretable. It's a neural network after all. As the generated outputs emerge from abstract latent representations rather than direct sequential dependencies. Additionally, training complexity differs. While autoregressive models optimize likelihood at each step, purely maximum likelihood estimation, the latent space models such as GANs and VAEs, variational autoencoders can be harder to train due to stability challenges.
+
+00:23:52 Speaker 1
+Gan, especially is a difficult optimization because we know that the adversarial optimizers work against each other. Ultimately, the choice between these models depend on the task. Autoregressive models are preferable for structured sequence generation, text speech for example, While the latent space models are better in tasks, like image generation and data synthesis where parallel generations beneficial. Or just from a pure creative perspective. The H olt - W inters method is very classical method, and here is the analogy : it shares. The local approximation properties with the Taylor series, it has predictive structures similar to autoregressive models such as ARIMA, and it exhibits memory decay like Markov models but in a continuous setting. This is one of the. 
+
+00:24:51 Speaker 1
+Basic prime sequential learners. Here is an example using stats model library, The time series sample blue and the averaged smoothed Holt Winters model is in orange. ARIMA is an advanced version of let's say Holt Winters, it's autoregressive, It's integrated moving average plus more. It's a powerful tool for time series forecasting, combining two fundamental techniques, AR and moving average. The model also includes an integration step, R-E-M-A, the middle one, which ensures stationarity by differencing when the data calls for it. The AR component models dependencies. 
+
+00:25:49 Speaker 1
+On past values, while the MA component, moving average component, accounts for past forecast errors. ARIMA is expressed in terms of three parameters: p, the number of lagged observations, kind of a stride of a recurrent neural network or convolutional neural network; d, the number of times differencing is applied to make it stationarity stationary. Differencing is like taking the derivative. It's like a high pass filter. And q, the number of past forecast errors, basically the length of the moving average window. This model is particularly useful in financial forecasting, disease, economic data analysis, disease prediction and anomaly detection in time series. To better understand ARIMA. 
+
+00:26:47 Speaker 1
+Let's break it into its components. The Yt is the autoregressive component here. It's a linear combination of past values, as you see. Phi are the coefficients. Moving average component, it represents Yt as a function of Past forecast errors. This is similar to all filters. The epsilon here represents the noise. And the integrated component, if the time series is non-stationarity, differencing is applied. How much? We don't know, trial and error. In fact, we will look at this in a Jupiter notebook by guessing or by trying every hyperparameter. Let's say, from zero to five and picking the best fit.
+
+00:27:46 Speaker 1
+ARIMA models work best when properly tuned for stationarity. But that's also very typical. If the data is not stationary, how can you fit a predictive model based on probabilities? The trends and the seasonality do not skew the predictions. How do differencing help stationarity? We take differences. Differencing helps stationarity because it removes trends.
+
+00:28:16 Speaker 1
+A series shows an increasing or decreasing trend, but differencing eliminates it. Remember, negative slope, positive slope. When you take the difference, when you take the derivative, you only get the slope as a number. So the trend is gone. It stabilizes the variance. A log transformation can be followed. Eliminates seasonality. Seasonal differencing in this case Subtract values from the same season in the previous cycle. The mean and variance become stable, the series is likely stationary then. If too many differencing steps are applied, the series may become over-differenced, making it harder to model. Many information component or pieces are removed if we difference too much. The differencing in time series conceptually similar to high-pass filters. 
+
+00:29:12 Speaker 1
+In signal processing. Both methods aim to remove low-frequency components, trends, and retain high-frequency variations, changes or fluctuations which is the characteristic of the signal. A fluctuation would happen if COVID is going up or flu is going up in winter, for example, or in September October. However while they serve similar purposes they operate in different mathematical frameworks. Differencing and high pass filter. An ARIMA example here, this is practical. PMD ARIMA is a good library, one of the best. The number of forecasts, the next 30 periods, basically 30 days ahead. As you see it fits in the orange, it's not bad but it's not a very difficult data either.
+
+00:30:12 Speaker 1
+In fact, as we will see, you can apply a convolutional 1D model and then estimate this very easily. ARIMA methodology has the following key steps: check stationarity, apply differencing, determine ARIMA parameters p,d,q. Use autocorrelation partial autocorrelation plot, the estimate number of the number of AR and MA terms. Fit the model using MLE, maximum likelihood estimation. Optimize parameters to minimize errors. P, D, Q. Forecast future values, generate predictions and confidence intervals. Evaluate model performance. Use metrics like root mean squared error, typical classical error or mean absolute error. Root mean squared error is like L2. 
+
+00:31:09 Speaker 1
+Mean absolute error is like L1. Increasing p can improve pattern recognition but may lead to overfitting. Increasing q can capture short-term fluctuations at the cost of introducing noise. Recurrent neural networks, unlike traditional feedforward networks, RNNs, recurrent neural networks, Are designed to process sequential data by maintaining a hidden state that retains information about from previous time steps. This makes them ideal for tasks such as speech recognition, time series forecasting and natural language processing. The main idea behind an RNN is that each output depends not only the current input.
+
+00:32:06 Speaker 1
+But also on previous computations, like time. The computation would be hidden state is equal to a linear state, plus another linear state from the input. Two linear layers are composed. And those two linear layers, one of them, Is the previous hidden state and the other one is the time input. So, the RNN is a finite state machine with memory, and this memory is approximated based on seen values in a way autoregressive. Standard RNNs suffer from the vanishing gradient problem, which makes it difficult to learn long-term dependencies. Then we look at the RNN representation. The key feature is RNN. 
+
+00:33:03 Speaker 1
+Has state vectors here. One layer, one layer is linear combination of the previous hidden state, hidden vector, and the other linear layer is the input. And the combination of them makes the output. And the hidden is stored. Now, The unrolled view of an RNN, The model can be visualized as a chain-like structure here. Each node represents a time step. Each column here, for example. Because of the gradients tend to diminish or explode over long sequences, RNNs have modifications such as long short-term memory, LSTM networks. They improve their performance at the sake of more complexity.
+
+00:33:59 Speaker 1
+The flow of information across time steps enable the RNNs model temporal dependencies. In a way, it has memory. Now, sequence to sequence models they extend RNNs by introducing an encoder decoder architecture. Commonly, this is commonly used in machine translation, chatbot development like GPTs and speech synthesis. The encoder processes The input sequence and compresses it into a fixed-length representation. The hidden state ht here is the encoder, and the st is the decoder uses the ht.
+
+00:34:59 Speaker 1
+And the latent space to generate anything on the output side. The ct is the context vector here. It carries information from the encoder part. The decoder generates the output step by step, making sequence-to-sequence models an effective task model for text summarization, language generation, something to something.
+
+00:35:28 Speaker 1
+Now, further investigating, these are two RNNs. They are unfolded. And as we will see, these are replaced by attention neural networks. Basically, instead of doing it sequential in this fashion, doing it with matrix multiplication. At the sake of added more complexity, it improves parallelization.
+
+00:36:01 Speaker 1
+Now, the RNN-based models can be structured in different ways. Here, it is many-to-many. But it could be one-to-one, like bigram analysis. Given input x1 or given output y1, what is the probability of x1 or given input x1, what's the probability of y1? One-to-one. By the way, this data can be also image. I mean the X Might be entirety of multidimensional data as well. X1 is not necessarily a one-dimensional input, but it's a sequence of multidimensional inputs. One to many, single x generating a sequence of y's. Many to one, a sequence generating a label for example, a class such as sentiment analysis or many to many.
+
+00:36:57 Speaker 1
+Typical GPT or translator or transformation. We will see generalized pre-trained transformers are in this fashion. Now sequence to sequence models provide flexibility in handling varying sequence lengths. How do I mark something? By special markers, I can put X2 like end of the sequence and now filled with zeros or padding, again a special marker. That would be my vector. However, in this configuration, the T is there. I have to spend this much vector. In short, my input vector will be X1 to XT sequence. Similarly output will be YT minus length of the sequence to YT Y1 to YT. And again, that is fixed T's might be different.
+
+00:37:55 Speaker 1
+I might have T1 and T2 here, different periods. Still it's minute to minute. Now, before going to the transformers later, it's a good idea to study LSTM which is the ultimate recurrent neural network. A regular neural network has two layers : one for h hidden state and the other one. For input. But as you see here, this neural network has eight layers. So it is four times more complex. However, It can fit and, of course, generalize when we fit. It is not like an overfit, but it can also generalize much better than a regular RNN. There is forget gate It decides what information to discard Here's the forget gate. 
+
+00:38:55 Speaker 1
+It has input gate, how much of the input is used. There is output gate, determines the next hidden state. Hidden state is used for output and the next hidden state. This is the output. This is the input. LSTMs effectively capture long-term dependencies. Making them widely used in speech recognition, NLP and time series prediction. In order to feed a transformer, you need a lot of data. If you have few data points, LSTM is better. But of course LSTM is also a neural network. Still you need much data. Let's see an example RNN in PyTorch This one is using an LSTM. 
+
+00:39:51 Speaker 1
+This is a simple implementation. It's worthwhile studying this. The RNN processes input sequences, captures dependencies and generates outputs in one class in this fashion. The surrounding lines are to support that one. A few interesting points: This is the constructor, Hidden size is 128. This could be the embedding size. Number of layers in H is two. Basically it's a two layer neural network. Number of epochs, 500. You always need a lot of epochs in a CNN for example, five epochs could be enough. In an RNN, 5000 could be necessary. Eta batch size W. 
+
+00:40:50 Speaker 1
+W for balancing, as you see it is a loss. I might have multiple classes that are unbalanced, so W is there to balance. I have dropout. Dropout would be meaningless if the layer is only one, the hidden layer. So I must have more than one layer here. Now we have forward, we have predict and fit. Fit is, Standard, I can take the input, which could be tokens for example, and then generate embeddings. The embedding size will be as here. It will be the input size sequence size. Not the sequence number of elements in the sequence, but only the input size of one of the sequence elements.
+
+00:41:48 Speaker 1
+And then it will be mapped to hidden size, number of layers, bidirectional true or false. Bidirectional can use t1 to tt or tt to t1. Basically capturing dependencies from left to right or right to left. BERT is bidirectional for example. BERT transformer is bidirectional. Dropout device, generally it's a good idea to pass this to GPU. And the output layer is a linear layer. It's coming from the hidden size, that's the RNN output. It will output to the C number of classes. And the optimizer will optimize. Let's look at the predict first. Torch no grad so I don't have to compute the gradients, I'm just predicting.
+
+00:42:47 Speaker 1
+Forward it, get the output, and then give me the output's maximum index. It's a typical classifier. Why is dim one? Because it's the batch. Batch first. We prefer batch first. It's faster for inference, but it's also cleaner. If the first dimension of the tensor is batch, that's cleaner, And then return indices to CPU, so that I can pass it to the CPU from the GPU. Now, let's look at the forward. Give me the embedding vector for each x. It can be a small vector. By the way, probably 128 is pretty long unnecessarily. LSTM output and the other one, This is the hidden coming from this self RNN embeds. Basically embeds are here now.
+
+00:43:45 Speaker 1
+LSTM out will be the entire output, output 1, 2, 3, 4, 5, 6 all of them. However I know the only last output is important for my purpose because I am classifying that. Thus, the output will be RNN will run, generates the entire length of the sequence of LSTM output, vectors and I will use only the last one. Give me all the batch, the last vector of the LSTM output, and then the remaining embedding size or hidden size. Pass it to the output layer, which is a linear layer. Creates it. Pass to this one. That is my classifier. So RNN is like feature extractor, simple LSTM. And then the output will be softmax to make them like probability.
+
+00:44:43 Speaker 1
+It's a good practice. That concludes our lecture. References, and we'll continue to the notebooks.
+
+00:47:41 Speaker 1
+We are looking at sequence learning in this notebook. It's a key concept in machine learning that allows models to learn from ordered data, such as text, time series data and speech. This approach is essential for predictive analytics like NLP and anomaly detection. Now we often assume that the data points are independent and unordered. We liked it because we can shuffle the data, but real world datasets involves sequences. Where the order matters a lot, like events, speech data, audio data, events in a cybersecurity setup. These are related in speech recognition, stock market, DNA sequencing. And as you see we can do sequence prediction, sequence classification, sequence generation and sequence to sequence prediction using these methods. And the core transformer architecture. 
+
+00:48:39 Speaker 1
+Is exactly as in this fashion. There's an encoder, like the autoencoder, encoding the input sequence. And as you see, this is the sequence ABC and end of sequence marker. I don't have to put the end of sequence marker, but it helps the convergence and the representation. Otherwise it will be a fixed length vector. It will be still fixed length vector. Here, this vector will be converted To a sequence of embeddings in a normal standard approach. However, when I see the end of sequence, I will mark with padding such as zero for the rest of the vector. In transformers for example, many times you see the size of the prompt. This is the size of the prompt. If you let 64k tokens to be entered here, then that vector is 64k length.
+
+00:49:37 Speaker 1
+It will be always 64k length. If I have ABC and an end of sequence, it will take it and then pad 64k minus four of them with zero. Now, look at here. It's the latent space. It is generated by a state which is encoded because it's assumed a recurrent neural network. And this state is passed to the decoder where the input is Received as W X Y Z. So we have two inputs, the encoder input A B C, and by the way these are tokens so it might be IDs, integers which are long integers. And the output would be W, X Y Z as the output sequence and other set of tokens. The input and the output tokens can be from the same vocabulary, or it can be.
+
+00:50:33 Speaker 1
+From different books. I can have an embedding here, I can have an embedding there, separately for encoder and decoder. As you see, the go marker in the decoder starts the decoding process. And the states are green and red, but there is also context being transferred from one state to the other state or one layer. Iteration to the other layer iteration. All these are iterative layers. As, we will see in the transformers architecture where the attention neural network mechanism takes place, Uh this will be unrolled, and it will be computed in parallel all of these at once, because I have the input sequence in that order, I could compute it uh in a parallel fashion. What's the cost? Size. 
+
+00:51:30 Speaker 1
+The model will be much, much, much larger. Here the RNN is in effect and it's a very small model. Same thing for decoder. Encoder and decoder connected by a state in this fashion is like an autoencoder. But in the autoencoder I was comparing ABC to reconstructed ABC. Here I'm comparing ABC or mapping ABC to WXYZ, With an end-of-sequence marker. If my output is longer, I can do the same thing, pad it. Generally, the input and output vector size should be similar, say 64k, but that would be a huge model actually. 256 makes more sense or 512 in BERT. And this is the high-level architecture. Now in this particular example they're using this. 
+
+00:52:28 Speaker 1
+All data, all the data, and fit basically fit a curve there. As you see, this is many years. We preprocessed this, Split the date around January 1s t 2015, so that everything from ' 15 to early will be training. And I will try to predict from ' 15 to ' 19. Isn't that crazy? Like four years of prediction. Yes, that's a difficult task. If you fit a gradient boosting regressor here, it will do a good job. But I claim Conv1D, convolutional 1D, will do a better job. It will run a kernel on the time series, and then it will generate the model better. Let's see. Here is my. 
+
+00:53:26 Speaker 1
+C1 neural network based on conv1d. Its input is one. Why? Because I'm receiving data one by one. I have seven kernel size, number of filters as 32, stride 1, padding 0. I could have more conv 1d here like a pyramid scheme right in deep learning for transformers. I could have more features extracted here such as Different kernel size and different strides. ReLU, batch normalization, put another conv1d, flatten and pass it through a classifier. Typical neural network architecture: two feature extractions, one classifier linear layer. And here is my network: feature extraction one, feature extraction two, flatten to prepare to the classifier and then classify.
+
+00:54:24 Speaker 1
+My output features are 32 hours. So we are predicting 32 by 32. Look at the size of the neural network, 55k. This is for our information. Here's the prediction and generate the X training and test, train it, number of epochs, 500. It will be a slow fit because it's a convolutional 1D on time series. It will be a slow fit. It is not like image feature extractor, but time series it's more difficult. Could a gradient boosting regression approach do a better job? Probably, it can run converge much faster. My Conv1D will be a slow convergence compared to that.
+
+00:55:21 Speaker 1
+I could also use HMM or EMA. It would work perfectly. But I still claim my MAPE loss for this C on v1. D will be superior to what I have in the other ones. And as you see, actual green, forecast, they're close to each other. MSE and MAPE error shows it. It could be a good practice to compare this approach to other methods. From generative AI perspective, why is this important? Because I am generating the rest of the time series and pretty much all four years, which have similar characteristics to the previous one. Is there seasonality like ARIMA? Probably not. This is not like a moving average approach. This is convolutional 1D feature extraction approach and it's very powerful. It should be in our portfolio of machine learning models.
+
+00:56:20 Speaker 1
+That concludes our notebook. Thank you.
+
+00:57:47 Speaker 2
+Thank you.
