@@ -1,0 +1,19 @@
+# Module 6 environment: use AFTER creating the base env and cloning it.
+#
+# Setup (one-time):
+#   conda env create -f conda-env.yml
+#   conda create -n jhu-genai-mod6 --clone jhu-intro-to-genai
+#
+# Then update the module 6 env with any extra deps (this file):
+#   conda env update -f conda-env-mod6.yml -n jhu-genai-mod6
+#
+# Activate: conda activate jhu-genai-mod6
+#
+name: jhu-genai-mod6
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  # Add only module-6-specific packages here (base env already has python, pytorch, etc.)
+  - diffusers
+  - gradio  
