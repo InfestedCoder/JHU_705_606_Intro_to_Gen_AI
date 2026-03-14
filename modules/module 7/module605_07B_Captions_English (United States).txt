@@ -1,0 +1,429 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Mathematical model of a transformer. Understanding transformers requires a solid grasp of the mathematical principles that govern their operation.
+
+This slide presents the self-attention mechanism,
+
+which enables the model to weigh different parts of an input sequence based on relevance, eliminating the need for the recurrence.
+
+So the key mathematical operations include key query value transformations that allow attention to be distributed across input elements.
+
+And again this method eliminates recurrence.
+
+So we're changing. We're replacing the required neural networks with general attention and other types of attention.
+
+Another method scale dot product attention, computes similarity scores between tokens and positional encodings,
+
+which preserves the order of the sequences. Since self-attention inherently lacks temporal dependencies because in order none would store temporal
+
+difference uh dependencies to some order it transformers by looking at the alignment scores with the query,
+
+and the key would miss this. So when we positionally encode the, uh tokens,
+
+we combine the information to the actual relevance and transformers efficiently model sequential data without suffering from the limitations of RNA.
+
+There are many, many positive aspects of a transformer, but the drawback is the memory footprint the computation.
+
+We are basically losing the efficiency of RNA, and we are opening up the memory at the cost of the length of the sequence.
+
+If the input sequence is six to 4K, that's 6 to 40 times larger memory footprint compared to a recurrent neural network.
+
+Outline will be. Sequence to sequence models.
+
+Introduction to Transformers. Attention mechanism.
+
+Comparing attention models, mathematical insights and applications of Transformers.
+
+We will review all of these will analyze the mathematical models.
+
+We will also demonstrated through Jupyter notebooks.
+
+The module aims to provide both a theoretical understanding and practical applications of transformers.
+
+Like in any other lecture we have in this course.
+
+Now, we have to understand a neural network architecture in order to appreciate the transformers so we can understand the advantages of a transformer.
+
+They outperform RNNs and Grus in terms of scalability and parallelization at the cost of memory footprint.
+
+That's why we need huge GPU memory because of transformers.
+
+But the advantages are immense. Now sequence to sequence models.
+
+These are end to end optimize symbols because a sequence is mapped into another sequence.
+
+And the machine translation example we have translating English or French is a perfect example.
+
+Each sequence is a sequence of tokens. It can be also used in speech to text conversion, automatic text summarization,
+
+and etc. now, sequence to sequence models rely on encoder decoder architectures,
+
+where the encoder compresses the input sequence into a latent representation,
+
+and the decoder reconstructs an output sequence based on this latent space.
+
+This is typical encoding decoding we have seen in auto regressive auto encoder models.
+
+In those cases, the same sequence was being encoding and decoding.
+
+Here the sequences are different. The challenges with traditional sequence to sequence models is that they struggle with long sequences.
+
+Thus the attention mechanisms help. In order to appreciate Transformers, we have to look at recurrent neural networks.
+
+It processes sequential data by maintaining a hidden state that stores past information.
+
+So it has a memory. It is not stateless.
+
+Runs are effective in tasks. As classical machine learning, classical analytics showed.
+
+Speech recognition, time series forecasting and text processing.
+
+But they suffer from vanishing gradient problem.
+
+Very slow training due to the sequential processing.
+
+It is iterative. They cannot leverage parallelization.
+
+But the other thing is the slow training is due to gradients not effectively training fast.
+
+Unlike a convolutional neural network, in a convolutional neural network ten epochs, we can train on everything.
+
+But with recurrent neural networks, even a thousand epochs may not be enough.
+
+The transformer model overcomes these issues with self-attention.
+
+It also allows parallel computation, as we will see now attention to sequence to sequence model.
+
+We have 1 to 1 mapping it. Then it could be like a bigram approach.
+
+Probability of an input sequence. Token probability of an output token.
+
+Given probability of an input token that is 1 to 1 mapping one to many, it could be image captioning, but here the one is a complicated data point.
+
+Write an image. So it doesn't make that much sense because it's not a sequence.
+
+The power of the transformer is in the sequence, processing many to one.
+
+That's very typical. The one would be classification and labels.
+
+A sequence of many tokens is mapped to one classification label.
+
+We will see that and many to many like here.
+
+Many tokens. Too many tokens. It can be machine translation.
+
+It can be generative text. GPT is many to many.
+
+The standard or an on base sequence to sequence models have fixed length bottlenecks here.
+
+The hidden states are captured and the hidden state is transferred to the other side.
+
+Attention mechanism solves this by allowing dynamic weighting of the inputs.
+
+Still, the fixed length bottleneck is here. However, there's an attention mechanism right there.
+
+And then this hidden state is captured in a, let's say, more sophisticated manner.
+
+Encoder decoder framework is is. In this slide we have to mark the start and the ends and anything in between.
+
+For example, the encoder can input a sentence like sentence one marker, sentence two marker, and then sentence three and then end of sequence.
+
+It is possible the sequence mapping will learn those markers as well.
+
+Here it doesn't have to start with the start token, even though it is okay to do it, because the sequence is input in this fashion.
+
+If you use positional embeddings, A will be encoded correctly and as you see, this entire thing is a probability of sequence.
+
+Given probability of sequence, which is a product of the conditionals and V is the encoding of the input sequence.
+
+So I know the encoding here, and I know the output probabilities.
+
+That's how I generate the sequence to sequence mapping.
+
+It's an immensely powerful architecture. Now we have transformer and and models.
+
+Neural networks are de facto because we can we know how to optimize them.
+
+We don't have to build architectures from them. Uh, that not regular transformers are built on.
+
+Self-attention replaces the recurrence and enables parallel processing of the sequences.
+
+What's the drawback? I have to sequence that. I have to see the sequence at once is a fixed vector.
+
+It is not variable in the Jupyter notebook. In this lecture it can input variable length inputs even though the current implementation is fixed.
+
+Vector size. We will look at this later.
+
+Now the other feature is multi-head attention capturing multiple relationships between tokens.
+
+This is kind of analogous to the multiple filters a CNN would have, and that's scalability.
+
+Handling large datasets efficiently Transformers from the basis of Bert, GPT, and T5.
+
+They definitely support modern language understanding and generation tasks.
+
+The need for attention. Attention improves sequence to sequence models by dynamically focusing on relevant input tokens.
+
+Unlike RNN and based attention, self-attention allows global context understanding.
+
+Transformers are vastly superior to arenas because of the attention.
+
+Now we have certain attention mechanisms. When we do imaging at the beginning.
+
+It's like a lookup table, but the embedding is an efficient representation of the input sequence.
+
+Otherwise it's too much. If we have a vocabulary size of 1 million.
+
+I cannot have 1 million of integers getting into the sequence and into the neural network.
+
+Rather, I will convert each of those integers into a fixed size embedding vectors of size.
+
+Let's say 128 1,000,228.
+
+And then I can also positionally encode each token, create another 128 length vectors for each position.
+
+But of course, that's kind of overkill.
+
+Add the positional embeddings in a smaller linear layer, and then either concatenate to the word embeddings or process it further.
+
+We will see these architectures. One example here.
+
+We will look at additive attention. Long multiplicative attention.
+
+The additive attention aligns input output sequences dynamically.
+
+Multiplicative attention is more computationally efficient.
+
+Multi-head attention. And here alphas are attention weights which determine how much focus each input token receives, then computing and outputs.
+
+An air computed by the hidden states, the unfolded RNA in a regular general attention.
+
+We will replace this. And alphas are not the linear layer itself.
+
+Instead, they are learned attention weights computed during the attention mechanism.
+
+But they are not E alignment scores either, because we will compute alignment scores after softmax.
+
+So it will be like probabilities. And then we will add them up including the hidden to make up a context vector.
+
+And every time this context vector is passed to the decoder side.
+
+And the code is also processing the probabilities is a sequence similar to the input sequence.
+
+But what's its advantage? It also receives the context from the input.
+
+So for this context the output probabilities will change.
+
+And this context here you can see on slide seven V is can be considered that context v.
+
+Here is a simpler representation only the encoding of the input sequence.
+
+But you can replace V with anything. If it is context, it's very powerful.
+
+You not only encoded the input sequence, but also looked at the attention.
+
+The relevance of each value, each key, with respect to the query.
+
+Linear layers play a role in computing the alphas in many attention mechanisms like Bodnar long transformer self-attention,
+
+linear layers are generate are used to generate the query Q key and value representations.
+
+The attention weights alphas are then obtained by computing scale dot products or other scoring functions between these representations.
+
+Here's an example. A simple example.
+
+All files are before the normalization. And here is the mathematical model of modern attention.
+
+Compare this these computations with respect to the previous picture.
+
+We have flexible scoring, for instance retention. We have computational efficiency for long attention.
+
+And we have discrete selection instead of computing a weighted sum over all encoder states.
+
+What's the benefit? Well this is distinct nominal discrete.
+
+So even though it's not differentiable because it involves discrete choices, hard attention cannot be trained using standard backpropagation.
+
+But it can be computed by reinforcement learning. Still, it is better in some ways.
+
+It's more efficient. It's computationally cheaper than self-attention.
+
+It avoids summing over all positions, so it could be useful for large sequences.
+
+In addition. It is also interpretable.
+
+100%. It makes explicit choices there is to interpret.
+
+Compared to soft attention. Soft attention. Soft attention would be linear combinations of positions, but hard attention would be explicit.
+
+Like like sparse representation. It is better for certain tasks, perhaps image processing, focusing only specific regions in an image,
+
+for example, or text attends only specific relevant tokens.
+
+Now. You should look at these slides to understand each of the difference.
+
+There are subtle differences and as in many research fields,
+
+they came up with these different attentions, claiming some of these are good for these tasks.
+
+Some of those are good for those tasks. However, if you use general attention, you are fine.
+
+The transformer encoder architecture enhanced the sequence transformation by general attention period multi-head self-attention.
+
+Same thing. Now we will employ feedforward layers and implement layer normalization and residual connect connections if necessary,
+
+but those details will be later covered.
+
+Now the general attention. It refers to a mechanism that dynamically learns how much focus to give to different parts of input sequence.
+
+So general attention in a way assigns importance scores to different input elements based on learned parameters, rather than using a fixed function.
+
+So even the function here is learned how to assign the relevancy.
+
+It is selectively retrieving relevant information from a sequence.
+
+So it is definitely general from that perspective.
+
+Now why general? Because it comes from the flexibility in defining called attention scores are computed.
+
+It is not dot product attention which is simply similarity measure, but it learns the weight matrices to compute the attention scores.
+
+Here is the general attention model.
+
+At the moment it may not make sense what to make up the query key and the value, but here is some semantic definition.
+
+So the query is the representation of the token seeking contextual info.
+
+Key is the representation of tokens being compared against.
+
+And then value is the information to be aggregated based on the attention scores.
+
+Now Multi-head splits shave into multiple heads so it can capture diverse relationships.
+
+Then and of course, like in a CNN with different filters, this is left to the optimizer to catch the dot product and scaling it.
+
+Compute similarity between Q and. It is scaled to avoid large gradients.
+
+And then apply softmax to the a v accordingly.
+
+Softmax makes it probable to like. As we continue.
+
+Here's a table. Think of again.
+
+Q as the search request. So that is also built by the optimizer.
+
+The query comes from the current token. It's the decoder side of the sequence to sequence models or same token is in self-attention.
+
+If you use self-attention, then the query will be same.
+
+With the key. The key is like an index. It matches the information to a query.
+
+Each word in the input has a key representing its contents.
+
+This gives another layer of flexibility. The attention mechanism compares the query with all keys.
+
+So you see, I have multiple keys extracted earlier and currently in that iteration.
+
+And then the value is the actual information. It is basically query times key matrix multiplication.
+
+If the query matches the key, well, then it's a high attention score and the value will be important in the final output.
+
+Then when I pass the value to the context, it will make the decoder.
+
+The coders job much easier. Now multiyear detention.
+
+It's it gets concatenated in the outputs from different attention heads.
+
+Despite this concatenation, hidden size remains the same due to a final linear projection layer.
+
+So what happens in multi fashion? Instead of using just one set of query key value set.
+
+We split the data input into multiple smaller representations and apply self-attention independently in each head.
+
+It's also parallel attention computation. Each head learns different aspects of the input sequence by applying its own set of wq w ki and w q.
+
+G. Each matrix is independent and then we concatenate the attention output of the heads.
+
+So in a way capturing the information and also embedding it.
+
+The linear projection to preserve hidden size. Is done by concatenation.
+
+Converting it to the embedding again. So it will be back to the original size.
+
+Why are we doing this? And again, each head supposedly will capture different aspects.
+
+How many heads should I have? No more than four. The final representation will not increase in size.
+
+So it would be still computationally efficient. And here are implementations a few important things.
+
+This is not the example in the Jupyter notebook.
+
+Here the batch first is true. It's a matter of choice, making the batch first.
+
+True or false? At first can help the computations in terms of mathematical representation.
+
+Though it might help us if you put the batch as the first dimension.
+
+There's not efficiency. The difference between batch first. True or false?
+
+In order to compare this one by one element by element converging into a batch of element by element operations,
+
+batch first might help for the computations. This code is very similar to the notebook provided the code constructor.
+
+We have an embedding dropout linear layer for attention and then context and the attention cell.
+
+There's no general attention here. We're still using the RNA.
+
+And the output is combine all of these and then generate the why wait why linear outputs.
+
+And as you see this is two times. Because the hidden layer is concatenated.
+
+To the. Context vector generated coming from the attention.
+
+And this concatenation is passed through WC, which is of size two.
+
+All the dimensions are hidden size and that's pretty standard.
+
+It's much easier to handle this way.
+
+We should look at this code and then compare the red yellow to the figure and then understand why it's done this way.
+
+But again, this code is very close to the original code anyway.
+
+Now here's a general detection. It's much simpler and much, much larger.
+
+This attention is much larger because there's no RNA. And as you see QV, they are hidden to hidden.
+
+And matrix multiplication is done here to compute the output.
+
+And again this entire. Is.
+
+Uh mapping to the and then. Attention layer encoder decoder.
+
+So we don't have to even implement this part, but leave it to the, uh, neural network module of PyTorch.
+
+Now it is important to have benchmark data.
+
+Glue is an important data set. Uh, they came up with the benchmark to be able to compare the outputs in this fashion.
+
+It is important because we claim one thing, but it may not be true.
+
+And these benchmarks are designed to empirically measure the performance correctly so that when we claim 80% performance in the paper,
+
+it is repeatable.
+
+So, uh, to be able to compare to the other performances in other papers or approaches, single sentence tasks, similarity, um, paraphrase inference.
+
+And this is glue. There is also glue to the test is hidden.
+
+They will give you the training.
+
+But for the glue the training is also available and testing is available in hugging face search for glue and then you will find it immediately.
+
+I also provided links in the Jupyter notebooks. Some of these references are important.
+
+Attention all is all you need. For example.
+
+Rajkot and other ones. That concludes.
+
+Our lecture. Thank you.
+

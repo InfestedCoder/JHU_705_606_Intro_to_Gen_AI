@@ -1,0 +1,27 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Dear students, Transformers have become a corner store in generative AI due to their ability to handle
+
+sequential data by capturing long range dependencies through self-attention mechanisms.
+
+Unlike traditional models, which process data in sequence,
+
+transformers leverage self-attention to weigh the importance of each input element relative to others, regardless of distance.
+
+Multi-head attention further extends this by allowing the model to focus on multiple parts of the sequence simultaneously,
+
+leading to more sophisticated representations in industries.
+
+Transformers are widely used for tasks such as text generation, image captioning,
+
+and even video synthesis, where understanding both spatial and temporal relationships is crucial.
+
+The mathematical foundation of transformers lies in attention mechanisms,
+
+and recent variants like multi-agent attention and additive attention further define their performance.
+
+Implementing transformers in frameworks like PyTorch allows for high scalability and parallelism,
+
+making them efficient for large scale generative tasks.
+
+This presentation will walk through the architecture, attention mechanisms, and practical applications of transformers in generative AI.
+

@@ -1,0 +1,97 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+In this particular example, we are looking at an N-gram model.
+
+This is the typical classical traditional N-gram model.
+
+We covered this in the lecture and it is way far to Gpt3 GPT four like models.
+
+However, it's important to now understand how this associate to what we have learned so far.
+
+We will always work with a corpus. We should process.
+
+Sentence by sentence. Or it may be also important.
+
+You take the tokens in a consecutive manner, like text generation.
+
+Period. You. Why? Because maybe three grams.
+
+Not obvious, but ten grams. If you have ten grams, for example, the relation between the sequences ah can be captured.
+
+Otherwise it will be always starting from zero I and then ending with the period.
+
+Or like the transformer or language models, to put a starter marker here and put an end marker here and also learn them.
+
+So the probability of a starter marker after a period will be high.
+
+And the particular approach here is kind of similar to what we did with the Markov chain.
+
+These probabilities are just list. The data structure won't carry you.
+
+Of course it's not scalable. However, that shows the points.
+
+And in a real scenario we would use like Markov chain lecture a full sparse matrix but better use approximation.
+
+Neural network approximation.
+
+Now naive Bayes text generation in here it's a little bit different because we have two classes and the Naive Bayes learning.
+
+The probabilities are based on two classes. Is it any different from bigrams or engrams?
+
+Not so much, but this is another angle. Prepare the corpus such as this.
+
+Positive. Negative. We looked at movie reviews.
+
+Positive negative. That can out a lot. Get the vocabulary.
+
+We always tokenize in text always because the original data is in string.
+
+We have to convert those strings to integers, but the actual data structures data type will be long.
+
+Actually, torch will expect a long 64 bit.
+
+So those are long tensors.
+
+Single value. And they will be they will clear the indices.
+
+Word counts. Class word. Class word counts.
+
+Typical processing. Vocabulary size.
+
+All of these would be handled by, uh, the utilities that we use with the language models.
+
+They always come with a tokenizer. And that tokenizer will carry all this information preprocessing IDs.
+
+But the embedding will be on the model.
+
+Here there's no embedding. Of course these are pure probabilities.
+
+Generate text to generated word is a list for the length of five.
+
+Give. Take the highest probability starting with something.
+
+Because it's Laplace smoothing, the probability is not zero.
+
+So if. At the beginning.
+
+Uh, it will start randomly from one word in order to help it.
+
+You may provide a word saying that. Start with this word so that it's recursively autoregressive.
+
+We will use the words that generate it and the words that you provided at the beginning to generate sequences.
+
+Random choices among these with weights probabilities. This is a typical effective way of generating the word.
+
+And here are the generated words. As you see, they are not um.
+
+Meaningful. Even this dislike should be positive, but it is seen in the dislike should be negative, but it is seen in the positive group.
+
+That's why it's placed here. Is class dislike dislike.
+
+So it's totally, uh, not useful.
+
+And of course, the vocabulary is tiny, but this module here, this engine is the way to go.
+
+You should be able to read these and then imagine the algorithm.
+
+Very straightforward. Next we will look at transformers.
+

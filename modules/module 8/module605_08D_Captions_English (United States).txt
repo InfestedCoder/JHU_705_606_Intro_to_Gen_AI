@@ -1,0 +1,183 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Let's look at the transformer example. This is a full general attention regular transformer without the ordinance as we have seen before.
+
+We need word embeddings. We need positional embeddings. The arena ones kind of capture the order.
+
+But a general attention transformer without the arenas will not have that information.
+
+But then we add the positional embeddings. It will keep the order.
+
+There is no encoder. This is only decoder with the self-attention because it's autoregressive and transformer is much more stronger for sure.
+
+At the cost of more complexity, more computation needs and more memory.
+
+However, it's a much, uh. General approach than the one that we we have seen before.
+
+We have to code the sample data, always start of sequence and or sequence.
+
+And we might have sections like question.
+
+Start end like middle, let's say end of question and then answer another marker.
+
+And then class. We can even add a cluster and another marker.
+
+And then we can feed that into the transformer.
+
+It will basically learn how to do that. And by the way it doesn't have to be even same vector size.
+
+The middle markers and the end markers can be anywhere as long as the vector is fixed size the inside vector.
+
+Because a transformer uses tensors, batch fixed sequence size and embedding size is a regular tensor.
+
+Order three tensor to be input to a transformer, and we will place padding after the last end of sequence, ideally.
+
+Now this implementation here. Get the model size.
+
+This is embedding size. And here embedding vocabulary size input output vocabulary size.
+
+But this particular one is autoregressive. It is not like a translation problem.
+
+And then here is the transformer decoder layer. Number of heads.
+
+Number of words. Do not expand the transformer.
+
+It will only add partitions to the transformer.
+
+So it's a good idea to have multiple heads. Perhaps for it will add a bit complexity.
+
+That's it. Decoder and other decoder.
+
+We have to look up, uh, the PyTorch modules to understand the API.
+
+This particular example uses transformer decoder layer.
+
+And transformer decoder. Then we look at the torch API, such as transformer layers.
+
+We can look up the transformer decoders and transformer decoder layer.
+
+So these are the ones that we will use. Set sequence length positions.
+
+They will be added additively. Numerically. Series the embedding.
+
+Plus equals position embeddings. Transformer generates a proper map so that we will not see the future values decoded.
+
+Fully connected layer out. This is always typical like a classifier.
+
+So we will feed the output of the transformer which are the attention weights, or let's say attention values.
+
+Weights are already learned here. Pass it through the layer for logits and the output size will be also vocabulary size.
+
+And we can see them here. This is the output size and this is the input size, vocabulary size and the rest.
+
+This little program does the full general attention vocabulary size.
+
+Learn vocabulary. Simple. Here is the model had a very small transformer of course, because this is just a toy but still fully capable.
+
+This can be expanded to learn how to talk, say movie reviews from IMDb that it looked at earlier.
+
+Transformer text generator. Here are some sentences.
+
+Start end tokenizers run it. The vocabularies, uh, for example.
+
+We can also build this dynamically, like in the named dataset class we looked at before.
+
+Run it. Learn it. That's it. Uh.
+
+And generate. I love NLP, and this is, uh, regular.
+
+It learns how to do. I love an LP, of course.
+
+Uh, but this particular program can easily be expanded to do anything.
+
+Transformer can do. The next example, we're looking at the GPT model directly from Huggingface.
+
+It's a strong model. Let's look at how this looks in Huggingface.
+
+Is. You see, uh, we create these modal parts.
+
+Uh, data cache. So this will be downloaded, and it's not a tiny one.
+
+Probably this is what we are using. As you see here, the pipeline actually hides it from us.
+
+We just get the model name, which is GPT two. That's it. But what does it get?
+
+We have to dig in the Huggingface pipeline and transformer interface to see what is actually being downloaded.
+
+However, probably something like this. Very close.
+
+And as you see, 127 million, it's not big.
+
+For example, Lama has seven B which can run on a 3090 like GPU.
+
+And uh, this is a good one. It's also very popular.
+
+17 million. This GPT is the information is here.
+
+We can also look up what kind of data it's it has seen to learn.
+
+And by the way, there are also API examples. This page gives that information 40 GB of of text and others.
+
+Uh, vocab size of 50 K. Uh.
+
+Two 5063. It starts at home.
+
+You can do this if you have the server. It's not a huge GPT from full training and these are some results.
+
+So we are using this example. If possible, you should switch to FP floating point 16.
+
+This one doesn't allow that. And let's go back to the notebook.
+
+Get the model. Look at the model. Embedding.
+
+And this is the vocabulary size. You can match it embedding size of 768.
+
+This is normal I think. It shouldn't be less than this.
+
+Maybe 512. But it shouldn't be more than this. Definitely.
+
+In other embedding positions dropout.
+
+This is also typical to always place dropout. To make it robust.
+
+And the modules there's an attention and other dropouts.
+
+And then normalization con one the. This is interesting commonly layer normalization and linear.
+
+All sizes are 768, as you see.
+
+And the output size is also the same as inputs, because we want to generate text and then use the model directly.
+
+There are some parameters you can dig in the API and see what kind of parameters there are, and then use it.
+
+Now. Prompt I love an output. It will answer accordingly.
+
+It will generate. You can also specify many things here,
+
+like the temperature which which only adjusts the output probabilities in my opening temperature would not increase in creativity or anything,
+
+but it will reduce the probability dependance.
+
+It will not take top shape by only looking at the probabilities just like that.
+
+But when we shape those probabilities by adjusting the softmax through the temperature, then, uh, it will be more, let's say realistic.
+
+Run it. And as you see, I'll have an LP.
+
+No no no no no. That's the answer. It goes like that.
+
+So this is pretty good. But of course you can also do the same thing with other models.
+
+If you go to the models here. If you go to the text generation.
+
+And good luck digging it. There are lots of super models here.
+
+I would use most likes. And as you see there are meta OpenAI.
+
+All the big players Mistral, Google, Microsoft Nvidia.
+
+Here is Microsoft. You can also say most downloads.
+
+And then get one suitable to your computing platform and then start generating.
+
+That's it. Next we will look at Lang Chain.
+

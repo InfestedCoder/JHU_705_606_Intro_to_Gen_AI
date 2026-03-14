@@ -1,0 +1,437 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+In this particular example notebook, we will look at sequence to sequence learning.
+
+But we will do a real attention neural network.
+
+And this attention neural network is like a transformer.
+
+There is a latent space in between. Uh, the transformer is like an encoder decoder architecture, similar to an encoder,
+
+but auto encoder uses the input sequence again at the output in a transformer architecture or sequence to sequence mapping architecture,
+
+the input sequence and output sequence are different. Before we dive into the example, we should look at the data set.
+
+Examples from glue. This is the original and an from Huggingface.
+
+That's the glue data set. Now it is released fully so you can get to test.
+
+And it's a very useful data set with different problems. We looked at this earlier and in these examples, such as the one we looked at earlier,
+
+the recurrent neural network, which uses sentiments from movie database.
+
+We could easily replace the data set with one of these glue.
+
+More difficult data sets. The problem can be easily solved with bag of words approach.
+
+It's obvious, but still it's a good approach using being able to use that RNA for such a problem.
+
+Now there are additional data sets. Here regarding this neural network machine translation.
+
+And you can get more data here. We are using example program from there.
+
+Now in order to get some models you might need hugging face off token, but these are model related.
+
+And this. I'm using this notebook as an excuse to provide this information.
+
+You can get the tokens from hugging Face. Uh, and I have these tokens, for example, that, uh, I can use so that my notebook can get the models,
+
+the ones, especially the ones that require this kind of credential.
+
+Now back to the notebook. If you have git by the way, it will store it in git.
+
+And this cell here can log in and then store that credential here.
+
+So when you run any notebook on that machine with the credential in git on that machine, you can get the model easily if you use GPU.
+
+But some problems CPU are okay. You should try your CPU first.
+
+If you have a good GPU, you can also try that first. It's a good idea to have the model parts.
+
+In this fashion, these three before anything and any model you get, they will use it.
+
+By the way, this particular notebook doesn't use a model, but we could.
+
+We could get a transformer model to solve this problem easily.
+
+Well, let's load that particular glue model our data set from data sets.
+
+Actually, you can get the data. Here are the number of rows. Supposedly this data should be exactly as the melt data from glue.
+
+Now we looked at sequence to sequence translation in our slide deck.
+
+Sequence to sequence translation is like this. And this is the auto autoencoder like ABC.
+
+Look at the error, the reconstructed ABC and auto encoders.
+
+Why it is auto because it uses the same auto term.
+
+Is the same sequence used again, especially in time series.
+
+Now in a translation. In generative text.
+
+This is the prompt. This is the input language and this is the output language.
+
+And this is the generated text. This state is the last state of the encoder.
+
+And this last state is based on everything that the encoder has seen to that point.
+
+If you have arenas here is here then that final state is fed to the context.
+
+This can be multiplication. This can be addition or concatenation.
+
+In the code here the the attention is computed.
+
+Basically the alignment scores of the h and the input and the h.
+
+And the last hidden state is concatenated to that doubling.
+
+And then that is used as the context vector. You can put another linear layer here reduce the dimensions.
+
+And each of these layers would be like a classifier or like a projection like a dot product.
+
+This is very typical. And you can also convert this to a classifier by changing this part to a single value.
+
+Hidden is generated and then connect the linear layer. Do use it as a classifier.
+
+Perfectly okay. We looked at this earlier.
+
+Uh, and here is the original code based on sequence to sequence translation.
+
+And of course, like everyone else's code, it's difficult to follow all of these.
+
+Supposedly, in these notebooks we have simpler.
+
+Now, this notebook is self-contained. We have Lang and NMT dataset classes.
+
+Lang is the language and as you see name word to index, word to count the tokens.
+
+I cannot use the tokens just like that. I have to use their integers.
+
+And generally they are longs for long.
+
+And I also need index to even word to index, because if the word is given, I have to be able to generate the index.
+
+And then if index is given because the classifier will output those indices.
+
+Then in order to get back to original token or word, I have to use the index two words.
+
+I have three spatial tokens go at the beginning.
+
+It starts in this fashion go and then it goes.
+
+That's the start of the token. It kind of decoder knows how to initialize with that go token.
+
+If you remove it, will it work? It will. The probabilities will be different, but it won't be perfect.
+
+And every sequence there's an iOS. As soon as the OS is generated, you stop and then that's your output.
+
+And probably after iOS we have padding.
+
+So when you look at the data and here are some examples.
+
+Number of sequences French to English.
+
+And these are sequence pairs. Number of size of vocabulary of English 38.
+
+Number of number of words in English. French to English, uh.
+
+Cardinality of the vocabulary, size or vocabulary. Number of unique words 2460.
+
+And this is the exact coding three which is.
+
+Goal. Which is the first letter.
+
+Goal is not dash. We can put the goal here.
+
+But this one didn't work and I put to go. Well, this particular transformer places the go at the front for the output.
+
+So it will be go 3456, seven.
+
+You are very attractive. And then 12345.
+
+12345. Period is seven.
+
+And then iOS. And then the rest will be padding. This particular notebook uses variable length.
+
+It is not fixed. That's why the batch size has to be one.
+
+And some of the tensor operations there are one hidden size is 128.
+
+Problem old enough and get the class vectorized false.
+
+You should analyze this code a bit. Most of them are filtering, but vectorize is here.
+
+If it is vectorized then it makes it appends it such as this one.
+
+Normally this could be gore and then language sequence related to the pair and then filled with part.
+
+So that would be the vectorized one, and I should not learn that in the vectorized version.
+
+I can also use the loss ignore those paths.
+
+But here, this is exactly what the input will be for this particular encoder decoder.
+
+Now you should match the encoder and decoder directly to the block diagram.
+
+Nothing difficult here. The encoder does the embedding.
+
+Remember we were using glove. In this case this lookup table will learn the vocabulary and then convert it to hidden.
+
+And this will be optimized end to end. This will be optimized.
+
+Uh in this particular training. It is not end to end.
+
+But when I connect the hidden to the decoder, when I optimize it, it will be end to end and end to end.
+
+Optimization is always very powerful. We should consider end to end if possible after embedding layer round the group.
+
+And that's it. So this is the first section encoder section below an entire thing.
+
+And now the attention is on the decoder part. But it's it's okay.
+
+Normally the encoder can have an attention decoder can have an attention dot.
+
+That's general. This particular notebook does a sequence to sequence learning with attention in a very simplistic but still teaching manner.
+
+So the forward do the embedding adjusts the batch sizes accordingly and then outputs the hidden.
+
+And outputs after the unannounced sell. And that's it.
+
+And this is the end. So if you remember from the previous lecture, it is not the last one,
+
+but it's the enter and I have to initialize the in it when this starts and in it has to be in the training or somewhere in the uh,
+
+encoder for example. Well, the decoder is like that, but it has more parts embedding and then attention.
+
+This is the first layer. And then you see this is the context the action and the attention of course.
+
+Or in this case these are the alphas. And the E's are being learned.
+
+This is from the slides. And I'm still I'm running a guru guru, this entire decoder here.
+
+Thus the attention mechanism plus the attention here.
+
+This is also an RNA. It captures its own sequence context.
+
+This is very typical.
+
+That's why you can replace this one blue and or orange with a transformer with an attention layer, because the entire thing is transformer.
+
+And you can also use another attention here replacing this one.
+
+When we replace these with attention, general attention, for example,
+
+we do not do it iteratively, but rather this entire thing is done with a matrix multiplication.
+
+So one two matrix multiplication done one two matrix multiplication done.
+
+But that's why the size of, uh, this neural network actually increases by a magnitude.
+
+This it will be increased in the order of the sequence length here.
+
+I don't care because it is done iteratively there.
+
+I will be doing this at once. It will be paralyzed.
+
+That's a benefit. But that's why I also need batched and sequence vectorized.
+
+So the order will be batch sequence length in this case ten for example.
+
+And then embedding size. This also matches the assignment.
+
+Now going back to the decoder. Let's look at the math.
+
+Once the output is done, it is passed through a linear layer to be able to classify that sequence into.
+
+Class labels, which are in this case output sequence token IDs.
+
+So the input is here. In the decoder encoder part.
+
+The input is literally a sequence of integers which represent the input sequence, and in the decoder at the output, it is a single token integer.
+
+As the output of the decoder will run for the duration of the input sequence to be able to extract every token on the output,
+
+and these output tokens will be corresponding to the second sequence.
+
+Now look at the look at the math computation. Get the output embedding.
+
+This is decoder part encoder generated.
+
+The encoder and decoder are connected through a channel. That's why end to end optimization is possible.
+
+But this network here doesn't implement in that fashion.
+
+It is separate. And a chance is passed from the encoder.
+
+Output sequence embedding. Apply dropout.
+
+And then start doing the read. Run the RNA for the duration of the output sequence.
+
+And I start doing the yellow orange. I will get the attention layer's final output.
+
+And the encoder outputs as matrix multiplication.
+
+And then I make them into weights.
+
+Alphas. So that I can use these alphas to compute the actual attention.
+
+Now this will be the actual attention or the context vector, and then I'll concatenate the context vector with the h1.
+
+You might think that I already have h1 right, but that is.
+
+Uh, computed according to the attention with respect to the input sequence.
+
+So the attention is different. That's the context.
+
+The context is determined by the input sequence context.
+
+And n is determined by the input sequence. I have two entities there.
+
+The think of something like the sentence and the context of the sentence.
+
+Its relation to other words. For example, the sequence can be.
+
+I studied computer size for words and the context could be a person entity like me,
+
+and then past tense, and then some field, some computing field abacus.
+
+The second would be the context. You see they are different from the original words.
+
+So h n is based on the actual sequence, and context is based on the context of the sequence.
+
+Those two things are concatenated and then passed to the decoder side.
+
+All I need is get that hidden. Through the context classifier linear layer, which is here w c.
+
+Its input is two times higher than output is sedan. It's a single linear layer.
+
+And then once that is computed, pass it through hyperbolic tangent and then pass it through another output layer for classification
+
+w y and then pass it through log softmax so that it will be probabilities and log is preferred.
+
+Because these numbers are very low, we prefer negative numbers after log, which has more precision than float points.
+
+Numbers. And then same thing with the in it.
+
+Now these encoder and decoder are created here. The data set size shuffle false intentionally and the training is run only once one pass.
+
+Uh, actually, we have to check if the train epoch is one.
+
+Plus there's no epoch. It's one pass. And.
+
+Set the optimizers. You can also set Adam W.
+
+Set the loss function as a loss.
+
+It needs a, b, c tensor shape, b being batch C being classes number of classes which is the size of output language cardinality.
+
+Now the training is also a little bit tricky. For every sequence.
+
+Pair one by one. Run the optimizer.
+
+And the first part is. Encoded onto the sequence and as soon as the sequence stops ended there.
+
+So this is variable length not fixed.
+
+This cannot be batched easily. I have to convert those into vectorized sequences first.
+
+And now once the encoder is done, capture the encoder.
+
+Pass it to the decoder. Start creating the input sequence.
+
+The first element will be called token. This is also typical.
+
+This kind of initializes the decoder and for the duration of the output sequence, run the decoder.
+
+Accumulate the loss. And these two losses are.
+
+Added up, but the loss is coming from the other side.
+
+Now when I pass. This loss to the encoder side because of this connection.
+
+It will be, uh, done accordingly.
+
+It will be done correctly. So the gradients are passed backwards.
+
+Because all this network is connected and finished the decoding parts.
+
+Encoding decoding part. Pass the loss round your optimization on those two steps.
+
+Accumulate the loss for information that it this run slow.
+
+It is one by one. That's why it is not batch by batch.
+
+Then they convert it to batch. It will also run strongly.
+
+Now evolution has to imitate the training.
+
+Encoder decoder models and then run the sequence.
+
+Similarly here generate the hidden layer latent space space and then start generating the output.
+
+Start with core token. Run it. And now, for every token.
+
+The dam generating take the highest probability.
+
+And generate the next one. Still using.
+
+The previous one. How? By passing it here, the coder, the input and the input is being updated.
+
+It starts with gore. It goes to the next, it goes to the next.
+
+It goes to the next one by one. It is not vectorized.
+
+And then, uh, the rest is just comparison.
+
+As you see, the, uh, it's not perfectly doing it.
+
+Some of these are correct. Hundred percent. Second and third, for example.
+
+And every time you run it, it will be different output.
+
+I suggest run the training, save the model and then load the model and then play with this part.
+
+And by the way, if you pass second or third time. 15 minutes, 30 minutes, 45 minutes.
+
+This will be much, much better output here. Now plot the attention.
+
+The attention is already there. All I need is pulling from the decoder side where it is also returns.
+
+As you see, the output is returned.
+
+Hidden state is returned and attention weights are returned as computed exactly as here.
+
+So when I show these attention weights with the sequence,
+
+there should be a correlation between the input sequence and the output sequence with respect to these attentions.
+
+So that's exactly what's happening here. When I look at the heatmap the input sequence top output sequence I know am not.
+
+Compar. For.
+
+Thomas Murray. Actually, this is incorrect.
+
+That's why the attention is a little bit off. But some of these are napping.
+
+The second one. I think the snatch.
+
+Uh, by the way, I was looking at the wrong one. Uh, the first one is string is here.
+
+The second string is here. So she l.
+
+Is. She's a. So this s could be e two.
+
+Throw this a match. Perfect. Put. It should be throw.
+
+So that's not a match. And that's it. The third one.
+
+It's the. It's a good match. Crain scared poor.
+
+Should have been not. But it's not a match.
+
+Maybe if you're on the second or third time this these would be better matches.
+
+However, even in this shape, it works okay to me.
+
+And that concludes our lecture. Thank you.
+

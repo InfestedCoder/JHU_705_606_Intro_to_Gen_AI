@@ -1,0 +1,107 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+In this particular example, we are looking at land chain framework to do some pipelining, to do some large language model.
+
+Building information would be here long chain API.
+
+And also documentation. There are also tutorials and examples.
+
+And of course this is an ongoing development. So every week when you look at these API or web pages you will see updates.
+
+It's not like we are promoting a particular API or framework here,
+
+but rather one of the frameworks that can help you to build a language model quickly.
+
+Now in this example, as you see, we install the Anaconda environment.
+
+Always look up uh, what the package, uh, for example how it is downloaded.
+
+Use conda forge is okay. A more mature package would be directly in Anaconda.
+
+And as you see it has 600 uh K downloads.
+
+So that shows popularity and a little bit perhaps reliability.
+
+So I would trust this library because it's used by so many people.
+
+Reputation. And next what we will do is create a corpus and build a large language model here.
+
+Actually it's a tiny language model from this corpus.
+
+But the point is, I'm building my own model from scratch.
+
+And the trigram model using all this corpus tokens start and end markers, as you see here, this is the start and this is the end.
+
+And I'm building the trigram probabilities in a very simplistic manner.
+
+So trigram model is here. Build trigram model.
+
+That's a method. This is used by the class here.
+
+It's a custom alarm. And the point is, nothing, um, can be simpler than this model.
+
+And we will use the Lang chain. Uh, in order to use this model.
+
+And more. By the way, you can easily replace these with your own large language model.
+
+Maybe using prompt. Using pipeline. One of the Huggingface models.
+
+Now for this class it has to match some of the properties of um Lang chain.
+
+By the way, these models like OpenAI, GPT, cohere, or Huggingface model would be kind of typical.
+
+So let's focus on this one. Uh, it would include model name.
+
+It would include, uh, temperature, max tokens and API key.
+
+These fields. Properties. Methods cover for a variety of API and in here alarm type identifying parameters call.
+
+Do some operations like. Lower. Prompt, lower. Prompt will be passed here.
+
+And it's of type string. It's always a good idea to have the type helpers for parameters stop optional list.
+
+Uh, it continues like this. Generate the tokens. And of course this will be coming from the original trigram model here.
+
+And it's a dictionary. Get context words properties.
+
+Next word random choices. If next word is stop slash s end of sequence or stop and next word.
+
+So this follows the alarm. And the alarm is the base alarm of length chain.
+
+And by the way this approach is typical typical software engineering.
+
+It's basically a wrapper class to follow certain methods and class variables so that land chain can run it.
+
+Are basically plugging in our custom alum into their pipeline, into their pipeline, API or pipeline framework.
+
+Continuing in this fashion, this n-gram alarm will be our alarm and then we will just chain it.
+
+This is the pipe. Is in Linux shell.
+
+Create the alarm template prompt.
+
+These are also similar to how we use the pipelines from Huggingface.
+
+Generate text. It will start with a list and then expect it to finish third with respect to the properties.
+
+And here a list is here.
+
+This is in other places. So one of them will start trading on that.
+
+And this is my corpus. Trigrams are generated from this corpus.
+
+Continuous continuing like this. Um, generated text.
+
+Prompts, different prompts. And I'm basically after this, uh, chaining, which is inherent to that chain.
+
+And as you see, the prompt is of type prompt template.
+
+Alarm is of type editor. And all of both of these are coming from the Lang chain base.
+
+Continuing in this fashion. Uh prompts prompt prompt.
+
+And these are the outputs by the way. Note that this will be similar to a Markov chain because I build the trigram accordingly.
+
+I could easily replace that trigram with the attention neural network we showed earlier.
+
+That concludes long chain. Thank you.
+

@@ -1,0 +1,429 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+It takes a generation.
+
+Generative AI is a rapidly evolving field that enables machines to generate humanlike text based on patterns learned from vast amounts of data.
+
+Text generation is a crucial aspect of generative AI,
+
+with applications ranging from chatbots and virtual assistants to content creation and automated report generation.
+
+I'm sure you use GPT in your courses. The evolution of text generation techniques has moved from traditional statistical methods,
+
+such as Ngrams and Naive Bayes to deep learning approaches, including transformers and large language models.
+
+These advancements allow AI systems to generate coherent, contextually relevant, and often creative text.
+
+However, as models become more complicated.
+
+Challenges like bias, hallucination, and computational costs also increase.
+
+In this lecture, we will explore various text generation techniques, analyze their strengths.
+
+Limitations, and discuss how frameworks like Land chain can be used to improve the accuracy and reliability of generated text.
+
+The outline will be as follows. And of course, these methods are not complete.
+
+One might add many text generation approaches to this.
+
+And then these are the learning objectives. By the end of this module you'll be equipped with these.
+
+Now. Let's look at text generation.
+
+We looked at Markov chains. Takes generations a fundamental task in natural language processing, including question and answering.
+
+Summarization. N-gram models they expect, they predict the next word based.
+
+On the sequence itself. And the Markov assumption, which is incorrect, probably is the probability of the long sequence is the change probability.
+
+Well, number one, it would be very difficult to compute that probability anyway a low number.
+
+We wouldn't have all the world's data. Even these language models have it.
+
+Markov chain wouldn't be proper to use it. Why?
+
+Because it's distinct. It's not a neural network approximator.
+
+Now let's focus on N-gram models. The N-gram model is one of the simplest and most widely used.
+
+It is clinical in NLP. It predicts the next word in a sequence based on the previews and words and many words.
+
+For instance, a bigram model n equals two. The model predicts each word based only on the only one.
+
+Preceding is a trigram model and equals three.
+
+The prediction considers the two previous words or tokens.
+
+A token can be numerical. A token can be anything. It doesn't have to be a word necessarily.
+
+This approach is computationally efficient, easy to implement because it's only trigrams,
+
+making it useful in applications like autocomplete, speech recognition, typographical corrections.
+
+However, N-gram models struggled with capturing long range dependencies because they only consider a fixed context window.
+
+It's not variable. It's not long. It's not dynamic.
+
+Generated text often lacks coherent logical flow, especially for longer passages.
+
+Actually, we looked at these in some assignments, and grammar does require extra extensive training because there are distinct probability models.
+
+They are absolute. They are not approximated.
+
+Now ensuring sufficient coverage.
+
+We have to train them much, much more than any other methods.
+
+However, they are very simple. They are. The core basis takes generation approaches.
+
+Now let's look at Naive Bayes model. It's a probabilistic model often used for text classification, but can also be applied to text generation.
+
+It assumes the words appear independently.
+
+Well, of course we know that strong it's conditioned on a given category or context and simplifies probability calculations.
+
+In text generation, the model predicts the most likely word at each step based on the properties derived from a training corpus.
+
+We always need a training corpus. Naive Bayes models are efficient and effective for simple text prediction tasks.
+
+The first thing you should use in a classifier model would be Naive Bayes.
+
+We know that. And of course, the incorrect assumption is the words are independent, but we use embeddings to keep them dependent.
+
+So in a way we scratched both N-gram models and Naive Bayes.
+
+Now still, it's important to learn these in order to compare and contrast.
+
+Let's focus on Laplace smoothing. One common problem in text generation, particularly in n-gram and naive Bayes approaches,
+
+is that they assign a probability of zero to unseen word sequences.
+
+The issue arises when the training data does not contain a particular phrase in embeddings.
+
+That's not a problem. Now, in Naive Bayes without embeddings, it's a problem.
+
+It's impossible for the model to generate that particular word.
+
+So in order to cover that, we use Laplace smoothing by adding a small constant value,
+
+typically one to all possible word counts in a way ensuring that even unseen words receive a small epsilon probability.
+
+This technique improves the robustness, but does not fully overcome the data sparsity problem.
+
+Only embeddings can. And I know I'm repeating this three times now.
+
+Every transformer. The state of the art model has an embedding in the input sequence and output sequence.
+
+Laplace smoothing is widely used in basic language modeling applications.
+
+A simple probability distribution is sufficient. It's also very explainable.
+
+Neural networks are not explainable. So text based spam detection.
+
+Predictive typing systems. These are easy to do with Naive Bayes.
+
+Now we have the much more powerful approach today.
+
+Transformers. We looked at sequence to sequence models.
+
+Transformers revolutionized text generation by replacing sequential processing with parallel processing through self-attention mechanisms.
+
+It's self-attention because it looks the sequence. That's input.
+
+It's auto autoregressive. Unlike the recurrent neural networks, the process takes sequentially because others have to iterate on the sequence.
+
+Transformers can analyze an entire sequence at once, making them significantly more efficient at the cost of memory footprint.
+
+The self-attention mechanism allows the model to weigh the importance of different words in a sentence,
+
+so it understands the context more effectively.
+
+This approach led to development of powerful models like GPT, which is generative pre-trained transformer.
+
+It can generate humanlike text with remarkable fluency.
+
+Transformers are now widely used in applications such as conversational AI, machine translation,
+
+automated content creation significantly outperforming traditional methods, and they exceed them in speed and quality.
+
+And we all use GPT. Transformer architecture.
+
+It consists of an encoder and decoder similar to the sequence mapping we looked at earlier.
+
+The encoder processes the input sequence and learns contextual relationships using multi-head self-attention, which is below.
+
+And it learns through feedforward layers. Those are like classifiers or feature extractors.
+
+They extract the hidden state, those states connecting here.
+
+That is the information kind of the context about the input sequence.
+
+Now the decoder generates text by attending to both encoded input coming states.
+
+Which is previous to generate the tokens and. Other information coming here.
+
+Now. The self-attention mechanism enables the model to capture long range dependencies.
+
+It is effective for tasks like summarization.
+
+Call generation. Unlike earlier sequence models.
+
+Transformers do not rely on recurrence. Our sequence to sequence notebook does recurrence.
+
+In order to show the utility. But our goal is coming from the classical times Markov chains and then recurrent neural networks.
+
+And then coming to here understanding the attention mechanism which replace all of these and why they are strong and important.
+
+The architecture here is now the foundation of state of the art language models,
+
+providing the backbone for systems like GPT, Bert, and millions of hugging face models.
+
+Transforming implantation. We looked at this code a bit.
+
+It is similar to the original code. The encoder is same.
+
+Even the comments should be same. And we are using a GRU, not a Lstm.
+
+Guru is much more efficient and almost same performance with Lstm and single head attention.
+
+This is a manual implementation of query key value and as you see the keys are coming here.
+
+States. And the query are coming here.
+
+The values are coming here. And this Curie can be used on the key and new values can be generated.
+
+And there are three attention layers here as you see.
+
+And these layers might have multiple layers themselves.
+
+And even the transformer layer in neural network PyTorch module it has attention and it has also an MLP.
+
+So it is kind of an encapsulating this entirely with multiple layers on board.
+
+Understanding transformer implementations is in here.
+
+It's crucial for fine tuning and alarms for specific tasks.
+
+Now the General Detention decoders. In a way, it is replacing the regular decoders on the sequence to sequence mapping.
+
+You should compare this code to the other one. The input the same input sequence.
+
+Input output sequence processing is same. The forward takes the embedding.
+
+Does the dropout. Computes the attention weights according to the attention layer here.
+
+Pass it to the RNA. Remember, we don't replace CNN's, we only replace the attention.
+
+Layer here with the attention from PyTorch.
+
+And much easier to follow this. Attention output plus embeddings.
+
+And it will be true in a nutshell. Log.
+
+Max. Pass it through the final classifier and that will be my output sequence.
+
+This is only replacing the sequence to sequence mapping,
+
+but we will see in the lecture notebook we will use the completely self-contained attention without ordinance.
+
+100% conforming to this architecture. In order to process some corpus and then be able to generate text in a very simplistic manner.
+
+But we if we expand that implementation, it will be able to generate complicated, sophisticated text.
+
+Large language models. They are the AI models trained on massive data sets.
+
+10 trillion tokens. Vocabulary size of 5 million.
+
+Hugging face have has many pages related to this, and these AI models can understand and generate text with humanlike fluency.
+
+These models such as OpenAI, GPT, Google can write essays, generate code, translate languages, even engage in meaningful conversations.
+
+Their effectiveness depends on the quality of the training data.
+
+Like in any other machine learning approach and of course computational resources, they will require many, many GPUs.
+
+The entire neural network has to fit in the GPU memory to be effective.
+
+GPU memory is ten times faster than regular memory, and the bias and high energy consumptions are,
+
+of course, risk because the bias will come from training data.
+
+The weight is labeled and the energy consumption can be a lot.
+
+But in my opinion, the energy consumption in our worlds are mostly coming from other uh uh, situations.
+
+Like I'm sure heating and transportation is several magnitudes larger than just training AI models.
+
+In addition, in Huggingface models there are millions of models and they are based on already trained models.
+
+So we are reusing the models created by meta, Microsoft, Google, Nvidia and others.
+
+Rather than vortex generation.
+
+Large language models are class of deep learning models designed to process generate humanlike text, and they are built by transformer architectures.
+
+So the transformer architecture literally does this kind of mapping.
+
+If you add input output sequences separately, then what you do is the output sequence probability will be dependent on the input context,
+
+um, and some sequence elements that are in the output.
+
+So we know we will be only replacing this autoregressive models to multiple sequence.
+
+And same thing. What do we need with the GPT?
+
+Well, pre-training on very large corpora.
+
+Fine tuning for specific tasks. Fine tuning will be easy.
+
+And when we reach the rag retrieval augmented generation, you will see that when we add the rag, even we don't have to pre-trained use the already.
+
+I mean, uh, we don't have to fine tune.
+
+We always need pre-training.
+
+And we use these pre-trained models, uh, either as a, as they are with rags, or we fine tune them for our specific problems.
+
+Yeah. This is the way of text generation or any text related problem solution these days.
+
+And Huggingface have many, many models. To start.
+
+And the labs have made significant advancements. They are content generated content.
+
+Their practical implementation, um, they are they are fine tuning is crucial.
+
+Or now it's not if you use a rag. But we have to, no matter what, make their outputs relevant, reliable and aligned.
+
+So the following lectures will cover all these such as prompt engineering.
+
+Constraining. Uh, a gigantic eye and also rags.
+
+Of course. Negative aspects. I'm sure you heard the word hallucination.
+
+Despite their powerful capabilities, they come with challenges.
+
+One major concern is computational expense. We talked about this and the other one is data inefficiency.
+
+For example, they need enormous datasets. We have them. But one researcher was saying we hit a block.
+
+We finished all the data that we can use. Maybe that's not true.
+
+Maybe a genetic AI. We will use multiple multiply to, uh, do interesting stuff as teamwork.
+
+Another critical issue. Very important bias propagation.
+
+Biases present in training data, potentially leading to unethical or misleading outputs.
+
+They also suffer from lack of true understanding.
+
+Or are they? Even Kasparov said, when in a smart match with deep blue, sometimes quantity becomes quality.
+
+And Kasparov himself was saying, I felt like I'm playing with a human being or some entity.
+
+Uh, I'm not 100% sure. As an instructor opinion.
+
+I'm stating this, that the true understanding is a factor, especially with very large models.
+
+Uh, they may feel like they have some kind of understanding.
+
+Any difficult question? Any paradoxical question.
+
+I found them, uh, that they are answering. Okay.
+
+And I wonder what happens in a year's time. And this lecture is 2025 right now.
+
+March. I wonder what will happen in a year's time.
+
+Well, the opacity, of course, can make it difficult to interpret how they arrive at certain decisions.
+
+Opacity might be important, regardless of true understanding or anything, because it's related to, uh, bias.
+
+It may be related to some other things.
+
+And of course, ongoing efforts improve efficiency, reduce bias, and enhance their trustworthiness in real world applications.
+
+That will be an ongoing effort. Hallucination in large language models.
+
+Hallucination. Large language model occurs when the model generates plausible sounding but incorrect or misleading information.
+
+This phenomenon is one of the biggest challenges maybe was it undermines trust and reliability,
+
+especially in high stakes stakes applications like health care law, scientific research.
+
+Well, neural network networks are functional approximators.
+
+They will not answer anything with formalism.
+
+Maybe we should add formalism to our transformer approaches so that these large language models will be constrained.
+
+Several factors include include such as, uh, training data limitations.
+
+Vast but finite patterns.
+
+Maybe they do not understand those patterns.
+
+Maybe they have an inherent understanding of what is true or false, or modal encounters the gap in its knowledge and try to fill in the blanks.
+
+Learn pattern, but not factually accurate. Another factor is, of course, like I said, approximation.
+
+Probabilistic nature of at a glance. These models do not retrieve facts that a way a database would.
+
+Instead, they predict the next word in a sequence based on statistical likelihood.
+
+This method makes them highly flexible, but also mean means they can sometimes produce responses which sound correct but completely fabricated.
+
+Lack of external grounding formalism.
+
+Maybe we can add formalism. In addition.
+
+Uh. We may have ambiguity in usage prompts.
+
+The model may attempt to generate responses by making assumptions rather than asking for clarification in practical applications.
+
+Hallucinations can be dangerous. Imagine AI generated medical diagnosis.
+
+Sounds confident, but entirely incorrect. Understanding the causes of fascination is crucial, of course.
+
+Fact checking mechanisms. Integrating external knowledge sources.
+
+Improving prompt engineering and formalism.
+
+We can use formal methods to improve them. In the next section we will look at how to counteract hallucination.
+
+Fact checking. Fine tuning on domain data. External knowledge.
+
+Human in the loop. Reinforcement learning. Post-processing filters.
+
+Accepting hallucination in creative applications.
+
+Yeah, maybe it is. Important.
+
+And creative applications because we want. Them to be creative.
+
+There are some papers. For example, truthful coupé measuring car models mimic human falsehoods.
+
+You can look up these papers. You can also make a Google search or any other search.
+
+Mitigating bias. Misinformation retrieval.
+
+Augmented generation. This is a very hot ongoing research area.
+
+Fine tuning strategies for reducing calcination explainability in AI.
+
+Now, one last topic. We also have a notebook section for this one.
+
+Long chain language chain is the framework that allows developers to build powerful,
+
+AI driven applications by chaining together various components of a language model pipeline.
+
+It enables structured text generation, memory based interactions, and retrieval augmented generation to improve accuracy.
+
+Businesses use long chain for automated customer support today.
+
+Document summarization. Of course, interactive AI systems is an AI assistant, so it's a valuable tool.
+
+It's being developed and we will look at that shortly.
+
+This concludes this particular lecture. We will look at three notebooks now.
+
+Thank you.
+

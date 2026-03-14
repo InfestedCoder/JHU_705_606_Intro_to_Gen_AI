@@ -1,0 +1,27 @@
+# Module 8 environment: use AFTER creating the base env and cloning it.
+#
+# Setup (one-time):
+#   conda env create -f conda-env.yml
+#   conda create -n jhu-genai-mod8 --clone jhu-intro-to-genai
+#
+# Then update the module 8 env with any extra deps (this file):
+#   conda env update -f conda-env-mod8.yml -n jhu-genai-mod8
+#
+# Activate: conda activate jhu-genai-mod8
+#
+# ep_seq (NMTDataset, GO_token, EOS_token, PAD_token):
+#   Not on PyPI/Conda. Get it from course materials (Canvas/files from instructor)
+#   then either:
+#     pip install /path/to/ep_seq   # if it's a package
+#   or place the ep_seq folder in this directory and add to Python path in the notebook:
+#     import sys; sys.path.insert(0, 'modules/module 8')
+#
+name: jhu-genai-mod8
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - pip
+  - langchain
+  - langchain-core
+

@@ -3,3 +3,5 @@ datasets/
 models
 output/
 output*/
+__pycache__
+.env

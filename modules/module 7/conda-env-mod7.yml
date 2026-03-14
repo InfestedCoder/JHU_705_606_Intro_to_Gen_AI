@@ -1,0 +1,27 @@
+# Module 7 environment: use AFTER creating the base env and cloning it.
+#
+# Setup (one-time):
+#   conda env create -f conda-env.yml
+#   conda create -n jhu-genai-mod7 --clone jhu-intro-to-genai
+#
+# Then update the module 7 env with any extra deps (this file):
+#   conda env update -f conda-env-mod7.yml -n jhu-genai-mod7
+#
+# Activate: conda activate jhu-genai-mod7
+#
+# ep_seq (NMTDataset, GO_token, EOS_token, PAD_token):
+#   Not on PyPI/Conda. Get it from course materials (Canvas/files from instructor)
+#   then either:
+#     pip install /path/to/ep_seq   # if it's a package
+#   or place the ep_seq folder in this directory and add to Python path in the notebook:
+#     import sys; sys.path.insert(0, 'modules/module 7')
+#
+name: jhu-genai-mod7
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - pip
+  - graphviz
+  # pip install ep_seq  # only if instructor provides a wheel/URL; see comment above
+
