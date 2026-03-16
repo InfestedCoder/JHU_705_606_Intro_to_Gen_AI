@@ -1,0 +1,22 @@
+{
+    "dual_bound": [
+        null,
+        0.0,
+        null
+    ],
+    "origin": [
+        "none",
+        "none",
+        "none"
+    ],
+    "primal_bound": [
+        null,
+        null,
+        null
+    ],
+    "timestamp": [
+        0.036111889,
+        1.0361639660000002,
+        1.302544833
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "client_0_memory": [
+        [
+            19275776.0,
+            0.9899591455888117,
+            0.00015311299648601562
+        ]
+    ],
+    "memory_tracker_file": "ramsey_r3_s4_n5.mps",
+    "memory_tracker_record": "process_memory_footprint, fraction_of_total_ram_available, time_stamp"
+}

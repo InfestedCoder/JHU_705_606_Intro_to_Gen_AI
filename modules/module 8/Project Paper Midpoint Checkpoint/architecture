@@ -1,0 +1,70 @@
+digraph solver_log_copilot_pipeline {
+	graph [dpi=300]
+	nodesep=0.6 rankdir=TB ranksep=0.8 splines=true
+	node [fontname=Helvetica fontsize=13 shape=box style=rounded]
+	edge [arrowsize=0.8]
+	A [label="Raw Solver Logs" fillcolor="#d5e8d4" style="filled,rounded"]
+	B [label="Log Parser
+(regex extraction)" fillcolor="#dae8fc" style="filled,rounded"]
+	C [label="Structured Representation
+(JSON event stream)" fillcolor="#dae8fc" style="filled,rounded"]
+	D [label="Transformer Encoder
+(embedding + retrieval)" fillcolor="#dae8fc" style="filled,rounded"]
+	RAG [label="Solver Behavior
+Knowledge Base (RAG)" fillcolor="#e8e8e8" style="filled,rounded"]
+	E [label="Bottleneck Classifier
+(multi-label)" fillcolor="#dae8fc" style="filled,rounded"]
+	F [label="Diagnostic Generator
+(seq2seq / LLM)" fillcolor="#dae8fc" style="filled,rounded"]
+	G [label="Predicted
+Diagnostic Labels" fillcolor="#fff2cc" style="filled,rounded"]
+	H [label="Generated
+Explanation" fillcolor="#fff2cc" style="filled,rounded"]
+	I [label="Diagnostic Report" fillcolor="#fff2cc" style="filled,rounded"]
+	A -> B
+	B -> C
+	C -> D
+	RAG -> D [style=dashed]
+	D -> E
+	D -> F
+	E -> G
+	F -> H
+	G -> I
+	H -> I
+	L0 [label=Input fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L1 [label="Stage 1" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L2 [label="Stage 2" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L3 [label="Stage 3" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L4 [label="Stage 4" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L0 -> L1 [style=invis]
+	L1 -> L2 [style=invis]
+	L2 -> L3 [style=invis]
+	L3 -> L4 [style=invis]
+	{
+		rank=same
+		L0
+		A
+	}
+	{
+		rank=same
+		L1
+		B
+	}
+	{
+		rank=same
+		L2
+		C
+	}
+	{
+		rank=same
+		L3
+		D
+		RAG
+	}
+	{
+		rank=same
+		L4
+		E
+		F
+	}
+}

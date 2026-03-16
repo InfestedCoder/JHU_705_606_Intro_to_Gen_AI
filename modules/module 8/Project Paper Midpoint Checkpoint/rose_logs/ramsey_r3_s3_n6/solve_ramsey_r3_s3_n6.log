@@ -1,0 +1,33 @@
+================================================================================
+Rose Solve Submission Log
+================================================================================
+
+Model Information:
+  Model file: ramsey_r3_s3_n6.mps
+  Run number: 1
+  Solve ID: 68467cfa-2de7-48d8-a3c2-0158159249a0
+
+Timing Information:
+  Submitted to Rose: 2026-03-15 16:02:47.338168
+
+  Status: no_solution
+
+Note: Use rose_poll_and_download.py to poll for completion and download results from S3
+S3 Files:
+  Files downloaded (13):
+    - basic_metrics.json
+    - bounds.json
+    - detailed_bounds.json
+    - detailed_config.json
+    - detailed_metrics.json
+    - detailed_ping.json
+    - detailed_trace.json
+    - info.json
+    - manifest.json
+    - problem.json
+    - status.json
+    - stderr.txt
+    - stdout.txt
+  (All S3 files saved in run folder)
+
+================================================================================

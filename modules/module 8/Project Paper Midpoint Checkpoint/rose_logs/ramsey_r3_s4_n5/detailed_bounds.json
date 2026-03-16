@@ -1,0 +1,58 @@
+{
+    "dual_bound": [
+        null,
+        null,
+        null,
+        null,
+        -0.0
+    ],
+    "dual_burls_active": [
+        0,
+        0,
+        0,
+        0,
+        2
+    ],
+    "dual_burls_allocated": [
+        0,
+        0,
+        0,
+        0,
+        60
+    ],
+    "origin": [
+        "fjump",
+        "none",
+        "none",
+        "none",
+        "none"
+    ],
+    "primal_bound": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+    ],
+    "primal_burls_active": [
+        2,
+        2,
+        2,
+        2,
+        0
+    ],
+    "primal_burls_allocated": [
+        4,
+        4,
+        4,
+        4,
+        4
+    ],
+    "timestamp": [
+        0.055723339000000004,
+        0.05573320700000001,
+        0.055916506000000005,
+        0.055924835000000006,
+        0.05686345
+    ]
+}

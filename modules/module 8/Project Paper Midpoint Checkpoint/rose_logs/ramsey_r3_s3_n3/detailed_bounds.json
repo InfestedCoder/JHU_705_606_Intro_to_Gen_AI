@@ -1,0 +1,26 @@
+{
+    "dual_bound": [
+        null
+    ],
+    "dual_burls_active": [
+        0
+    ],
+    "dual_burls_allocated": [
+        0
+    ],
+    "origin": [
+        "none"
+    ],
+    "primal_bound": [
+        null
+    ],
+    "primal_burls_active": [
+        0
+    ],
+    "primal_burls_allocated": [
+        0
+    ],
+    "timestamp": [
+        0.058061256000000006
+    ]
+}

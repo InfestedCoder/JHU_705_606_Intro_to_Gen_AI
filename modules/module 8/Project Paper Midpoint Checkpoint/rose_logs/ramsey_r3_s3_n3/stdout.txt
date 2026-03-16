@@ -1,0 +1,31 @@
+[    0.028]:[      layout_manager.cpp:  246]: Box Assignments:[0m
+[    0.028]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64[0m
+[    0.032]:[              banner.cpp:   67]: [38;5;161m       ▼         _____                [0m
+[    0.032]:[              banner.cpp:   68]: [38;5;161m   ▴ ▾   ▾ ▴    |  __ \               [0m
+[    0.032]:[              banner.cpp:   69]: [38;5;161m ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ [0m
+[    0.032]:[              banner.cpp:   70]: [38;5;161m▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \[0m
+[    0.032]:[              banner.cpp:   71]: [38;5;161m ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/[0m
+[    0.032]:[              banner.cpp:   72]: [38;5;161m   ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|[0m
+[    0.032]:[              banner.cpp:   73]: [38;5;161m       ▲       [0m
+[    0.032]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e[0m
+[    0.032]:[              banner.cpp:   83]: Host: rose-worker-job-3a11b598-e196-4dd7-8981-0db988e02ec6-wsbr9[0m
+[    0.033]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s3_n3[0m
+[    0.033]:[         head_client.cpp:  398]: Sense: minimize[0m
+[    0.033]:[         head_client.cpp:  399]: Objective offset: 0.000000[0m
+[    0.033]:[         head_client.cpp:  400]: Original:  3 x 4, nonz: 7[0m
+[    0.034]:[         head_client.cpp:  479]: Problem solved at the Head in Highs[0m
+[    0.034]:[   head_client_state.cpp:   95]: [38;5;13mTerminating[0m
+[    0.058]:[   head_client_state.cpp:  104]: [38;5;13mExiting[0m
+[    0.058]:[         head_client.cpp:  236]: Head has solved the problem locally via highs presolve[0m
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    0.058] [38;5;10m          inf[0m [38;5;10m         -inf[0m [38;5;10m     nan%[0m [0m         [0m [0m   0/0   [0m [0m   0/0   [0m 3 0 0 1 0
+[    0.058]:[         head_client.cpp:  290]: Solution validation OK[0m
+[    0.058]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.[0m
+[    0.058]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    [0m
+[    0.059]:[         head_client.cpp:  320]: Termination reason: finished,  Message: Finished in Head by Highs[0m
+[    0.059]:[         head_client.cpp:  712]: Final    objective: 0, status: optimal[0m

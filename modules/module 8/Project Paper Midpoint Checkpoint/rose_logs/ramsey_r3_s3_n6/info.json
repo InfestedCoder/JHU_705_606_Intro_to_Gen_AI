@@ -1,0 +1,28 @@
+{
+    "git": {
+        "branch": "develop",
+        "commit": "44b7ec85ea7d50d4cb7a28dbb287446fe9d6856f",
+        "date": "2026-02-05 13:42:48 -0600",
+        "repo": "rose",
+        "tag": "5.18.2-release-2-g44b7ec85e"
+    },
+    "hardware": {
+        "0": {
+            "cpu_architecture": "aarch64",
+            "cpu_make": "ARM",
+            "cpu_model": "Neoverse-V2",
+            "cxx_compiler": "g++",
+            "cxx_compiler_version": "13.3.0",
+            "domains": [
+                [
+                    0,
+                    64
+                ]
+            ],
+            "machine_name": "rose-worker-job-68467cfa-2de7-48d8-a3c2-0158159249a0-8frgp",
+            "mpi_version": "3.1.0",
+            "os_type": "Linux 6.12.66-88.122.amzn2023.aarch64 #1 SMP Mon Jan 26 01:40:42 UTC 2026 aarch64",
+            "total_ram_gb": 494
+        }
+    }
+}

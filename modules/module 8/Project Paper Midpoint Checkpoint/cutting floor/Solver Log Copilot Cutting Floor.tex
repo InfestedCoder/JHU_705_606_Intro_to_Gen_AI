@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\geometry{margin=1in}
+
+\title{Optimization Log Copilot: Using Large Language Models to Analyze Mathematical Optimization Solver Logs}
+\author{Jeff Ginn \\ EN.705.605.81.SP26 Introduction to Generative AI}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% ============================================================
+\begin{abstract}
+
+\end{abstract}
+
+% ============================================================
+\section{Introduction}
+\label{sec:intro}
+
+
+
+% ============================================================
+\section{Related Work}
+\label{sec:related_work}
+
+
+% ============================================================
+\section{Research Problem and Hypotheses}
+\label{sec:problem}
+
+
+% ============================================================
+\section{Method}
+\label{sec:method}
+
+The Optimization Log Copilot combines structured log parsing, transformer-based sequence understanding, and generative language models to produce both structured predictions and 
+natural-language explanations. The system does not modify solver internals.
+
+\subsection{System Architecture}
+
+
+\subsection{Dataset Construction}
+\label{sec:dataset}
+
+
+\subsection{Bottleneck Classification Model}
+
+The classification model uses a transformer encoder to generate contextual representations of the log text. Since solver logs can be long, architectures designed for long sequences such as Longformer or BigBird are candidates. The encoder output is passed through a linear classification head with sigmoid activation for multi-label prediction:
+\begin{equation}
+    \hat{y}_i = \sigma(W_i \cdot h_{\text{[CLS]}} + b_i), \quad i = 1, \ldots, K
+\end{equation}
+where $h_{\text{[CLS]}}$ is the pooled encoder representation, $K$ is the number of bottleneck categories, and $\sigma$ is the sigmoid function. The model is trained with binary cross-entropy loss:
+\begin{equation}
+    \mathcal{L} = -\frac{1}{K} \sum_{i=1}^{K} \left[ y_i \log \hat{y}_i + (1 - y_i) \log(1 - \hat{y}_i) \right]
+\end{equation}
+
+\subsection{Generative Explanation Model}
+
+To produce human-readable diagnostics, a sequence-to-sequence generative model (e.g., T5 or FLAN-T5) generates explanations conditioned on the solver log and predicted diagnostic labels. The generation is formulated as:
+\begin{equation}
+    P(\text{explanation} \mid \text{log\_text}, \text{labels}) = \prod_{t=1}^{T} P(w_t \mid w_{<t}, \text{log\_text}, \text{labels})
+\end{equation}
+where $w_t$ denotes the $t$-th token of the generated explanation. The model is trained to produce concise summaries describing solver behavior and recommend potential improvements to model formulation or solver configuration.
+
+\subsection{LLM Approach Comparison}
+
+Three LLM-based approaches will be evaluated:
+\begin{enumerate}
+    \item \textbf{Prompt Engineering:} Directly feeding solver logs to a pre-trained LLM with domain-specific prompts. This is the simplest approach and requires no training data.
+    \item \textbf{Retrieval-Augmented Generation (RAG):} Augmenting the LLM with a database of known solver behavior patterns and diagnostic examples. The system retrieves relevant examples based on log similarity before generating a response.
+    \item \textbf{Fine-Tuning:} Training a smaller model on the labeled dataset of solver logs and expert annotations. This approach requires the most data but may produce the most consistent domain-specific outputs.
+\end{enumerate}
+
+Based on findings from the literature \cite{akhtar2025llmbasedeventloganalysis}, RAG is expected to offer the best balance of accuracy and practicality for this domain, given the relatively small dataset size and the need to reduce hallucination risk.
+
+% ============================================================
+\section{Experimental Plan}
+\label{sec:experiments}
+
+
+% ============================================================
+\section{Results}
+\label{sec:results}
+
+
+
+% ============================================================
+\section{Conclusion and Future Work}
+\label{sec:conclusion}
+
+
+% ============================================================
+\begin{thebibliography}{99}
+
+    \bibitem{akhtar2025llmbasedeventloganalysis}
+    S.~Akhtar, S.~Khan, and S.~Parkinson, ``LLM-based event log analysis techniques: A survey,''
+    \emph{arXiv preprint arXiv:2502.00677}, 2025.
+    [Online]. Available: \url{https://arxiv.org/abs/2502.00677}
+
+    \bibitem{landauer2023deeplearningloganomaly}
+    M.~Landauer, S.~Onder, F.~Skopik, and M.~Wurzenberger, ``Deep learning for anomaly detection in log data: A survey,''
+    \emph{Machine Learning with Applications}, vol.~12, p.~100470, 2023.
+    [Online]. Available: \url{https://www.sciencedirect.com/science/article/pii/S2666827023000233}
+
+    \bibitem{bengio2018mlforcombinatorial}
+    Y.~Bengio, A.~Lodi, and A.~Prouvost, ``Machine learning for combinatorial optimization: A methodological tour d'horizon,''
+    \emph{arXiv preprint arXiv:1811.06128}, 2018.
+    [Online]. Available: \url{https://arxiv.org/abs/1811.06128}
+
+    \bibitem{kotary2021endtoend}
+    J.~Kotary, F.~Fioretto, P.~Van~Hentenryck, and B.~Wilder, ``End-to-end constrained optimization learning: A survey,''
+    in \emph{Proceedings of the International Joint Conference on Artificial Intelligence (IJCAI)}, 2021.
+    [Online]. Available: \url{https://arxiv.org/abs/2103.16378}
+
+    \bibitem{yazdani2025evocut}
+    M.~Yazdani, M.~Mostajabdaveh, S.~Aref, and Z.~Zhou, ``EvoCut: strengthening integer programs via evolution-guided language models,''
+    \emph{arXiv preprint arXiv:2508.11850}, 2025.
+    [Online]. Available: \url{https://arxiv.org/abs/2508.11850}
+
+    \bibitem{raffel2020t5}
+    C.~Raffel, N.~Shazeer, A.~Roberts, K.~Lee, S.~Narang, M.~Matena, Y.~Zhou, W.~Li, and P.~J.~Liu, ``Exploring the limits of transfer learning with a unified text-to-text transformer,''
+    \emph{Journal of Machine Learning Research}, vol.~21, no.~140, pp.~1--67, 2020.
+    [Online]. Available: \url{https://arxiv.org/abs/1910.10683}
+
+    \bibitem{devlin2019bert}
+    J.~Devlin, M.-W.~Chang, K.~Lee, and K.~Toutanova, ``BERT: Pre-training of deep bidirectional transformers for language understanding,''
+    in \emph{Proceedings of NAACL-HLT}, 2019.
+    [Online]. Available: \url{https://arxiv.org/abs/1810.04805}
+
+    \bibitem{chung2022flanT5}
+    H.~W.~Chung, L.~Hou, S.~Longpre, B.~Zoph, Y.~Tay, W.~Fedus, Y.~Li, X.~Wang, M.~Dehghani, S.~Brahma, A.~Webson, S.~S.~Gu, Z.~Dai, M.~Suzgun, X.~Chen, A.~Chowdhery, A.~Castro-Ros, M.~Pellat, K.~Robinson, D.~Valter, S.~Narang, G.~Mishra, A.~Yu, V.~Zhao, Y.~Huang, A.~Dai, H.~Yu, S.~Petrov, E.~H.~Chi, J.~Dean, J.~Devlin, A.~Roberts, D.~Zhou, Q.~V.~Le, and J.~Wei, ``Scaling instruction-finetuned language models,''
+    \emph{arXiv preprint arXiv:2210.11416}, 2022.
+    [Online]. Available: \url{https://arxiv.org/abs/2210.11416}
+
+\end{thebibliography}
+
+\end{document}

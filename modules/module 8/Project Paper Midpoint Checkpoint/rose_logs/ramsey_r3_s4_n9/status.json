@@ -1,0 +1,10 @@
+{
+    "dual_bound": null,
+    "num_solution_nonzeros_binary": null,
+    "num_solution_nonzeros_continuous": null,
+    "num_solution_nonzeros_integer": null,
+    "objective": null,
+    "primal_bound": null,
+    "solution_status": "no_solution",
+    "termination_reason": "finished"
+}

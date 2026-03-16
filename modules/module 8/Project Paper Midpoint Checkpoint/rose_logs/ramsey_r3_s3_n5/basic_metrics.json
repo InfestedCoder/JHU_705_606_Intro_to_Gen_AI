@@ -1,0 +1,21 @@
+{
+    "num_boxes": 1,
+    "num_burls": 64,
+    "num_cores": 64,
+    "num_cuts_applied": 0,
+    "num_cuts_generated": 10,
+    "num_lp_iterations": 9,
+    "num_nodes_leaves": 1,
+    "num_nodes_parent": 1,
+    "num_nodes_processed": 2,
+    "num_nodes_pruned": 0,
+    "num_nodes_total": 3,
+    "num_nodes_unprocessed": 1,
+    "num_solutions_found": 5,
+    "time_zero_epoch_seconds": 1773605065.478461,
+    "timeline_init_seconds": 0.0035396610000000004,
+    "timeline_postsolve_seconds": 0.00027431300000000004,
+    "timeline_presolve_seconds": 0.0017716250000000002,
+    "timeline_solve_seconds": 0.028901849,
+    "timeline_total_seconds": 0.060182076
+}
