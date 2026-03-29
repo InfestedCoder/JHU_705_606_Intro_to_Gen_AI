@@ -131,17 +131,22 @@ Typical performance issues that the system should detect include:
     \item Insufficient presolve: Minimal problem reduction during the presolve phase.
 \end{itemize}
 
-\subsection{Research Hypotheses}
+\subsection{Primary Hypothesis}
 
-The project investigates three research questions, formalized as testable hypotheses:
+The central claim of this project is:
+
+\begin{quote}
+\emph{A system that combines structured log parsing with large language model reasoning can analyze optimization solver logs and produce diagnostic outputs---bottleneck classifications, natural-language summaries, and solver recommendations---whose quality meets or exceeds that of rule-based baselines across all three tasks, as measured by F1 score, ROUGE, and expert evaluation.}
+\end{quote}
+
+This hypothesis is falsifiable: if the LLM-based approaches fail to outperform the rule-based heuristic baseline on any of the three metrics defined below, the hypothesis does not hold for that task. The hypothesis is decomposed into three sub-hypotheses, each tied to a specific performance metric.
+
+\subsection{Sub-Hypotheses}
 
 \begin{itemize}
-    \item H1 (Summarization): An LLM-based system can generate accurate natural-language summaries of solver log behavior, as measured by ROUGE scores and human evaluation against
-    expert-written summaries.
-    \item H2 (Bottleneck Detection): Solver logs contain sufficient information to classify the cause of poor solver performance, and a trained classifier can achieve F1 scores 
-    comparable to those reported in related log anomaly detection work ($>$0.85).
-    \item H3 (Recommendations): The system can produce actionable solver configuration recommendations that correlate with measurable improvements in solver performance metrics 
-    such as solve time and node count.
+    \item H1 (Bottleneck Detection): A transformer-based classifier operating on parsed solver log features can achieve a macro-averaged F1 score of at least 0.85 for multi-label bottleneck classification, matching the lower bound of F1 scores reported for deep learning log anomaly detectors in Landauer et al.\ \cite{landauer2023deeplearningloganomaly} (0.90--0.98 for LSTM models, $>$0.95 for transformer models). The 0.85 threshold accounts for the smaller dataset and more specialized domain.
+    \item H2 (Summarization): An LLM-based system can generate natural-language summaries of solver log behavior that achieve ROUGE-L scores of at least 0.40 when compared to expert-written reference summaries. This threshold is grounded in ROUGE-L scores reported for abstractive summarization of technical documents, where scores in the 0.35--0.45 range indicate substantive alignment with reference text \cite{raffel2020t5}. Because solver log summaries require domain-specific terminology and precise numerical claims, exceeding 0.40 would demonstrate meaningful content overlap beyond generic language.
+    \item H3 (Recommendation Quality): The system can produce solver configuration recommendations that domain experts rate as ``actionable and correct'' on at least 70\% of test cases, using a binary expert judgment protocol. This threshold is motivated by the finding in Akhtar et al.\ \cite{akhtar2025llmbasedeventloganalysis} that human judgment remains necessary for log analysis evaluation, and that LLM-based systems should supplement rather than replace expert reasoning. A 70\% actionability rate would demonstrate practical utility without requiring the system to match expert performance on every instance.
 \end{itemize}
 
 % ============================================================
@@ -250,26 +255,51 @@ Based on findings from the literature \cite{akhtar2025llmbasedeventloganalysis},
 
 \textit{[This section will be completed in the final paper.]}
 
-The experimental evaluation will assess the system across three dimensions corresponding to the research hypotheses.
+The experimental evaluation will assess the system using three performance metrics, each tied to a sub-hypothesis. Together, they provide a quantitative framework for determining whether the primary hypothesis holds.
 
-\subsection{Planned Evaluation Metrics}
+\subsection{Metric 1: Macro-Averaged F1 Score for Bottleneck Detection (H1)}
 
-\begin{itemize}
-    \item Summarization quality (H1): ROUGE scores comparing generated summaries to expert-written reference summaries, supplemented by human evaluation of factual accuracy and completeness.
-    \item Bottleneck detection accuracy (H2): Precision, recall, and F1 score for multi-label classification of bottleneck categories.
-    \item Recommendation quality (H3): Human expert evaluation of generated recommendations assessing usefulness, correctness, and actionability.
-\end{itemize}
+The first metric evaluates the multi-label classification component. For each bottleneck category $k \in \{1, \ldots, K\}$, precision ($P_k$), recall ($R_k$), and F1 ($F_{1,k}$) are computed in the standard way:
+\begin{equation}
+    P_k = \frac{TP_k}{TP_k + FP_k}, \quad R_k = \frac{TP_k}{TP_k + FN_k}, \quad F_{1,k} = \frac{2 P_k R_k}{P_k + R_k}
+\end{equation}
+The macro-averaged F1 score is the unweighted mean across all $K=5$ bottleneck categories:
+\begin{equation}
+    F_1^{\text{macro}} = \frac{1}{K} \sum_{k=1}^{K} F_{1,k}
+\end{equation}
+
+The target threshold is $F_1^{\text{macro}} \geq 0.85$. This is grounded in results from Landauer et al.\ \cite{landauer2023deeplearningloganomaly}, who report F1 scores of 0.90--0.98 for deep LSTM-based log anomaly detectors and often exceeding 0.95 for transformer-based approaches. The lower threshold of 0.85 accounts for the smaller dataset size (approximately 200 logs vs.\ thousands in IT log benchmarks) and the specialized domain. The metric will be computed on a held-out test set (20\% of logs) using 5-fold cross-validation to account for dataset size. Both the rule-based baseline and each LLM approach (prompt engineering, RAG, fine-tuning) will be evaluated on the same folds.
+
+\subsection{Metric 2: ROUGE-L Score for Diagnostic Summarization (H2)}
+
+The second metric evaluates the quality of generated diagnostic summaries. ROUGE-L measures the longest common subsequence (LCS) between a generated summary $S$ and a reference summary $R$:
+\begin{equation}
+    P_{\text{lcs}} = \frac{|LCS(S, R)|}{|S|}, \quad R_{\text{lcs}} = \frac{|LCS(S, R)|}{|R|}, \quad \text{ROUGE-L} = \frac{(1 + \beta^2) P_{\text{lcs}} R_{\text{lcs}}}{\beta^2 P_{\text{lcs}} + R_{\text{lcs}}}
+\end{equation}
+with $\beta$ set to favor recall ($\beta = 1.2$), following standard practice. ROUGE-1 and ROUGE-2 (unigram and bigram overlap) will also be reported for completeness.
+
+The target threshold is ROUGE-L $\geq 0.40$. Raffel et al.\ \cite{raffel2020t5} report ROUGE-L scores in the 0.35--0.45 range for T5 on abstractive summarization benchmarks. Because solver log summaries require domain-specific terminology (e.g., ``root LP relaxation,'' ``branching pseudocosts'') and precise numerical claims (e.g., ``gap closed from 40\% to 5\%''), achieving ROUGE-L $\geq 0.40$ would demonstrate that generated summaries capture the substantive content of expert-written references rather than producing superficially similar generic text. Reference summaries will be written by the author for each test log, describing the key solver behavior, identified bottlenecks, and performance characteristics.
+
+\subsection{Metric 3: Expert Actionability Rate for Recommendations (H3)}
+
+The third metric evaluates whether generated recommendations are practically useful. Each recommendation produced by the system will be presented to a domain expert (the author, with experience in optimization solver configuration) alongside the corresponding solver log. The expert assigns a binary label: \emph{actionable and correct} (the recommendation identifies a real issue and suggests a plausible intervention) or \emph{not actionable} (the recommendation is vague, incorrect, or irrelevant). The actionability rate is:
+\begin{equation}
+    A = \frac{\text{number of recommendations rated actionable}}{\text{total recommendations evaluated}}
+\end{equation}
+
+The target threshold is $A \geq 0.70$. This threshold is motivated by Akhtar et al.\ \cite{akhtar2025llmbasedeventloganalysis}, who find that LLM-based log analysis systems should supplement rather than replace human reasoning, and that hallucination risk makes perfect accuracy unrealistic. A 70\% actionability rate would demonstrate that the majority of generated recommendations provide genuine diagnostic value. To mitigate single-rater bias, a subset of recommendations will be evaluated independently by a second reviewer, and inter-rater agreement (Cohen's kappa) will be reported.
 
 \subsection{Planned Experiments}
 
 \begin{enumerate}
-    \item Baseline comparison: Compare rule-based heuristic diagnostics (current prototype) against LLM-generated diagnostics to quantify the improvement from learned models.
-    \item Approach comparison: Evaluate prompt engineering, RAG, and fine-tuning approaches on the same test set to determine which strategy is most effective for solver log analysis.    
+    \item Baseline comparison: Compare the rule-based heuristic baseline (implemented in the prototype notebook) against each LLM approach on all three metrics to quantify the improvement from learned models.
+    \item Approach comparison: Evaluate prompt engineering, RAG, and fine-tuning on the same held-out test set to determine which strategy is most effective for solver log analysis. Results will be reported per-metric with 95\% confidence intervals.
+    \item Sensitivity analysis: Assess how each metric varies with dataset size by evaluating on subsets of 50, 100, and 200 logs to determine whether the current dataset is sufficient or whether additional log collection is needed.
 \end{enumerate}
 
 \subsection{Planned Statistical Analysis}
 
-\textit{[Placeholder: Statistical significance tests (e.g., paired t-tests) will be applied to compare approaches. Results will be reported with confidence intervals.]}
+For Metric 1, statistical significance between approaches will be assessed using a paired bootstrap test over the cross-validation folds. For Metric 2, significance will be assessed using a paired permutation test on per-log ROUGE-L scores. For Metric 3, confidence intervals on the actionability rate will be computed using the Wilson score interval, which is appropriate for proportions with moderate sample sizes. All comparisons will use a significance level of $\alpha = 0.05$.
 
 % ============================================================
 \section{Results}

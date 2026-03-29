@@ -1,0 +1,139 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Now, in this particular example we use a transformer to transcribe.
+
+Basically signals uh, basically classify into letters.
+
+However, it's not an easy. Uh, classification.
+
+It is basically a sequence to uh, letter or let's say uh, multiple to single mapping, multiple tokens, a sequence of tokens to a single token mapping.
+
+And we will use a full, uh, strong, uh, transformer.
+
+It could be used for language translation or text summarization, but in this case we are using it for signals.
+
+And it is a classifier and a generator.
+
+We could easily reverse. And in the assignment actually asking can you reverse this transformer and generate the actual signals now?
+
+A sine wave is in this fashion.
+
+Uh, basically two pi f f is the frequency divided by 1000, and the sampling period in this case would be one kilohertz one milliseconds.
+
+The transformer not predictor class will do it.
+
+And there's important note here. The encoder expects input shape as t batch model dimension or embedding dimension or hidden dimension.
+
+All these three are same practically. So even though we set.
+
+Uh, the transformer here. Exactly here, even though we set it as bachelors through.
+
+For its encoder, it expects t batch model dimension.
+
+This is similar to the H. This is the latent space or hidden states in between encoder and decoder.
+
+So we have to be careful. I prefer to follow batch for through all over.
+
+But this is an exception. We have to be careful.
+
+By the way, if this was incorrect, I would imagine this notebook wouldn't run correctly as it's running now.
+
+Well let's continue. That was the most important one, uh, to catch.
+
+The classification head is just classification, and I don't need an encoder decoder because I'm not generating an output sequence.
+
+But I can map everything to a layer as a classifier.
+
+Now, these are all my frequencies. And as you see, this is almost like a piano level from C2 to B7.
+
+So that's a lot of frequencies from 65Hz to 4kHz.
+
+This is almost like a piano and the note data set.
+
+We are randomly generating data here.
+
+Uh, that's why when I sample the data set, I am not expecting some increasing frequencies, but rather random frequencies.
+
+Every time we run this, uh, there will be different frequencies.
+
+However, it's not a bad approach because my goal is generation slash classification.
+
+I want to generate as many sequences as I can. And another good idea could be actually adding some phase here.
+
+Uh, not all of them should start from zero, but if I set it in this fashion, they will start from a particular value.
+
+So another good idea could be improving this data set generation.
+
+And then adding a phase. A phase would be a shift in one period.
+
+Uh, however the period length if it is 1000 data points since the sampling period here is one kilohertz,
+
+there are 1000 samples per seconds, so every shift from 1 to 1000.
+
+Random shift would be a phase difference. A phase is less than a period.
+
+Now my data set and the actual transform of predictor is so simple because it's a full transformer.
+
+I'm not dealing with any kind of processing here except for passing the stuff to a general attention.
+
+And as you see here, embedding layer positional encodings, these are typical.
+
+We have to have a good command of this now. Only two heads, maybe four would be okay.
+
+Embedding dimension is 16 which is very small. Encoder layers is one.
+
+And again all these should be enough in my opinion.
+
+And the notebook also demonstrates this.
+
+Here's the transformer model dimension number of encoder layers batch four through and the output layer which is basically classifier.
+
+And this is the forward. Get the embedding. Get the position.
+
+Position is just a parameter permuted t batch.
+
+Model them because I will pass it to the encoder in the transformer.
+
+So imagine this is a H.M. Now that's passed.
+
+Get the average over the sequence length. And turn it as a classifier layer.
+
+The classifier layer. Is that linear? This approach when trained and how many epochs?
+
+We have ten epochs. These are some, uh, signals and randomly selecting three signals.
+
+It is also checking the label. So C2D4G uh d s5.
+
+And every time you run it. But by the way, you should also run the data sets first.
+
+These will be different. Now run the note predictor 25 seconds.
+
+Nothing predicted original. And as you see, it is correct all the time.
+
+But of course, I mean, we don't need a transformer to actually look at the signal and then outputs, uh, the particular um, not.
+
+However, it's a very good demonstration because each data point is actually handled one by one as a token.
+
+We should look at the sequence length. And the sequence length is set to.
+
+50. There are 50, uh, data points in that sequence.
+
+And then by looking at their values, position and everything, this transformer is able to classify these nodes.
+
+It's a multiple classification. The number of labels.
+
+Is the number of output here basically.
+
+And as you see. Number of classes.
+
+Here is the number of notes coming from here. So these are my labels.
+
+It's a lot of classification.
+
+And some of these are very close to each others like a seven to be seven or any one of these if they are very close values.
+
+That's the power of the Transformers.
+
+And uh, in the assignment, we are reversing this notebook or approach to be able to generate these when I input one of these.
+
+So that could be some signal generation that concludes this notebook.
+

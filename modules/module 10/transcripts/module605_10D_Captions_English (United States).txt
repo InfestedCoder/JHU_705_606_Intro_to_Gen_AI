@@ -1,0 +1,83 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+In this particular example, we are using audio generation using Huggingface models, specifically text to speech synthesis using Snowpark.
+
+As you can imagine, these module models are big large.
+
+Maybe several engineers worked on them for months, maybe years,
+
+and it demonstrates how to convert text prompts into spoken audio using the Transformers library from hugging face.
+
+The notebook starts setting up the TTS pipeline, and, uh, you have to include all of these first before anything before Transformers.
+
+So when you download it will download to these plots.
+
+And when you rerun this, it will check if they exist and um, it will not download it again,
+
+but use the local version and uh, sound audio is not demanding.
+
+So you could easily use CPU, um, in large language models or large video or image uh libraries with requires GPU.
+
+But in this case, I don't think, uh, it requires that now, um, synthesizer, we get the pipeline.
+
+When we say Snowpark, it will download a particular version.
+
+So it will be text to speech and task.
+
+The, uh, it will use it for generation.
+
+Now the model generates natural sound speech by leveraging sampling techniques like do sample through.
+
+So it will kind of creatively generate speech and continuing in this fashion.
+
+The notebook also covers playing generated audio directly from this notebook, for example.
+
+That causes individuals. Probably.
+
+It's a little bit slow. I will increase the level.
+
+Hello. My course is cooler than yours. So this is hundred percent generated sounds.
+
+Hello. My course is cooler than yours. And of course, uh, this is just a, uh, HTML notebook.
+
+I already run this and generated this file, and I saved it.
+
+And, uh, continuing in this fashion, we will have deep learning based audio synthesis.
+
+Transformers generated waveforms. It emphasizes the advantages of using pre-trained models.
+
+Can I fine tune this? I do not know. We have to dig in to the API and see if it is doable.
+
+But just for the sake of argument, let's go to this place and then see what they have in Huggingface.
+
+Here. So it is. Download the 36 K.
+
+Not many problem. There are weather models. Snow is the space is the uh actual model name small large.
+
+Uh transformer usage of course. Information here.
+
+How to use them. This is typical hugging face interface, and here are some actual, uh, information that it's used.
+
+It would be demanding if I were to do this, uh, model or such a model.
+
+I'm guessing half a year. Several engineers could work on this easily.
+
+Now back to the notebook. Now we will do text.
+
+Speech. Text to speech again. Uh.
+
+Another approach. One more auto processor or auto model.
+
+Every time you run it, the information, the generated output will be different.
+
+Uh, and here this is the full text. Hello, my name is Snow and Alavs.
+
+And here is the actual output.
+
+So I increase the volume. Hello, my name is snow, and, uh.
+
+And I like pizza. Uh, but I also have other interests, such as for texto and.
+
+Yeah, it's so realistic, isn't it? There was some background noise, but like I said, every time you run it, you will have different outputs.
+
+And that concludes our demonstration.
+

@@ -1,0 +1,85 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Here we will focus on sound generation and specifically explore milk frequency capsule coefficients mFCC.
+
+These are classical Nobili topics and is a key feature extraction method used in speech and audio processing.
+
+Why are we interested? Because in order to use Gans such as muse Gan, we need some kind of spectrogram.
+
+And this is the best approach that we know. It begins with mFCC spectral characters.
+
+Well we use here torch audio and a particular sound file here uh drivers sound file.
+
+We install it using pip and it uses the hardware of the computer.
+
+It may not work 100%. I'm not sure if it would work on Apple or Mac, but, uh, this notebook is right on a windows.
+
+So if this is empty, it's not good.
+
+Uh, we want some background so that we can play here on this one, on a notebook.
+
+The first thing we will check is how to use mFCC.
+
+For example, here, one second linear space, uh, for 40 frequency sine wave.
+
+Basically it's a four. And this is the signal and that is the signal input signal.
+
+It looks as if it is blocked. But actually there's a modulation here.
+
+The amplitude modulation is uh, what we here uh, and.
+
+As you see. Mfccs time frames.
+
+And there are. The conversion is 2048 points of for number of mel uh bins are 40.
+
+Hope length is 512. So there are 512 shifts.
+
+And, uh, of course. And Mars is too many. It could be 20 and 40.
+
+It could be 1024. Uh, we can play with this, but the torture audio can do all of these.
+
+And here is what we have with just this one.
+
+And mFCC is the typical application of, uh, or quantization of harmonics in order to generate music.
+
+And of course, we are not touching music. These are complicated topics.
+
+Uh, can easily exceed 2 or 3 lectures, but we are only touching the backbones a bit in this particular lecture.
+
+Actually, we have three notebooks and very detailed applications.
+
+Now WaveNet is a difficult neural network.
+
+Again this would take a few lectures minimum. However, in here, uh, the actual WaveNet implementation is supposedly done.
+
+Quantization channels 256. This is basically the actual, uh, data points in the quantization channel of.
+
+However we represent the sounds. So basically the WaveNet will generate a value in one of these channels.
+
+And then when the connect connect all of these outputs on the time axis with a particular,
+
+uh, let's say sampling period, it will make up the actual um, time series signals.
+
+So the implementation here and then module quantization residual skip dilation filters causal.
+
+And these channels are configured in this fashion.
+
+In the assignment we are asking. Map this implementation to the actual convolutional neural networks and layers.
+
+You have to study a bit and the forward does the actual neural network.
+
+And if all of these would work, it would be able to learn, let's say, cat and dog sounds,
+
+and then would be able to generate either a cat sound or a dog sound.
+
+It is not an it would not be an easy notebook and it's left as an exercise.
+
+Preprocess the audio files. Pad them.
+
+Truncate. Split. This is the actual data set and as you see, there is no training here or there is no generation.
+
+The training would be running this neural network on the actual data from data sets and then generating.
+
+After it is trained, it is just left as a sample example.
+
+That concludes this notebook. Let's go to the next one.
+

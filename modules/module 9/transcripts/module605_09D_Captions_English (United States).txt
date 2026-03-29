@@ -1,0 +1,125 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+This particular Jupyter notebook focuses on generative adversarial networks and their advanced implementations,
+
+such as covering fundamental problems, possible improvements.
+
+And now here we are looking at problems like in the slide deck and then offering wgan and
+
+showing literally demonstrating how it will improve mode collapse or mode loss mode drop.
+
+Now we create. Data here.
+
+And as you see, it's two dimensional, but it is created with six modes.
+
+And the data distribution here could be pretty much realistic with the particular rotating densities.
+
+In my opinion, this is a very good example of simulated synthesized data.
+
+The implementation here Gan. After the data loader is done, the generator and the discriminator.
+
+All of these are very similar to the uh, previous first notebook implementation.
+
+However, this particular notebook, uh, takes it even further, expresses generative discriminator critic, and then extends it.
+
+And the regular Gan is in this fashion. It's not extending anything.
+
+Suppose that this should be very much close to the implementation that we have seen earlier.
+
+But the point of this notebook is after all these and, uh, the Wasserstein is also implemented here, but we will look at,
+
+um, uh, a bit later after they run, when they generated, by the way, 10,000 epochs is run, it will take you a long time.
+
+1000 might work. You may try, uh, and the 10,000 took 30 minutes for w gan.
+
+But interesting to see this particular gan kind of messes up.
+
+Maybe drops this mode a bit, maybe that mode a bit.
+
+And we learned how to look at this with the basically histogram.
+
+And then looking at the uniform distribution and the regular Gan fails miserably.
+
+And by the way this particular Gan is basically a linear layer.
+
+So there is no Sienna. There is no convolutional neural network.
+
+It is not treated as an image. Will it improve.
+
+Probably not because it's only two dimensional. Uh, but the point is that Kian is capable and w gan is just an extension.
+
+Nothing except for converting from classification to regression, changing the loss function.
+
+And that's it. Maybe a few other improvements. And look how.
+
+Uh, stronger compared to the previous methods.
+
+Number one, it's pretty much treating all the models equally good.
+
+Number two, uh, the, uh, data points between the modes are less noise like.
+
+But that's okay. Uh, this is generated data.
+
+You should examine this notebook and see how it is used.
+
+And as we see again here, it's a new class extending gan.
+
+Uh, initialize uh dg. Alright.
+
+Basically the discriminator and generator and that's it.
+
+Uh reusing reusing generator discriminator critic directly but updating the uh DG and as you see here,
+
+critic is same, generator is same and the optimizer is same.
+
+Compare this section to the previous section.
+
+And after that, execution of the discriminator is a little bit different.
+
+Execution of generator is a bit different. Uh, the best is placing them side by side.
+
+I will do that in a second. And then comparing the classes.
+
+Critic criterion. Wasserstein loss.
+
+All of these are also coming from here because when we do super in it, these are initialized.
+
+However, we change the labels fake to minus one because it will be a regression between -1 and 1.
+
+In DG this is same. It's two dimensional because it's just x y.
+
+But I change the optimizer. Does it matter?
+
+Try and see. We could also use Adam w.
+
+Exactly. The updates are here.
+
+So let's compare them side by side. Batch size in size.
+
+These these are other initializations.
+
+Like real labels. Real. And you should continue in this fashion.
+
+Mostly they are similar except for wgan clips.
+
+The parameters kind of a hack, but this will be updated as we have seen in the slide deck.
+
+It is basically now a function. And here this is the old one.
+
+Exactly. Very similar.
+
+Labels. We don't need that anymore. And then the fittest say.
+
+So we updated in its DG. Exactly, exactly.
+
+And the net result is very strong and just updating the major parts loss function and converting from classification to regression.
+
+By the way, we can also see that here. The discriminator is output a sigmoid.
+
+However, the critical output is no activation and instead of using um.
+
+Regular discriminator, we are using the critic here.
+
+So that's the main difference. That concludes our WGN example.
+
+Thank you.
+

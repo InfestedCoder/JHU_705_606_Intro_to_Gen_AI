@@ -1,0 +1,309 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Now. Today we will discuss music and audio generation or sound generation using generative AI.
+
+The field focuses on producing sound melodies. Harmonies resemble human composed music or completely novel AI driven compositions.
+
+Generative AI enhances creative potential by assisting musicians and composers,
+
+enabling personalized playlists, adaptive soundtracks, and gaming dynamics.
+
+Virtual environments. And there are two major ways to model music computationally.
+
+Sequence models and image based models.
+
+The sequence models treat music as time sequence data stream making.
+
+Recurrent neural networks or transformers suitable for this task and image based models.
+
+It represents music as 2D image like pitch versus time.
+
+Or a spectrogram. Frequency versus time.
+
+This allows Gan based models like Musica to generate full tracks by independently controlling musical components such as chords and style and melody.
+
+Gans are particularly useful for polyphonic music generation.
+
+Music generation, enabling AI to create.
+
+Multi-layered harmonies that simulate the interplay of different instruments or voices.
+
+And. The first model we will look at is WaveNet.
+
+It is developed by DeepMind 2016 deep generative model capable of producing raw audio with high fidelity.
+
+It's based on convolutional neural networks, uses dilated causal convolutions, and it models the conditional probabilities of audio samples.
+
+Like text, ensuring that each prediction depends only on past data.
+
+So that's the causal, related and causal the causal conclusion.
+
+Enforce temporal consistency. So the model respects the natural of the natural order of all your sequences.
+
+Dilated convolutions. It introduce gaps between filter types allowing a larger receptive field.
+
+This is exactly a higher frequency transform.
+
+It captures long term dependencies without significantly increasing computational cost.
+
+Different frequency. Low frequency. In a way, if you take the spectrogram or frequency distribution of some sample some time series,
+
+if we process it sampled by sample continuously, continuously, it will correspond to the highest frequency.
+
+But when I sample two times of it, three times ten times of it, those are the lower frequencies.
+
+So WaveNet architecture allows it to synthesize humanlike speech in this fashion.
+
+One more approach. Residual and skip connections.
+
+This is effective in training by allowing gradients to flow through deeper networks without vanishing.
+
+So ResNet is a known and popular approach for image deep learning image processing as well.
+
+Now let's see the WaveNet architecture. How multiple layers of dilated causal convolutions processed the input audio signal.
+
+The key feature is exponentially increasing dilation in successive layers,
+
+which allows the network to model long range dependencies in the fact in the waveform.
+
+Now each residual block consists of gated activation units.
+
+Ensuring non-linearity and improving expressiveness in generated audio.
+
+Skip connections directly contribute to the final output, helping maintain gradient flow overall this arc,
+
+this structure enables wavelets, so supposedly this arc architecture also maps to the WaveNet notebook that we share.
+
+The mathematical. Uh uh, model of WaveNet is as in here.
+
+Given a raw audio waveform and a sequence, it computes the joint probability.
+
+And this is no different from any kind of token sequence like text generation or text sequences.
+
+Causal convolutions ensure the predictions for each HT.
+
+And here you can see it's k minus one. All the time.
+
+Steps less than t. And dilated convolutions introduce a dilation factor d d times I.
+
+And this will make sure that the network will capture long term dependencies, lower frequencies without increasing the parameter count.
+
+So this is also effective. So this kind of formalism enables WaveNet to model complex temporal structures in audio waveforms.
+
+Can we do that. Can we do this with an image. Yes.
+
+Actually in convolutional neural networks, when we learned in applied machine learning we looked at.
+
+The spectrogram when we converted the time series into a picture, basically.
+
+Like the Gan is using pitch and time.
+
+And then using CNN S2D2 classify five doors.
+
+And in here we are using a time series to capture that information.
+
+A little bit more detailed here. We have two automatic operations major dilated causal convolutions and gated activation units.
+
+Dilated convolutions are in this fashion. The is the factor and it's very easy to implement this using continuity of PyTorch.
+
+So increase the receptive field without adding extra parameters.
+
+And the gated activation units here.
+
+Elementwise multiplication. This is similar to the control element of Lstm.
+
+It introduces non-linearity. So it improves expressiveness.
+
+And remember a neural network is a function approximator.
+
+It's one of the best universal. Why? Because of the nonlinear activation units.
+
+The non-linearity here is also required to.
+
+Hyperbolic tangent. These linear layers, it will be only polygons, but when we apply the tangent hyperbolic tangent on the sigmoid,
+
+we will add uh, expressiveness through non-linearity.
+
+So it will the. These elements allow WaveNet to produce rich and dynamic audio sequences.
+
+Residual and skip connections. It's also critical so that we can make the deep network trainable.
+
+Residual. This is in here.
+
+It also prevents vanishing gradients, allowing raw input signals to bypass certain layers and combines the processed output.
+
+Also skip connections. The past or it passes transformed features directly to the output layers.
+
+It is effective in training. Improves final predictions.
+
+Final softmax. Obviously we always do softmax.
+
+The output size of the softmax here will be equivalent to the quantization units that we are trying to classify.
+
+In a way, it is like text classification or a transformer where the output is the size of the output.
+
+Vocabulary. It is generally 128 or 256 quantization levels coming from A or mu LOF encoding.
+
+Now recurrent neural networks. We reviewed this before.
+
+We are also looking at, uh, recurrent neural networks here because we could use RNAs also to generate audio.
+
+They are designed to process sequential data. It's well suited for temporal patterns recognizing temporal patterns in text, speech and music.
+
+Unlike feedforward networks, I maintain a hidden state in text classification or text processing or generation.
+
+We were generating the input sequence hidden state through the RNA, and then we were passing that hidden state to the decoder side.
+
+In music, an audio generation or enhanced model.
+
+Temporal dependencies. The generator sequences are coherent and contextually relevant.
+
+If there are spikes or jumps or discontinuities in the time series values, it will cause, uh, harsh noises in the sound.
+
+The change won't be smooth. Any discontinuity in time series will cause a lot of frequencies to kick up in the frequency domain,
+
+and those will be heard by us by our auditory system.
+
+Now, even though Iranians are strong, they capture temporal dependencies.
+
+Of course, they are not the best methods. They have vanishing gradient problem.
+
+They learn very slow. Even LSTMs are very, very slow.
+
+Just as a review, you look at the Lstm here, the mathematical equations.
+
+There are eight layers here. Each w is a layer single layer.
+
+We can also add multiple layers for each one of them. Context hidden.
+
+The hidden output is generated here and the context and it's a flowing on time axis.
+
+It captures. Short and long changes, and one of the foundation models in Odeon Music Generation.
+
+Here is one unknown example, and this one is doing letter embeddings.
+
+Like the example we were doing for generative text earlier.
+
+We are using an Lstm to generate the letter embeddings or letters.
+
+Now, one important aspect to learn is mFCC, because that's how we represent the temporal information.
+
+On to the images. One axis is pitch or frequency, the other axis is time.
+
+And each. Time window will be computed.
+
+Outputting many frequencies for that. And then we shift the time, let's say, every hundred milliseconds.
+
+We compute a frequency band and then over, let's say five seconds.
+
+We built 50 of them.
+
+And that spectrogram or spectrum is used to generate something in again for example FFT converts time domain signals to a frequency domain.
+
+It's one of the major approaches we have.
+
+Mel filter bank. These are triangular filters spaced according to the Mel scale.
+
+These are perceptually relevant frequency components.
+
+That's how we hear. So if an alien comes they may not like mass filter.
+
+But humans or mammals like Mel filter.
+
+Framing and windowing is necessary in order to, uh, clamp in order to fix the vector sizes.
+
+These techniques analyze, help analyze, and evaluate audio quality as well.
+
+And it is kind of a pre-processing from one perspective.
+
+Here is the Mel capsule. Uh, Mel.
+
+Frequency capsule coefficients. Audio signal coming in.
+
+Framing, windowing. This is necessary so that we will avoid aliasing.
+
+Aliasing means. Uh, the frequency components are not captured properly because of the sampling frequency.
+
+So. Uh, artifacts are generated.
+
+We apply a PhD. We apply the Masters filter bank, such as this one.
+
+Take the logarithm, apply DCT and these are mfccs.
+
+And we can use these features. Now we can invert mFCC, but it's a logical, uh, it's a lossy, let's say, compression or feature extraction.
+
+So it won't be a perfect, uh, reversal.
+
+However, we can take the inverse discrete, uh, cosine transform and then generate a quantized version of the original.
+
+Is it important? No, actually, this information can be used in music.
+
+Again, like in Midi inputs. Generate the pitch.
+
+Quantize. What's that? Frequency? Uh, generate the time axis.
+
+Quantize. Let's say every ten milliseconds and then input that, uh, to a Midi player.
+
+So in a way, when we apply and when we generate according to the mFCC images, we can use that, uh, to generate the music.
+
+No. There is another approach. Transformer based music generation.
+
+Actually, we have one notebook where the input signal is mapped to a particular key, and you will see that it does it very, very effectively.
+
+And it is no different from token classification or sequence to sequence learning.
+
+It's important the tokens or notes or pitches frequencies sampled in a sequence, uh, are generated and.
+
+Transformer is one of the most important vehicles to either classify or generate such sequences.
+
+So this applies more towards music generation, but it could be applied also to audio or sound generation if you use phonemes.
+
+For example, phonemes are small little tokens that make up the sound of speech.
+
+However, this wouldn't be sound generation or any sound generation.
+
+It will be more speech generation. We looked at Transformers so much.
+
+And this is general attention query key.
+
+Sometimes self-attention is used, etc. Now musician, uh, music generation.
+
+Basically, it's a generative adversarial network, but it is also specifically designed for multi-track music generation.
+
+So there is a track generator, time generator, inter track module such as here.
+
+The track generator generates music for each instrument separately.
+
+Time generator captures temporal dependencies and entire track module.
+
+These are the relationships between different instruments. So the muse Gan works in a hierarchical manner.
+
+Multiple generators and discriminators, almost like an orchestra, generate polyphonic music captured both short term and long term structures.
+
+Does the attention part? Ensure stylistic coherence across instruments.
+
+And we are not covering music in detail.
+
+And one example of piano roll where music can or mFCC based generation can be used, is the piano roll representation of music.
+
+I can generate this with the mFCC and kind of image generation, and this can be quantized into Midi and can be played.
+
+The x axis is the time. And the y axis is the pitch.
+
+And these are particularly piano keys.
+
+So activated cells like green. These are the notes.
+
+It can control melody chords.
+
+Just add more instruments on top violin.
+
+And of course their bandwidths or their dynamic range will be much smaller than a piano,
+
+but have those notes, rhythmic patterns and instrumental layers, almost like a drum machine or sequencer.
+
+So by learning the patterns of real music, music can generate these compositions.
+
+That concludes our slide deck. We will look at the notebooks.
+
+Thank you.
+

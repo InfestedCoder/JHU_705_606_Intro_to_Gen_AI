@@ -1,0 +1,163 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Now let's look at, uh, different Gan architectures.
+
+Normally this is what we have done. Generative discriminator pairs.
+
+So we have x real and x fake. And the g is generating x fake from a noise.
+
+And then these two are fed to the d. So our original Gan notebook was this.
+
+Now the conditional Gan. It extends the traditional again by introducing additional conditioning variable.
+
+And we see it here. It allows control generation instead of learning a single data distribution.
+
+Conditional generate uh generation uh is conditioned on class labels, textual descriptions or other auxiliary inputs.
+
+So the equation becomes conditional.
+
+Literally. They are again widely used.
+
+Approaches. Now we have other examples here.
+
+Latent space autoencoder. Data space.
+
+Auto encoders. Improved discriminator, encoder and decoder like a transformer, but they are included.
+
+They are improved separately. Latent space engineering.
+
+Basically mean a standard deviation of different inputs.
+
+And the difference between this. And the original is just modifying the Z.
+
+And, uh, the following architectures are a bit different.
+
+Such as info Gan. An unsupervised variant of conditional Gan.
+
+This learns interpretable and disentangled representations, so it introduces an auxiliary latent code.
+
+See. Class that influences the generator's output while maximizing mutual information.
+
+As in here. In a way, it ensures the changes in sea produce meaningful variations in the output.
+
+This enables controllable generation where factors like object position, shape, style can be adjusted without explicit supervision.
+
+Another approach was to start again. We made it a regression problem.
+
+And uh, in this notebook example we will see its performance.
+
+It replaces the GST with earthmovers distance.
+
+It provides more stable gradients. The training will be more stable and forces Lipschitz constraint on D as gradient penalty.
+
+So originally we did clamping clipping.
+
+And uh this is also change later. And made it differentiable.
+
+It will definitely avoid mode collapse and improves convergence.
+
+Better than without. Another one.
+
+Cyclegan unpaired image to image translation.
+
+Unlike traditional image to image translation method such as U-Net neural networks,
+
+which also requires paired data sets like input output image pairs like input image and semantic output.
+
+For example, the Cyclegan can learn style transformations between two different domains without paired examples.
+
+So the key idea of cyclegan is the g transforms images from domain X to domain Y like horses to zebras,
+
+and the generator F maps images from domain Y back to X like an auto encoder,
+
+and the discriminator Rd distinguishes real images in domain X and the discriminator Y.
+
+This distinguishes real images in domain Y instead of requiring a corresponding image pairs.
+
+Cyclegan relies on cycle consistency loss to enforce that an image translated to the target domain can be mapped back to the original domain.
+
+We also have a cycle consistency loss, a major challenge in unpaired translation,
+
+so the generated images retain meaningful content while adapting to the new domain.
+
+So the cycle Gan here enforces that this through a cycle consistency loss.
+
+And ensures that if we apply G followed by f.
+
+We recover the original image G and then F, it's almost again an auto encoder marriage.
+
+The approach encourages the generators to preserve key image features.
+
+Prevents them from making arbitrary transformations.
+
+Training of training objective of Saigon Falls.
+
+Combined optimization objective here.
+
+So is the standard loss al Gan.
+
+Standard loss of regular allergen, which is separately plus this one.
+
+Now she applications style transfer, image to image translation, medical imaging, synthetic to real domain adaptation, and all of those now saga.
+
+It's one of the most advanced Gan architectures introduced by Nvidia,
+
+designed for high resolution image synthesis with controllable size, unlike traditional Gans.
+
+Which directly map latent noise to images.
+
+StyleGAN introduces a novel mapping network that allows precise control over different image features and mapping network.
+
+Instead of feeding a raw, noisy directly into the generator, it transforms it into an intermediate latent space W.
+
+And using a separate mapping network.
+
+This enables fine grained style control over different levels of generated image.
+
+And second style modulation, adaptive instance normalization, and the Ada.
+
+In this, each layer of the generator is modulated by the latent code W.
+
+And influences different aspects of the images.
+
+The lower layers control high level features like face shape, higher levels.
+
+Higher layers control fine details like skin texture.
+
+So mathematically, either n is here.
+
+The gamma. And the beta R learns a fine transformation from the latent code W.
+
+And then third stochastic variation. Random noise is injected at multiple points.
+
+Fine details like hair strand. Skin imperfections.
+
+Wrinkles. And this is these are very independently of the latent code.
+
+This prevents the network from generating overly smooth or unrealistic images.
+
+And number four StyleGAN uses progressive training strategy.
+
+So image resolution is gradually increased over time.
+
+That's also smart. It starts with low resolution and gradually adds finer details.
+
+This improves training stability and prevents artifacts.
+
+Now some advantages. Better control over image generation.
+
+Higher resolution. Reduce mode collapse.
+
+Sargon had significant impact on various fields like first generation art and design, medical imaging, deepfake.
+
+And of course, like any advanced AI generated content.
+
+It raised ethical concerns, bias, and generated data.
+
+It can amplify societal biases, privacy concerns.
+
+But despite these challenges, it's remained strong and remains one of the most influential advancements.
+
+This concludes our advanced Gan lecture notes.
+
+Thank you.
+

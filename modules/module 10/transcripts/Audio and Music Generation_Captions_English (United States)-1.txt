@@ -1,0 +1,19 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Welcome to our lecture on Audio and Music Generation,
+
+where we explore how generative AI is reshaping the creation of soundscapes and melodies from
+
+groundbreaking architectures like WaveNet capable of producing high fidelity audio to music,
+
+Gan, again tailored for multi-track music generation, will delve into the cutting edge models driving these fields.
+
+We'll examine how AI emulates human like creativity through intricate patterns and genre specific styles,
+
+enabling personalized soundtracks, adaptive music and games, and more.
+
+By combining temporal models like Renaissance and Transformers with techniques like piano roll representations,
+
+these advancements open new horizons in musical composition and audio synthesis.
+
+Join us! We will explore the technology, applications, and artistry behind AI driven audio and music generation.
+
