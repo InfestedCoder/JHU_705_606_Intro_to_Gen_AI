@@ -1,0 +1,317 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+After we are looking at Gpt2 now we want to load and off uh, offline module instead of using GPT 3.5 from an API.
+
+We want to use a smaller but offline module.
+
+So Llama Notebook is a practical exploration into the llama large language model meta AI family of models.
+
+By the way, we don't pick Llama or Microsoft or Google Gemini or OpenAI.
+
+Uh, just like that. Uh, we can use all of them. And these notebooks, they try each one of.
+
+For example, llama is available, uh, OpenAI or meta updates their llama modules, uh, on hugging face.
+
+But in order to get it, actually we have to use our access token.
+
+So we have to get in with our talk, uh, accounts here and, um, the, uh, access tokens, like you're, you're seeing here.
+
+Uh, you have to create these copy to a text file because you won't be able to see them from here.
+
+And then those text files can be used, uh, in here as one of the files here, such as.
+
+Such as logging in. And then entering, copy pasting that, uh, credential coming from the hugging face.
+
+And as you see, uh, if you install git. It will save that credential automatically.
+
+So it's pretty neat. It's very practical. Now let's look at this.
+
+It begins by importing key libraries, setting up the environment.
+
+Typical specifically leveraging Transformers and torch PyTorch to interact with the Lama models.
+
+The notebook demonstrates how to load pre-trained models. Of course these are pre-trained.
+
+They are already trained, but we can fine tune them.
+
+Every model comes with a tokenizer and how to structure input prompts to generate coherent text outputs.
+
+It includes examples to compare various prompt formulations and how different model configurations or instruction tuned variants behave.
+
+They showcase techniques for generating completions, controlled and reproducible manner.
+
+Now let's look at these. Make sure that you set the form and offline so that once it downloads, it doesn't download again.
+
+And, uh, some of these warnings can be turned off.
+
+Uh, just in order not to clutter the, uh, notebook cells.
+
+I turn them off. You should always check the versions available to search.
+
+There's a GPU, the model size, in this case, 3.21 billion instructs.
+
+Uh, this can fit easily, but done, as you will see in the following examples.
+
+Actually, I download two models at the same time.
+
+Uh, and these are, these are okay. In the first module of this course, we were looking at a very large model which requires a 32 gigabyte GPU to run.
+
+Those are very strong models in my opinion.
+
+Maybe not as strong as GPT 3.5, but definitely better than GPT two, or maybe kind of equivalent to GPT three.
+
+And next year, probably there will be even stronger models. Small but stronger.
+
+Uh, when you run the notebook, first time, you have to turn these off comments out.
+
+The, uh, remove the comments and, uh, do it once.
+
+Once it's loaded to the git. No problem.
+
+Done. It will load automatically.
+
+Uh, they will know that this particular notebook transformers library will get it automatically in when you get the pipeline, for example.
+
+Now the pipeline will be text generation and the mental model will be this.
+
+Let's go and check what it is. This is the model.
+
+2.2 million. It's popular. It's in struct, so it's general.
+
+It's not chat, but it can also, uh, answer questions.
+
+Or you can use prompt engineering nicely. Bfloat16.
+
+So you can save even more, probably at the cost of a few percentage drop in the performance.
+
+And then the rest. Lots of information. Um.
+
+What, uh, data sets it used.
+
+Corporate used to, uh, train this.
+
+How much, uh, power is consumed just for, you know, so that they will feel better.
+
+Um, and all of those, um, some performances.
+
+So this is that information training power.
+
+Training data. All kinds of information. Now, from our perspective, we care about the model size and its performance.
+
+But that's something to trial and error. And the floating point size.
+
+If it's 16 it can be make it smaller. But the old earlier models like the art from Google, it has to be 32.
+
+It cannot make it small. When you make it small tensor type from 32 to 16 it may drop.
+
+Performance may drop a few percentage. Now look at this model pipeline.
+
+By the way. We should also look at what other pipelines there are.
+
+The pipelines are here. There are tasks specific, for example, audio, computer vision, natural language processing.
+
+These are the pipelines. And there's a lot of information here.
+
+Why do I want to use this kind of pipeline?
+
+Because, uh, these are well-controlled and these are the tasks.
+
+And of course, every month they add more. So we will do we will use text generation.
+
+But then if you want text classification you get this.
+
+And the output layer will be different for text generation.
+
+The output layer will be uh generated sequence layer,
+
+something like a single token classification like layer but run in a recursive manner which with teacher forcing.
+
+But if it is text classification then it will be just the label a single many to one transformer.
+
+Similarly, these details like translation, text to audio, these are all for specific tasks, so it's good to know.
+
+You should always refer to Huggingface and Transformers API.
+
+Now the rest is just using it. Get the query raw.
+
+This user content is prompt and the prompt will be passed to this, uh function.
+
+Get the response. Get the content. You should check each uh fields in the response, for example, one by one to understand what's going on.
+
+The first one. Who are you? I mean, no no no, no. Uh, and every time you ask, probably it will answer similarly.
+
+But that's a good idea to ask, you know, what you are dealing with the sky is if you remember, we asked the same question to GPT 3.5 turbo.
+
+Be creative from now on. The sky is. This is exactly, uh, prompt engineering.
+
+Right. Okay. Now, this is creative. And every time you run eight, probably you will receive different answers.
+
+And then the sky is blue. Suppose this is creative.
+
+Please be creative. And the sky is now.
+
+It gave me a longer one. And then the text.
+
+Summarization. This is the context.
+
+And explain the above in one short sentence. So they instruct you, instruct it, and then it does it.
+
+I think it's pretty good. In NLP this is a difficult problem.
+
+Similarly question and answering answer. No. No.
+
+No. Context. Question. And unsure about the answer.
+
+Stronger models. They are able to answer this.
+
+But, uh, we have seen this in the first module with A54 very large model compared to this one.
+
+This is tiny one. Be that other one was 16 B, so it's like 16 times larger.
+
+Now classify this and remember this was text generation.
+
+We then switch the task again. It is doing exactly text generation with project prompt engineering.
+
+Classify this and then sentiment will be.
+
+The word okay. Neutral. So it explains now roleplaying.
+
+You should follow its output. And now let's see what else it can do in terms of property engineering, similar to the slide deck coal generation.
+
+I think this is pretty good. It also generated a markdown. So when I printed the markdown it is formatted like this.
+
+This is pretty cool. And remember this is only one B model tiny one b.
+
+Reasoning. The odd numbers? No, no. By breaking into problem steps.
+
+So this is chain of thought. It answers.
+
+And all of this is its output. And remember we set the output size to a large one for k.
+
+So it will also supposedly use it. However, this is the interface's size.
+
+It is not limiting itself. You have to say be concise.
+
+So if it answers long and the max length is not enough, um, it will, it might give you an error.
+
+We have to check. I do not know. It continues in this fashion.
+
+And let's continue with the zero shot chain of thought.
+
+Here is the answer. You should compare these answers to the previous notebook where OpenAI GPT 2.52 was used.
+
+Self-consistency. These are, uh, answers.
+
+By the way, this this is markdown walls, but we are printing it so it doesn't show nicely generated knowledge.
+
+Prompting remembers uh, it was generating information and then you were asking, okay, you generated these.
+
+Combine them and you have to combine that.
+
+That combined knowledge is here. You have to pass the combined knowledge to the prompts.
+
+So that's the prompt engineering like use the GPT to generate this.
+
+Uh, combine the knowledge and then ask, okay, now accumulated knowledge statements.
+
+No no no no. You already answered that. Now, can you answer the original question?
+
+So full of if it is correct.
+
+And of course. I mean, in my opinion, these look very, very strong.
+
+Uh, but then you may find subtle errors.
+
+And every time you run it, it might change. Some models are more consistent, but that doesn't mean that they're good models.
+
+After all, this is probabilistic. The neural network transformer is just approximating.
+
+And then you're generating a sequence. And that sequence can be perturbed.
+
+For example, even the dropout layers in Transformers,
+
+it can be used to generate randomness because there's a dropout layer at the output layer of the sequence generation.
+
+Let's focus on key features of lemma instruct models.
+
+Instruction fine tuned so they would do better with a summary task specific responses.
+
+This is not a black chart. This is a creativity would be a little bit less.
+
+And here is some other GPT lemma.
+
+Instruct OpenAI. Instruct GPT and Google T5.
+
+Note that these are similar sizes. T5 is for example.
+
+Let's look at how we find about T5. You go to the model, look at T5.
+
+And sort most downloads. T5.
+
+Now this is T5 Google t5, T5 small or base.
+
+And let's look at this one. 5.8.
+
+F32 because it's old. And look at the size 223 million.
+
+This is very small and T5 was actually phenomenal at one time.
+
+But now the small ones like one B which is around five times bigger.
+
+Uh, they do a better job. And by the way, let's check the latest slammer.
+
+This is how we check it. Llama models.
+
+Llama for. We need to find a small one.
+
+17. Be large to large. 32. Is needed.
+
+Let's look at this 16. Let's look at other ones.
+
+Let's try to go to metal lemma. Space.
+
+Mr. Llama. They have this many models.
+
+We just need to find a small one for metal ammo for.
+
+But unfortunately all of them are 17 B later.
+
+Maybe small ones will come. We were using that one. After the comparison.
+
+So training data. Deployment.
+
+Fine tuning. So Lamar is open for research and noncommercial.
+
+That's why you have to register. T5 open source, no problem.
+
+But this one is not. It's OpenAI. Um.
+
+Performance on tasks. So here are some more examples.
+
+TB there's a stronger one. And similarly.
+
+Skies blue immediately and then generated knowledge prompting.
+
+Probably this is also a coolant as good as the other one.
+
+But now I'm asking for something more like explain this philosophical implication of Gödel's incompleteness so it's not easy.
+
+And within 100 words. Check out if it makes sense.
+
+It's not easy. It requires the model to synthesize ideas from philosophy, mathematics, theoretical physics.
+
+This and that. And for the 3D model. Uh, I think it's doing good.
+
+I remember this, let's say, a year ago. Uh, messing up so much, like, generating gibberish.
+
+Challenges. The pursuit of unified theory of everything in physics is not.
+
+Theory can encompass all aspects of reality. So I think it's okay.
+
+That's it. Answers. You could take this response and then make, uh, some conversation.
+
+And informally the your party wouldn't understand if you're using AI.
+
+So that's prompt engineering. It concludes this notebook.
+
+Thank you.
+

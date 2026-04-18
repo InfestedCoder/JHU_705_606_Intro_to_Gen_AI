@@ -1,0 +1,585 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Welcome to our module on generative AI, with a particular focus on the exciting and evolving field of prompt engineering.
+
+Generative AI refers to systems that can create new content.
+
+We have been covering that whether it's text, images, music, or even chords based on the data they've been trained on.
+
+Prompt engineering is the practice of crafting inputs or prompts that guide these AI systems to produce accurate,
+
+useful, or creative or custom outputs.
+
+In this session, we'll explore how prompt quality directly affects the AI performance and how to improve your interactions with models like ChatGPT.
+
+Here is what we will cover in this module. We'll start with the learning objectives.
+
+Which set the stage for what you will gain by the end of the session.
+
+Then you will examine various platforms where prompt engineering is applied, and explore what makes the prompt effective or ineffective.
+
+After that, we will look at how constraints structure context shape AI responses.
+
+We'll also get hands on with the Land Chain, an advanced tool for building applications with large language models.
+
+Lastly, we will touch on ethical considerations like fairness and safety when working with generative AI.
+
+Model. Learning objectives. Our learning goals are listed here.
+
+Now let's look at platforms of prompt engineering. From engineering plays a role across a wide variety of platforms and ecosystems.
+
+It's a growing field. For example, OpenAI's ChatGPT and GPT four or after this lecture is recorded, GPT five six.
+
+These APIs Allo Allo developers and users to interact directly with powerful language models.
+
+Microsoft Azure The integration of open AI models adds enterprise grade scalability and security.
+
+Hugging face offers an open source library of Transformers.
+
+Then that can be customized and fine tuned for specific NLP tasks.
+
+Google's Lamda, but also benefits from carefully engineered prompts to enhance chatbots responsiveness or quality.
+
+Meanwhile, AI writing tools like copy AI and Jasper use prompt templates to generate tailored content for business, marketing, and personal use.
+
+Platforms beyond standard applications.
+
+Prompt engineering is essential in platform platforms like AI dungeon, where players generate dynamic storylines through interactive prompts.
+
+Developers can also use APIs to create custom maps powered by language models,
+
+which require precise and well-structured prompts to platform or perform specific operations functions.
+
+Long chain supports these efforts by providing tools to sequence prompts and handle complex conversations or workflows.
+
+Chat bots and customer service. Educational platforms for tutoring or language learning,
+
+and even creative applications that generate music or poetry all depends on high quality prompts to ensure relevance and coherence.
+
+Explicit instructions. Well to produce effective responses.
+
+I need clear guidance in the form of explicit instructions and relevant context.
+
+These instructions reduce ambiguity by clearly telling the AI what action to perform, like summarizing, translating, or generating a poem.
+
+Context. On the other hand, provides the situational automatic information that informs the AI output.
+
+This could include the subject matter, audience, or tone.
+
+Together, these elements help shape the AI understanding and outputs, increasing the relevance and accuracy of its response.
+
+Let's examine summarization as an example.
+
+A generic prompt like summarize the following text. It's too vague and often results in broad and or unfocused summaries.
+
+A more effective prompt B might be.
+
+Please provide concise. Summary of the following article on renewable energy technologies focusing.
+
+On the main advancements in solar and wind power. This version is more useful because it includes clear instruction, concise, renewable.
+
+And the AI now knows exactly what the summary should emphasize and what to leave out.
+
+Translating text. Translation prompts also benefit from added structure a week prompt like translate this.
+
+It leaves the AI guessing about the target language, tone, audience, and anything the AI was trained on.
+
+Instead, we could say translate the following English paragraph into formal French suitable for business audience.
+
+Clear parameters. Language. Formality. Context so the AI can produce a translation that sounds natural and proper for professional setting.
+
+The more specific we provide, the more reliable the model will meet our needs.
+
+Another example generating creative context. The generation requires both freedom and focus.
+
+Because it's creative. If you say I to write a story to open ended and it may lead to inconsistent or generic results.
+
+But the details from like write a short sentence. Fiction.
+
+Where are intelligence going? Society.
+
+The protagonist should be a human engineer who discovers a flaw in the AI logic.
+
+So this kind of prompt gives the model a defined setting, genre, character, and plot direction.
+
+These elements provide scaffolding for the story while still allowing creative expression.
+
+Constraints in prompt engineering. They are vital in ensuring that AI output aligns with our goals.
+
+This can be limits on the length. Star format contains many things you can imagine.
+
+For instance, if you are writing for an article for general audience, you might ask for simplified explanations or limit technical jargon.
+
+Constraints help narrow the model's response space, making it more likely to deliver content that is relevant, appropriate, and usable.
+
+Remember, these AI models are trained on trillions of tokens of length of corpora, so we have to narrow it no matter what.
+
+They all also allow or prevent the model from going off topic or generating overly long, verbose answers.
+
+Limiting the style. If we ask the model to explain quantum computing just like that, we may get a long, complex, overly technical explanation.
+
+But if we request no more than 200 words, explain quantum computing in simple terms.
+
+So now we apply two useful constraints. Word count and language style.
+
+These help the AI tailor the explanation for accessibility.
+
+Especially useful in education, outreach, or public communication.
+
+Format also matters. If we say this, the benefits of renewable renewable energy, it might give you a long paragraph or unordered points.
+
+But if you are prompted with provide a numbered list five key benefits, each point consisting of one sentence and focusing on environmental impacts,
+
+we are guiding the format, quantity and content, so the result will be structured.
+
+And by the way, all of these results given provided here are the output of actual GPT.
+
+And of course these might change when we change the model. The output might change was also.
+
+Boundaries and torn. In some cases, tone and content scope are critical.
+
+A vague prompt like write an article about social media may yield a disorganized response.
+
+A more precise version might be write a 300 word analytical essay on the effects of scores like that.
+
+So it sets the expectations for content type, focus area, tone length, and evidence.
+
+Such structure is ideal for academic or professional writing.
+
+Now from formulation, if you formulate our prompt, it determines the usefulness of the response.
+
+Of course, we have been telling this.
+
+An effective prompt sets the stage clearly, while an ineffective one can lead to irrelevant or misleading outputs.
+
+Common mistakes include being vague, omitting context, or failing to define constraints.
+
+Prompts that are too broad, like tell me about AI, often results in scattered or overly general responses that don't meet the user's intent.
+
+Prompt formulation. So what makes the prompt effective?
+
+It should clearly define the task including. Includes relevant background or context and apply helpful.
+
+And in my opinion, many constraints. Additionally, you should match the language.
+
+Of your prompt to the expected audience. If a technical audience might expect industry jargon.
+
+Or while a lay audience would benefit from simplified terms.
+
+The more aligned your prompt is with your communication goal, the better your results will be.
+
+Seeking detailed information. Let's say tell me about nutrition.
+
+The model might respond with a broad overview that lacks that.
+
+But if you specify, provide a detailed explanation of the role of antioxidants in human health,
+
+including how they combat all of those, the response will be richer and more informative.
+
+This refined prompt sets a clear topic, directs the eye on what subtopics to include.
+
+Here's an instruction example instruction for tech writing.
+
+Explain software development. It might take into 100 different directions,
+
+but if you try right the step by step guide on how to implement basic RESTful API using Python and the flask environment framework.
+
+Suitable for readers with intermediate programing knowledge. Now a lot of constraints.
+
+This tells you I. The kind of writing.
+
+The exact subject matter and the skill level.
+
+So much more targeted. Another example.
+
+Poetry. Probably requires even more prompt specificity.
+
+Interesting, because poetry is art. Sometimes it's abstract.
+
+Compose a poem. All kinds of you.
+
+See if there are more. If there's more freedom, we have to constrain more like in poetry.
+
+If you say, compose a sonnet in iambic pentameter about the changing seasons, using vivid imagery to evoke the transition from autumn to winter.
+
+Well, some of these words I do not know. But a poet might.
+
+And you should assume the eye knows everything.
+
+It's funny, but you should assume the eye knows everything.
+
+And then you should. You should constraint. You should start constraining.
+
+The model now has direction for structure, rhythm, team and style.
+
+Probably more constraints are needed for abstract starting outputs.
+
+These constraints help it produce a poetic piece that matches the classical literary standards, because the AI that model is trained on this.
+
+You can imagine how much data, corpora and training went into these very large models.
+
+Now effective prompt engineering with long chain.
+
+It's a powerful framework that supports building complex and alarm driven applications by enabling prompt chaining and interaction management.
+
+This environment crafting effective prompts becomes even more crucial.
+
+It allows us to break down tasks into steps, link prompts, logically, and so on.
+
+Poorly designed prompts,
+
+or those that don't take full advantage of lagging chains capability capabilities can result in disjointed or incomplete outputs.
+
+So clear, structured and purposeful prompting is essential here as well.
+
+Here's an example. Concrete use case with long chain.
+
+Instead, we're saying extract data from text.
+
+We can create a chain first. Extract product name.
+
+Sentiments. Features. As you see, multiple performs multiple constraints.
+
+Cascaded. The next format that can be structured into Json and then finally validate the Json formatting.
+
+There are three steps. Each step has its own clear prompt.
+
+Collect ensures accuracy, structure, and usability of the data.
+
+It has clear prompts. And, uh, the modular approach here is much more reliable for real world applications.
+
+Another example from Lang. Managing conversation flow in a customer support chat bot.
+
+A prompt like answer the question users questions far too vague for handling real customer queries.
+
+Instead, we use a sequence of structured prompts. First, greet the user.
+
+Ask how you can help based on their response.
+
+Identify the issues tracking product question or returns, or anything else it might be depending on your particular business.
+
+Next, respond appropriately with a friendly and professional tone.
+
+We are not like chatting, but we are responding to the customer.
+
+We have to be professional. Finally, if the issue remains remains unresolved, offer to connect the user with a human representative.
+
+So this layer structure makes the AI more helpful, natural, helpful.
+
+Definitely responsive in a dialog.
+
+Another example. Change.
+
+Writing explaining chords and we are chaining it right chord for sorting.
+
+If I say exactly like that, it lacks the context and the direction needed for a helpful answer.
+
+But if we say using long chain, we can write model step by step.
+
+So first we will say write a Python function.
+
+We can ask implement a quicksort and then ask include comments.
+
+So you see I'm saying paraphrasing paraphrasing all the time.
+
+Write make your code your code. You can ask GPT to do that to.
+
+It can describe the algorithms time complexity, for example,
+
+as a third step and check the code conforms to eight, for example, or any other standard writing in c sec.
+
+Writing in another language. Check for completeness.
+
+Correctness. Efficiency. We don't have to assume these will relieve release.
+
+Respond correctly 100%. But as these GPS improve, you can expect guiding the prompt becomes even more important because they will respond correctly.
+
+Now let's look at prompt engineering techniques. These techniques are important to learn.
+
+We also cover these in the Jupyter notebooks that we are providing to enhance model performance on complex or nuanced tasks.
+
+We can apply advanced prompting techniques. These include few shot prompting where the provided examples to steer the model.
+
+We provide examples. Chain of thought prompting encourages reasoning.
+
+Self-consistency samples multiple reasoning paths to find the most reliable answer.
+
+Also techniques like now the generation react combines reasoning with tool based actions.
+
+These methods help to fine tune the model's behavior.
+
+Think of these like a taxonomy of prompts. Prompt engineering.
+
+Now a few short prompts. Involves showing the model several examples of the task you wanted to perform.
+
+For instance, if we are working on a sentiment analysis, we might give examples of positive,
+
+negative, and neutral sentences paired with their correct labels.
+
+This approach primes the model with context and helps it understand the structure and logic of the task.
+
+It's only a few shots. When you then give, it's a new input.
+
+It uses those examples to guide its own, often resulting in better accuracy than a zero shot approach.
+
+Chain of thought. It goes a step further by encouraging the model to explain its reasoning step by step, before giving an answer.
+
+This is especially useful useful for tasks that require logic, arithmetic, or common sense reasoning.
+
+For example, instead of jumping straight to the answer of a math problem.
+
+The model was through its thought processes.
+
+Clarifying assumptions and logic along the way. This.
+
+Approach improves transparency and often leads to more accurate and justifiable answers.
+
+Also explainable. We can also combine Scotty Chain of thought with few shot examples.
+
+Zero shots. Even without examples, it can trigger reasoning behavior by simply including the phrase let's think step by step.
+
+This is known as a zero shot chain of tone prompting.
+
+For example, if we ask how many candies John has left after giving some away, and at listing step by step,
+
+the model will walk through the subtractions one at a time before delivering the final answer.
+
+It's lightweight but powerful trick.
+
+Self-consistency improves Scotty chain of torque, prompting by sampling the model multiple times, allowing it to produce different reasoning paths.
+
+These thoughts are then compared to find the most consistent answer across samples.
+
+If we ask how many balloons Alice has after giving away some buying and more, the model might generate three slightly different thought processes.
+
+But if all conclude with the same final number, which can be more confident in its accuracy.
+
+So the model reduces the chance of a fluke, spurious, or error in a single generation.
+
+Knowledge prompting. So in this case, we will generate knowledge, a powerful technique.
+
+In this approach, the model model first generates additional context or relevant background knowledge about the topic.
+
+Before coming into conclusion, let's say it uses that knowledge to answer a question.
+
+This two step method is useful when a model might not directly call an answer,
+
+but it can infer it from related information by augmenting the original question with the generated context.
+
+We improve the model's ability to reason and predict or predict outcomes, especially in domain specific tasks.
+
+React, reason and act together.
+
+It's a prompting framework where the model alternates between reasoning steps and specific actions.
+
+For example, it May 1st reflect on a question, then call an external tool like a search function or database.
+
+Then reflect again on the retrieved results. This method was introduced by Yale and it's particularly useful.
+
+Powerful tool augmented system in a as a tool augmented system.
+
+React helps models remain aware of what they know versus what they need to look up, creating more reliable,
+
+factually correct answers and handling tasks with multi-step logic and also external dependencies.
+
+Now let's create a custom researcher. GPT will apply prompt engineering to a real world use case.
+
+Building a custom GPT called researcher GPT. This tool is designed to help you summarize academic papers and extract trends across them.
+
+After uploading documents, the GPT can scan for key insights, methodologies, and common themes.
+
+It compiles this into a structured summary table that includes titles, orders, research focus methods, findings, and observable trends.
+
+Everything that we want it to do this makes easy.
+
+To identify patterns in large volumes of research quickly and systematically.
+
+So let's set up the researcher GPT.
+
+We can request summary summaries. Done. You might ask for one sentence, takeaway, paragraph, summary, or comprehensive in-depth analysis of a paper.
+
+The date of the summary can be tailored depending on what we need.
+
+Whether we are quickly browsing or conducting a deep literature review.
+
+This flexibility is built into the prompt design. So it's.
+
+Allowing high usability across research disciplines.
+
+Here's an example. Output.
+
+It's a summary table markdown, which can include fields like total title, orders, focus, methodology, findings, trends and anything years.
+
+Abstract. One sentence abstract. Now a paper on CNN image analysis.
+
+My height light improvements like in this example showing the use of convolutional neural networks in various applications.
+
+These tables can be generated automatically.
+
+Reviewed at a glance, making literature synthesis significantly more efficient.
+
+This is what exactly what we have been doing with research related work.
+
+Exploration. And that previous table is in fact a markdown.
+
+Exactly as in this format. Pipes. Dashes.
+
+Three rows. We can copy paste into a Jupyter notebook or LaTeX.
+
+Now let's create the researcher GPT. This works with GPT, but I'm sure if you explore many frameworks, support this.
+
+We will create our own GPT researcher with explore GPT interface.
+
+After clicking create, you will name your assistant add description.
+
+So let's see how it's done. Okay.
+
+Explore GPT is interface. By the way, there are many they provided.
+
+And I'm sure in the next time you watch this video this might be all changed.
+
+Will click on create. Creators here.
+
+Name it. Add a description.
+
+Add instructions. We can add the instructions like I provided in the slides.
+
+Exactly as here. So you can copy all these.
+
+Into that instructions. And then conversation starter like, yeah, initial prompts.
+
+We can prompt the user to upload files before analysis begins.
+
+Additional reference materials can be added to improve its own performance.
+
+Also option to enable disable features like depth search and code interpretation.
+
+So I will populate these now. Now I populated these fields you can use depending on what it provides, like additional knowledge.
+
+I clicked on these. I'll press on. Create.
+
+Save. Anyone with the link.
+
+So that's my link. It's a new one.
+
+I'll just pass that in a new window.
+
+And here is my. Researchers I just created.
+
+And now I'll upload a, uh, a few papers.
+
+I upload the two diffusion related papers. Send it.
+
+And there you go. I can copy paste this table into my.
+
+Research. This the title order?
+
+I can put any fields I like. So that's the output.
+
+Let's also reuse the one that I provided in the prompt in the slide deck.
+
+That also works that I created. A few months ago.
+
+If I do the same thing? Probably. It will respond similarly.
+
+Let's see. I'm curious. So this should be very similar to the previous one.
+
+A survey on generative diffusion models. Now the first one.
+
+Is the second second one is the first. Growing use in nananana diffusion models is a sea changed.
+
+But that's just the ChatGPT not our prompt engineers or API or researchers in this fashion.
+
+Now, of course. Ethical considerations model safety prompt engines injection rl h f reinforcement learning human feedback.
+
+Now this list can grow a lot.
+
+And as these lectures continue, uh, after this recording, there might be more important topics here.
+
+More the safety. The ethical considerations are important because these language models can sometimes produce biased,
+
+misleading, unsafe, and prompt engineering offers one way to mitigate those risks.
+
+So we can also use prompt engineering to mitigate or improve ethical considerations.
+
+The model. Safety.
+
+It can improve the prompt engineering can improve the model safety by shaping outputs to be less harmful or more in line with ethical standards.
+
+For example, we can use to filter or reframe requests that might trigger toxic, biased, or unsafe responses.
+
+It can also help expose vulnerabilities in model behavior by observing how a model reacts to certain prompts.
+
+We can identify where it might need additional safeguards or training.
+
+You can also see this behavior with ChatGPT. Copyright issues.
+
+Prompt injection. It's important to know these topics.
+
+It's a serious concern in AI safety. It occurs when a user embeds malicious or misleading instructions in a prompt to override its intended behavior.
+
+This can take several forms. Hijacking responses.
+
+Leaking information about internal prompts, or bypassing filters altogether.
+
+These attacks highlight the importance of rigorous prompt testing and response validation,
+
+especially when models are deployed in sensitive or public facing applications.
+
+And that's exactly what I was giving as feedback in your research and project.
+
+We need a lot of empirical testing, empirical work, experiments.
+
+Jailbreaking. It's a common example.
+
+Where users craft clever prompts to bypass safety restrictions.
+
+For instance,
+
+asking the model to present its a villain in a story and then describe a crime may lead to output content it's otherwise restricted from generating.
+
+So it's like a story in a story is set up in a set up, a prompt, in a prompt.
+
+You can continue infinitely many times in a compound matter fashion.
+
+Or probably we should call this recursive a prompt in a prompt.
+
+In a prompt, it can go like this recursively. Another method.
+
+Using encoded instructions or trick phrases.
+
+To get around moderation filters.
+
+These examples show even how even seemingly innocent problems can be exploited to produce unethical or unsafe outputs.
+
+Reinforcement learning from human feedback. It's important.
+
+It's one of the key methods used to make models like ChatGPT is safer and more in line with human expectations.
+
+Three steps. First, human annotators generate high quality example responses.
+
+I think there is no escape from that. Today we use human annotators.
+
+Human cohort. Second, the model is trained to mimic these responses.
+
+And third, a reward model is created to score output quality.
+
+And then it is used to fine tune the model using reinforcement learning.
+
+This is used in models developed by OpenAI and anthropic, including Claude and ChatGPT.
+
+It plays a vital role in reducing harmful outputs and improving helpfulness.
+
+Helpfulness. Looking ahead, prompt engineering will evolve alongside AI capabilities for sure for decades.
+
+I'm guessing we will see more augmented models that combine language with vision, planning.
+
+Even tool use. Emergent abilities.
+
+Capabilities that arise at scale will require new prompting strategies like graph prompting multimodal prompts.
+
+Planning oriented prompts will become more common as models get smarter and more interactive.
+
+The importance of well-designed prompts will only grow.
+
+That concludes our lecture. Thank you.
+

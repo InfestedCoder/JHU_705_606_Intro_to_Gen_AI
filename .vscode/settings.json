@@ -1,4 +1,4 @@
 {
     "python.envFile": "${workspaceFolder}/.env",
-    "python.defaultInterpreterPath": "C:\\Users\\jeffg\\anaconda3\\envs\\jhu-intro-to-genai\\python.exe"
+    "python.defaultInterpreterPath": "/Users/jeff/.local/share/mamba/envs/jhu-genai-mod11/bin/python"
 }

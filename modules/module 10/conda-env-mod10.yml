@@ -1,13 +1,13 @@
 # Module 10 environment: use AFTER creating the base env and cloning it.
 #
 # Setup (one-time):
-#   conda env create -f conda-env.yml
-#   conda create -n jhu-genai-mod10 --clone jhu-intro-to-genai
+#   mamba env create -f conda-env.yml
+#   mamba create -n jhu-genai-mod10 --clone jhu-intro-to-genai
 #
 # Then update the module 10 env with any extra deps (this file):
-#   conda env update -f conda-env-mod10.yml -n jhu-genai-mod10
+#   mamba env update -f conda-env-mod10.yml -n jhu-genai-mod10
 #
-# Activate: conda activate jhu-genai-mod10
+# Activate: mamba activate jhu-genai-mod10
 #
 # ep_seq (NMTDataset, GO_token, EOS_token, PAD_token):
 #   Not on PyPI/Conda. Get it from course materials (Canvas/files from instructor)
@@ -22,4 +22,9 @@ channels:
   - conda-forge
 dependencies:
   - pip
+  - conda-forge::pysoundfile
+  - conda-forge::pytorch
+  - conda-forge::torchvision
+  - conda-forge::torchaudio
+  - conda-forge::torchcodec
 

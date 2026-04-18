@@ -1,0 +1,17 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Welcome to this session on Prompt Engineering, a foundational aspect effectively utilizing large language models.
+
+In this module, we will examine the principles of crafting precise and contextually relevant prompts to guide AI outputs.
+
+Topics include explicit instructions, context provision, advanced techniques like few shot learning.
+
+Chain of taught reasoning to enhanced model performance.
+
+We will also discuss tools such as long chains for managing complex,
+
+prompt workflows and address the ethical considerations associated with prompt design, including safety and fairness.
+
+This session is designed to provide practical insights into creating optimized prompts for a range of applications,
+
+from content creation to data summarization.
+

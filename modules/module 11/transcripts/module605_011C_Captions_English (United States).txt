@@ -1,0 +1,141 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+The example. Here is an instructional example that introduce concepts and techniques and prompt engineering using OpenAI's language models.
+
+It will begin setting up the environment, including API access helper functions.
+
+The core of the notebook compares zero shot and few shot prompting as we go forward.
+
+Now we have to by. A small amount.
+
+We have to put money in our OpenAI account. I put $5, and this entire notebook uses only a few cents because I'm using the.
+
+Small model 3.5. We need to good use a good model here because these are demanding prompt engineering strategies.
+
+So if we use, let's say one of the models that can work offline, they may not be as capable as GPT 2.5.
+
+But you're more than welcome, of course, to use any GPT, Microsoft or Google or anything anyone that you want to do.
+
+We have to install the libraries. Get the key.
+
+We can do all of this through OpenAI web page.
+
+Log in, created uh, and create the environment and then login this a separate account with your ChatGPT.
+
+This is open our account. And now.
+
+The examples. These models show how to use zero shot and few shot prompting.
+
+Also, uh, if the models respond differently.
+
+Given the examples, it explores advanced prompting strategies such as chain of thought, prompting,
+
+encouraging reasoning, instructional prompts, etc. we covered all of these in the lectures.
+
+Get the environment. And this is the key, the teaching key that I got from API.
+
+Uh, open API. So add this.
+
+3.5 turbo is a strong model. It might open.
+
+Better models like for again cheaply.
+
+I'm a cheap not. It's not a cheap model, but they can offer it cheaper in terms of cost.
+
+The model temperature, max tokens and max tokens limits the output.
+
+If you make it too big that it will consume more dollars top get the completion.
+
+This is the interface HCM interface. Now the straightforward.
+
+And every time you run it, the output might change depending on the model you use.
+
+It might change. Is it better if it doesn't change?
+
+We don't know because the sky is open ended.
+
+Clear. No no no. Sometimes models say. Some other models say that.
+
+I do not know because I don't have sensors. Change the temperature.
+
+The effect temperature is just changing the probabilities or scores at the output.
+
+It will not add creativity. It's a number between 0 and 1.
+
+Either use the softmax output directly, or change the softmax output scores so that the second,
+
+the third fourth output probability would be also responded.
+
+Summarization. As you see, it's good.
+
+Temperature 0.7. Question.
+
+Answering all of these would be very simple.
+
+With these new models. Strong models. Text classification.
+
+And many times the interface is similar. Like messages are all user content prompt.
+
+You build the prompt and as you see, it's a multiple line prompt with three string chords.
+
+And I get the response. Neutral is the output.
+
+Role playing. Hello. How are you?
+
+Greeting. You can follow these examples on your own.
+
+Called generation. Like this is the input table, departments, columns, department ID, table students and then create a MySQL query.
+
+No no no. By the way don't forget to see new lines.
+
+We could also have this um, in other formats like that, but variation is good.
+
+So you will see what other approaches we could do. Here is the query which looks correct to me.
+
+Reasoning. Solved by breaking the problem into steps like chain of thoughts.
+
+So here is the output. Few short prompts.
+
+This is as a false. True. True. False.
+
+So there's some pattern. And then asks.
+
+This one. What is the answer? And as you see, a colon.
+
+The answer is false a colon, a colon, a colon. A colon.
+
+Empty. It feels it like mask language modeling.
+
+But it's more than that. Of course. Chain of thought.
+
+And then the answer. You could also write guides, apply chain of thought reasoning.
+
+You can write anything here. I want you to be.
+
+No, no no. And then here is the question answering is zero short chain of thoughts.
+
+Let's think step by step. It answers.
+
+You should check if this is correct or not. Self-consistency.
+
+So generate multiple answers and it will literally create multiple answers.
+
+Probably we would require a little bit lower temperature generate responses.
+
+And then. Counter responses.
+
+Majority vote separately. Generate multiple responses.
+
+Response one. Response to response three.
+
+Probably could be formatted a bit bit better. After response one A new line here.
+
+Here and you line response for response five and at the most consistent.
+
+Knowledge, prompting generated knowledge. So accumulate the knowledges.
+
+These are the statements. And then now, based on this information, how the planet.
+
+No no, no. And that concludes this particular example.
+
+Thank you.
+
