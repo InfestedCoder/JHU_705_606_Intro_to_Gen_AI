@@ -1,0 +1,313 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Generative AI models such as GPT, T5 bot are built to generate coherent and humanlike text,
+
+but their capabilities are bounded by the data they are they were trained on.
+
+Once deployed, these models cannot natively access updated technology knowledge, making them susceptible to inaccuracies and hallucinations.
+
+Actually, I don't agree hallucinations that much. It's just maybe unfortunate name.
+
+When the data is not enough. Rank retrieval.
+
+Augmented generation is a framework designed to overcome this limitation by injecting external knowledge into the generation process at runtime.
+
+This means that the model isn't limited to static parameters, and it can consult external databases to dynamically enhance its output.
+
+As a result, rack provides the best of both worlds the fluency and the creativity of the language model,
+
+combined with the factual grounding or retrieval.
+
+System. This dual approach addresses critical concerns around accuracy, transparency, and timeliness.
+
+In this module, we'll explore how Rag works, its architecture, and how it fundamentally changes the way we build and trust language systems.
+
+The outline is as in the following.
+
+The module begins with the defining goals and objectives centered around understanding Rack's core components and how they interact.
+
+We'll cover both theoretical underpinnings and practical implementations.
+
+Implications of integrating retrieval and generation.
+
+Then we'll examine how similarity metrics like Tf-Idf cosine similarity enable both sparse and dance retrieval.
+
+With them, the progress two embedding methods were to a global Bert, which transformed the backbone of dense retrieval systems.
+
+Later, we will discuss evaluation metrics, optimization strategies,
+
+and various integration strategies for enhancing generation with the retrieved content.
+
+The module concludes with architecture variations like white box and black box integration.
+
+Real world examples will follow.
+
+Each component builds towards understanding rank not just as a concept, but as a deployable system in modern AI applications.
+
+Module learning objectives as in here.
+
+Retrieval. The augmented generation. Modern language models are immense, with parameters numbering from millions to hundreds of billions.
+
+These models are expensive to train and maintain, yet they cannot easily be updated to reflect new information.
+
+More importantly, they often generate text based on outdated could be outdated or unrelated training examples,
+
+which can lead to factual inconsistencies.
+
+Now we call them hallucinations, but as I mentioned earlier, hallucination is not a proper term in my opinion.
+
+It is basically inaccuracy of the output. It is just less performing.
+
+Wragg solves this problem by injecting live tree relevant information into the response generation process,
+
+instead of relying entirely on memorized knowledge.
+
+Rack systems retrieve documents from external databases such as Wikipedia, internal knowledgebase or web API, or the sentences you provide.
+
+In condition. The response on this retrieved content saw drag is especially powerful in fast changing fields like law,
+
+finance or medicine, where up to date answers are critical.
+
+It also introduce the possibility of tracing the source of an answer and aiding interpretability and user trust.
+
+As we explore right, we will see how retrieval and generation can form a feedback loop, improving both factual accuracy and adaptability.
+
+The rag block diagram here. It provides a high level overview of how Rag models operate.
+
+Each block carries meaningful implications for the system design.
+
+So the process typically starts with a user query prompt being passed to a retriever module.
+
+The retriever selects the top key documents that are most relevant to the query,
+
+using some form of similarity scoring, Tf-Idf or embedding based, or similarity.
+
+These documents are then passed to a generator such as T5,
+
+GPT and these model conditions its output not only on the user query but also on the retrieved retrieved content.
+
+So that's another constraint. The final generated response is a product of both internal model knowledge and externally retrieved information.
+
+Understanding how these blocks interact, especially how the retriever and generator are aligned.
+
+It's critical for optimization. We can do end to end optimization.
+
+It's modular. Rag is extensible. The block can be improved independently with new components like re rankers Re routers, post processing.
+
+So it's the interplay between these components that determines both performance and flexibility.
+
+Evolution of rag. Rag systems have gone through several stages of evolution, like in their naive form.
+
+They operated as linear pipelines retrieved and generate without feedback or quality checks.
+
+This often led to errors like including irrelevant facts, redundant content, or hallucinating when retrieval failed.
+
+Advanced rack frameworks incorporate intelligence retrieval strategies such as queries,
+
+rewriting, passage, reranking, and context filtering to improve relevance.
+
+Sliding windows memory aware mechanisms help models maintain coherence across longer contexts.
+
+The most recent phase is modular rack, where retrieval, generation, and post-processing are independently configurable.
+
+This allows for end to end learning and dynamic adjustments during inference, making the system highly adaptable.
+
+These advancements mark a shift from static pipelines to intelligence iterative architectures that resembles better the human resource workflows.
+
+Iraq framework. There is no universally correct order or structure.
+
+Maybe it's an evolutionary process. Maybe in three years we will have standards.
+
+So the flexibility is a feature here, not a flaw, of course.
+
+In some applications, documents are retrieved first and then filtered or rerank before generation begins.
+
+In others, the model may refine its query based on an initial pass, retrieving again before responding.
+
+At the core, it's the interplay between external data and models internal representations,
+
+and assume that the number of representations internal is in the order of tens of thousands, if not more.
+
+So the framework allows for structured data, unstructured texts, knowledge graphs, even generated summaries to be part of the inputs.
+
+Basically we can input anything as the retrieval augmentation.
+
+The generation step typically involves a model that has been fine tuned for task specific goals like summarization.
+
+Question answering and augmentation may involve recursive retrieval.
+
+So retrieving again based on intermediate outputs.
+
+Kind of self-reflection right. The prompt engineering topic.
+
+So the answers are defined progressively. This flexibility makes Rag suitable for both static knowledge and dynamic reasoning.
+
+Evaluating rack systems involves both traditional air information retrieval matrix and generative matrix.
+
+At the retrieval stage, we assess whether the top key documents are relevant to the query.
+
+Tf-Idf its foundational term frequency.
+
+Basically, it's the frequency of the terms. Any token in the documents normalized by inverse document frequency.
+
+It's the frequency of the term with its rarity across the corpus, which is that normalization part brings in.
+
+So this helps surface documents that are both locally and globally important.
+
+However, tf IDF assumes good independence. Of course limiting its semantic debt.
+
+And what was the solution? Of course we are the embeddings. This.
+
+To measure generation quality. We also could use bleu or rouge scores.
+
+Comparing the output to ground truth references. It's a good idea to check those metrics in hugging face, for example.
+
+In probabilistic models, we can score the likelihood of an answer given retrieved context, or use an dqg and m rr for ranking.
+
+And this is normalized discounted cumulative gain.
+
+It measures ranking quality with position based relevance or mean reciprocal rank.
+
+Average is the inverse rank of the first correct result across queries.
+
+These are ranking tactics.
+
+A good rank system balances both retrieval precision and generation fluency, as weak links in either stage can degrade the final output.
+
+Right generation accuracy. Gauges. Gauges how reliably it received.
+
+Augmented system produces responses that are contextually relevant and factually correct based on the integrated external data.
+
+So these accuracies, these metrics could be listed us in the CG Mirabella Rouge.
+
+Perplexity. Perplexity from NLP.
+
+You can look it up. All these metrics. Now.
+
+Vector embeddings. Embeddings are the foundation of dense retrieval, offering a way to move beyond keyword matching.
+
+The words are not independent anymore.
+
+Unlike sparse representations like Tf-Idf, embeddings represent text in continuous vector space, capturing semantic similarities.
+
+Neural network is the excellent vehicle to extract embeddings words.
+
+VEC pioneered this approach with the skip gram model, which learns to predict surrounding context words.
+
+Given a target word, the learned word vectors captures subtle semantic relationships,
+
+words with similar usage, and up close together in vector space computer science, Python, for example.
+
+This makes them ideal for similarity based retrieval tasks where we want to match meaning rather than surface for word vectors,
+
+travel to model uses dot products of vectors and softmax functions to optimize learning, so an optimization problem is solved for dense retrieval.
+
+Systems based on search embeddings are more robust to vocabulary mismatches, typos, and paraphrasing.
+
+That is why when you have lots of typos entered into ChatGPT, it just goes through it.
+
+It doesn't care. Because those typos don't change the word embedding vector at all.
+
+Now global support global Vectors by Stanford and Birds.
+
+They offer fundamentally different approaches to embedding text. Glow is based on global word co-occurrence statistics.
+
+It constructs a co-occurrence matrix from a large corpus, so there's no neural network,
+
+trained it then factorizes into derived word vectors that captures global relationships.
+
+Its loss function penalizes deviations between dot products of word vectors and the logarithm of word co-occurrence counts.
+
+So this allows Glo to capture linear analogies like famous example in here, king minus man plus woman is queen.
+
+So that word embedding. Suppose that you can generate the queen embedding with these arithmetic operations on vectors.
+
+King vector minus man vector plus a woman vector should be close to queen.
+
+In contrast, Bert uses a deep transformer architecture to generate context dependent embeddings.
+
+Each tokens vector is influenced by all other tokens in the sentence, allowing it to disambiguate meanings based on context.
+
+These context aware embeddings are essential for dense retrieval systems in rank,
+
+especially when queries and documents share few overlapping keywords but are semantically aligned,
+
+so those representations are particularly useful in tasks requiring sentence level understanding and semantic similarity.
+
+Some similarity measures, there are key to identifying which documents are relevant to a query, especially when using embeddings.
+
+Cosine similarity is a widely used metric. We should know this by heart by now.
+
+It's the angle between two vectors reflecting how aligned they are in direction rather than magnitude.
+
+It's the angle between them and it can work scaled in any dimensions.
+
+A cosine similarity of one means two vectors point in the same direction.
+
+Perfect match. Zero implies orthogonality. No similarity at all.
+
+So this makes it ideal for high dimensional spaces like NLP embeddings, where vector length varies.
+
+Euclidean distance, on the other hand, measures straight line distance between points, but suffers in high dimensions due to distance concentration.
+
+So the square is square in two dimensions.
+
+Square root. So the root here will be the number of dimensions that we are looking at.
+
+Ideally. Cosine similarity is generally more robust in dense retrieval settings.
+
+Understanding these metrics helps in selecting, tuning and retrieval components with a rank pipeline.
+
+Some systems they use hybrid similarity approaches or learn similarity models.
+
+They combine the strengths of both. Now here's an implementation example.
+
+The snippet here uses how to look at the similarity.
+
+Use the similarity in numpy. We also have assert here and asserts are errors.
+
+They stop the program. They are not exceptions.
+
+Supposedly this should never happen.
+
+These implementations highlight the flexibility in choosing a similarity metric based on how your data is represented.
+
+Probabilistic models. They provide the principal way to handle uncertainty in information retrieval.
+
+Raj can estimate how likely a document is to be relevant to a query.
+
+Bayesian inference is a classical approach here. The posterior probability combines prior beliefs and observed evidence.
+
+The prior reflects how inherently useful the achievement is, possibly based on position or metadata.
+
+The likelihood measures how well the document answers the query, and the posterior combines both to assess final relevance.
+
+The probabilistic framework can guide document selection before generation, reducing noise and irrelevant context.
+
+While it is especially valuable in domains like legal or scientific systems, even a small residual error can degrade the output quality.
+
+So a probabilistic scoring can also support confidence estimates.
+
+You can have an error. You can have an estimate on the error reporting an error.
+
+Optimizing drag models is a challenge because the retrieval step is not differentiable.
+
+Of course, it's like an offline. It involves discrete choices, like selecting the top k document's ranking to overcome this.
+
+Researchers use stochastic approximations such as expected utility maximization,
+
+where the utility is defined by metrics like the rouge or task specific scoring function.
+
+This approach samples possible document sets and averages their expected value to guide learning.
+
+However, since the space of documents is huge, sampling needs to be efficient.
+
+Techniques like Gumbel Top K sampling introduce noise to the document scores to simulate randomness,
+
+enabling differentiable approximations of the selection process.
+
+If we can do end to end optimization, that's the bit best.
+
+Beam search is often used in generation to retrain retain diverse yet plausible outputs.
+
+So together these techniques enable joint tuning of the retriever and generator for better alignment and performs.
+

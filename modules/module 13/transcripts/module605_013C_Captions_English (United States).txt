@@ -1,0 +1,371 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Theories of agency.
+
+Now we looked at some of these topics, some of these fields at a high level using logic model logic such as necessity versus possibility and so on.
+
+And these topics, the field is necessary in order to assign goals or intentions, beliefs,
+
+desires, uh, objectively simulating or representing human behavior when using AI agents.
+
+Now let's look at a bit further. How beliefs, desires, and intentions evolve must be covered by the theories of agency and the interdependencies.
+
+Interdependencies and update rules also have to be represented.
+
+For example, a graph data structure can easily represent this search, such as in social networks.
+
+Actually, in social networks, this kind of relation between agents such as leaders and followers,
+
+they can be covered for an entire duration of a course.
+
+And our theories of agency, our models should definitely reflect these relations.
+
+Now rational action is required in response to the environment changes.
+
+Applications include AI planning, robotics, game theory, and social simulation.
+
+Clearly. Now let's focus on individual approaches.
+
+One of them is more knowledge in action. Its most work connects knowledge to action.
+
+Agents act based on what they know. This supports rational behavior modeling.
+
+If you remember, one of the assumptions was, uh, the agent is not benevolent, but rather operating or behaving rationally.
+
+So same here, where agents won't attempt actions they believe are impossible.
+
+The model integrates action, preconditions, effects, and epistemic updates essential for domains like automated planning or robotics models.
+
+Formalism also underline underlies the situation calculus, where agents reason about evolving world states after actions.
+
+Kohan and the best intention. The landmark work builds on Batman's theory of intention, formalizing it in logic.
+
+And of course, we're using logic. That's the only way. But we can also add stochasticity.
+
+Now intentions persist until fulfilled or abandons.
+
+Intentions filter out incompatible goals or impossible goals.
+
+Agents monitor their intentions and retry if needed.
+
+This theory models rational commitment crucial in multi-step tasks.
+
+For example, if an agent plans to deliver a package,
+
+it's processed through subgoals locate package, navigate to recipient, confirm delivery, and so on.
+
+This is the backbone of modern body architectures.
+
+Belief. Desire. Intention. Linking intention. Logic to reveal planning systems.
+
+Belief. Desire. Intention. Architecture. It captures.
+
+The intention, such as persistent calls and intentions derived from persistent calls.
+
+And we built the expressions in this fashion. The architecture supports.
+
+Desires are objectives or preferences the agent would like to see, realize intentions or desires that the agent has committed,
+
+acting on and believes like before, representing the agent's internal model of the world.
+
+So this mirrors human practical reasoning and formalized in agent programing languages like agent speak.
+
+Model implementations often use rule based planners or reactive control systems to translate intentions into actions in software agents.
+
+BDI systems allow for more interpretable behavior than black box neural models.
+
+Integrating VDI with learning, such as reinforcement learning or large language models.
+
+It's a frontier challenge, of course. Singh looked at rich agent logics, proposals, intentions, beliefs,
+
+knowledge for integrating and communication as a first class operator, and temporal reasoning with branching time semantics.
+
+So combining all almost all of the applicable fields such as temporal reasoning, temporal logic, communication as a graph, uh, and the body,
+
+of course, and the knowledge base branching time allows agents to reason over multiple potential futures, not just one deterministic timeline.
+
+This is important for planning under uncertainty or coordinating among agents with different plans.
+
+This framework is particularly strong in formalizing protocols for multi-agent communication.
+
+How agents negotiate, inform, request actions is useful.
+
+And how do we do it? Of course, when we have a branching, we have to support it with data, with a proper data structure, such as a tree.
+
+Zauner. A general model of agency.
+
+It's a unified theory of agency, integrating insights from economics, utility theory,
+
+automated theory from computer science like state transitions and philosophy.
+
+It's the intentional stance.
+
+The goal is a model applicable across strategic reasoning such as game theory, autonomous control, and epistemic modeling.
+
+While conceptual is rich, the framework remains mostly theoretical and it in part inspires the approaches in all of these models or theories.
+
+Sparse approaches, of course, where agents reason over trade offs, risks and social dynamics,
+
+potentially informing more humanlike generative agents that model motivations beyond simple utility maximization.
+
+Another theory. Multi-agent systems.
+
+And of course this is historical. These fields, these theories are the historical evolution of the.
+
+Theory of agents. Wooldridge focused on formal methods, of course verifying multi-agent systems with temporal logics, CTL,
+
+LTL, epistemic logics for beliefs and knowledge, and state transition systems for behavior modeling.
+
+Now this allows us prove properties like liveness, for example.
+
+That's necessity in the model logic.
+
+Safety. That's some time and logic constraints and goal convergence in multi-agent environments.
+
+Some of the applications can be like negotiation protocols, coordination, distributed problem solving.
+
+And of course this formally approach supports building trustworthy agents.
+
+So it's an important field in research at the moment.
+
+Such as autonomous vehicles or collaborative medical AI.
+
+There are safety critical. Safety critical systems. So trustworthy agents are an important part of it.
+
+Key insights and formalization. Intention is more than planning.
+
+It is a rational commitment. And beliefs.
+
+Desires must evolve with observation and interaction.
+
+Intention. Desire. Belief. And temporal and epistemic logics offer expressive tools for modeling agent behavior.
+
+The key is integration agents must reason, plan, and act in dynamic, uncertain, and multi-agent contexts.
+
+Formal models ensure that we can verify behaviors and understand limitations, especially generative agents.
+
+Now how do we do it? A stochastic network.
+
+Each node is an agent, can represent the communication, and each node can have beliefs and desires as a data structure, for example.
+
+And then using temporal logic using epistemic logics.
+
+We built uh information from this these data structures.
+
+Generative agents. Well of course this is an image in this particular slide summarizes what's out there right now.
+
+What people are working on. And generative agents could be in other course such as agency key.
+
+However, it's important to list these topics.
+
+Generative agents simulate human like cognition and behavior.
+
+So generative AI must be that. Of course, that's the AI agent like reasoning, memory, planning, reflection memory can be react,
+
+planning can be, uh, desired and the list of actions not committed yet.
+
+And the reflection can be the agent checking itself to verify if the goals are reached.
+
+Use cases of course. Chat bots always virtual assistants.
+
+Story driven simulation agents, creative tools, scenario simulators.
+
+A key innovation here is self reflection. And it's a, uh, it talks about how the agents monitor their own internal state and adapt over time.
+
+We looked at self-reflection in prompt engineering. It was asking itself, I generated this is it correct kind of approach.
+
+For example, in Park 2023 paper,
+
+generative agents in a simulated town maintain memory logs reflected daily and updated their behaviors, mimicking social life.
+
+This blends symbolic and neural paradigms so it's more dynamic, believable, interactive, human like.
+
+Memory and retrieval. It's essential in order to have believable behavior.
+
+So the generative agents must maintain a stream of timestamped observations.
+
+Like talk to Bob at 3 p.m. And second summaries and embeddings of these events, and of course embeddings embedding vectors.
+
+They are the best to keep comparables.
+
+Uh, information and they are retrieved.
+
+For semantic semantics. Relevance ranking.
+
+So I retrieved some context multiple embeddings and somehow I need to rank them for relevancy.
+
+This mirrors human episodic and semantic memory for implementation vector stores such as face for RSS and transformer based encoders.
+
+Of course, they retrieve relevant past events for prompting.
+
+We have to do the prompt engineering, of course. But that's easy using right now an important challenges scaling.
+
+Memory retrieval must be efficient and outdated or irrelevant.
+
+Memories must decay over time or be summarized. And even it has to be stochastic, uh, kind of mimicking the human behavior.
+
+Reflection mechanism. It allows agents to abstract patterns from memory and update intentions.
+
+So insights like Bob and Alice seem close.
+
+Maybe they're friends or I've been tired after late night conversations.
+
+So these reflections influence future goals and behavior.
+
+It stimulates growth and learning.
+
+This component draws also from cognitive architectures often modeled with prompt engineering or fine tuned summary summarization.
+
+Planning and reacting agents must balance between long term planning and short term reactivity.
+
+So while doing long term planning, uh, they can react.
+
+In shorter, a planning module sets intentions such as go to cafe at 4 p.m., while the reactive module the short term response to unexpected events.
+
+Alice invited you to talk. Do you postpone the cafe trip so that needs immediate, um, attention or reaction?
+
+This new layer architecture is aligned with human decision making systems as well.
+
+Like system one. System two. And often implemented via plan queues or intentional stacks prior to base stacks.
+
+Action selection from templates. Managing coherence over time is a key challenge.
+
+Generative agents must avoid contradictions, recover from errors, and adapt plans without losing their personality or object.
+
+This. Emergent social behaviors.
+
+And this kind of information is actually realized by networks.
+
+The network, the information or the disease in a disease spread network, for example, uh, it spreads in the network.
+
+So information diffusion. Uh, maybe today it's faster, but it is still there from north to not communication.
+
+It is stochastic. And by the way, for your information.
+
+Six degrees of separation can be applied here.
+
+Some people don't believe in that. Some experts, uh, but for the majority of the people, uh, it applies.
+
+There's six degrees of separation between any, uh, person in today's social network or network of network in general.
+
+One of the most compelling aspects of generative agents is its ability to exhibit emergent social behavior.
+
+So multiple agents operate in a shared environment. Their own memories, intentions, plans, and complex group dynamics can arise, like friendships,
+
+rival reels, group coordination without centralized control like swarm leaders,
+
+followers, cascading interactions such as gossip, propagation and I bet, uh,
+
+Wall Street, like stock investments, uh, are looking at all these behaviors.
+
+And these behaviors are not hardcoded. They result from local decision rules and information flow.
+
+So a society of generative agents displayed behaviors such as forming clubs or planning parties.
+
+And it is driven by autonomous reflection and communication.
+
+This is large scale social simulation relevant in urban planning, social sociology, multi-agent game environments and so on.
+
+So the challenge is of course, plausibility and consistency.
+
+There is no ground truth. There's no supervised learning feedback.
+
+Uh, is it reasonable? We need of course.
+
+Metrics. Some future directions are here.
+
+Memory retrieval. We also looked at discussion about this in the discussion.
+
+We looked at it real time interaction running multiple agents simultaneously while reflection planning dialog happens.
+
+It's very heavy computational lot. And we are talking about a million node network minimum lack efficient parallelism and memory sharing are key here.
+
+Bias and alignment. It will be always a problem without oversight.
+
+It may reinforce this.
+
+The agents may reinforce stereotypes like in life, probably generate inappropriate content, or act inconsistently with intended ethical norms.
+
+So how are you going to solve these? Of course. Difficult problem and must be a research field.
+
+Transparency and interpretability.
+
+It is difficult to inspect or verify the internal state of generative agents, especially with large language models.
+
+So explainability methods must evolve to support its robustness.
+
+Well, I personally don't believe in hallucinating that that's happening.
+
+Uh, maybe they called certain problems hallucinating about models,
+
+but those models were weak and they were not generating or doing their jobs properly.
+
+Not enough data, not enough compute, not enough complexity.
+
+However, if hallucination happens or something like that, it may lead to incoherent behavior.
+
+Uh, but we can check it by constraints and by logic.
+
+Uh, we have to integrate symbolic checks, fact verification, and constraint satisfaction models to mitigate these.
+
+And of course, improving memory retrieval algorithms.
+
+Episodic memory, and this is also replay memory, such as in reinforcement learning.
+
+It is composed of raw logs of events, semantic memory like structured summaries, even embeddings, conceptual maps, and working memory.
+
+Short term contexts for active planning. Maybe we need a neural network in the middle of all of these memories.
+
+Advanced retrieval methods like learned attention mechanisms that they can prioritize memories based on emotional salience,
+
+social relevance, and predictive utility. Knowledge graphs.
+
+Event ontologies are crucial. These are rule based approaches.
+
+A knowledge graph is exactly a graph. Nodes are entities, and edges are relations.
+
+Or predicates. Expanding real time interactions.
+
+Scalability remains a major bottleneck, of course. It requires generative agents to engage in synchronous conversations,
+
+act in rich environments, or participate in simulations with hundreds of entities.
+
+So in order to support this, we need efficient models serving incremental interface inference.
+
+Uh, in order to avoid the competing full plans.
+
+For example, uh and model serving should be low latency agent summarization, compressing inactive agents without losing their continuity.
+
+So solutions may draw from multi-agent reinforcement learning, systems optimization, even neuromorphic computing.
+
+Ethical considerations. It's foundational. We repeat this over and over again.
+
+Uh, over reliance. Of course, users may trust agents more than warranted.
+
+Uh, especially when it in social environment.
+
+Goal alignment agents must act in accordance with human values and institutional constraints.
+
+This is not, uh, benevolence, but this is rather common sense.
+
+Privacy and memory. If agents remember sensitive data or reproduce real individuals behaviors.
+
+Now this is privacy and content consent issue.
+
+Transparency. It should be possible to audit and interview.
+
+Well okay. This is also difficult. How am I going to look at even with explainable AI?
+
+How am I going to look at the large language models minds?
+
+At least maybe I can do it with constraints. Constraints.
+
+So, agents. Must go beyond static rules.
+
+It involves dynamic meta reasoning, introspection, and adjustment mechanisms to align with human expectations and legal norms.
+
+Some references are here.
+
+Uh, these papers, even though, uh, some of them are old, we can look at the latest one and we can look other recent papers in this field.
+
+This concludes our lecture. Thank you.
+

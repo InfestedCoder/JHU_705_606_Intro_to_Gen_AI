@@ -1,0 +1,345 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Now let's focus on rack excellence.
+
+Then integrate retrieval mechanisms into the inference process of evidence to improve factuality and reduce estimation.
+
+This architecture consists of three components retrieval, generation, and augmentation.
+
+Retrieval involves fetching relevant documents using sparse or dense methods.
+
+Generation uses these documents to form coherent answers, and augmentation refines or structures.
+
+The interaction between the two or a alums may use whitebox,
+
+modular or modifiable or blackbox opaque language models, depending on access and application.
+
+Of course, integration can happen at different levels, inputs, outputs, or even intermediate layers within the model.
+
+This setup allows real alarm to scale across tasks while maintaining adaptability and up to date knowledge access.
+
+They are especially useful in customer service, academic search and medical question and answering systems.
+
+Now. What is Spa's retail process? It is the grounded in lexical overlap.
+
+It returns documents that share key terms within the query.
+
+By the way, note that this is typical in NLP. Semantic processing models like Tf-Idf or Bm25 are used to score documents based on term frequency.
+
+An inverse document frequency, yes, favoring those with rare but relevant terms.
+
+And in the example given here, the key red fruits would return a document about apples because it contains both red and fruit, giving it a high score.
+
+The method is simple, interpretable, computationally efficient, making it a good baseline.
+
+However, of course it struggles with synonyms paraphrases, context sensitivity.
+
+It is not an embedding, it's just based on frequency.
+
+If a relevant document uses crimson instead of red.
+
+Good luck finding it. Sparse retrieval will fail to find it or may fail, let's say.
+
+Despite these limitations, sparse methods remain popular due to their speed and ease of use.
+
+This is classical in NLP, particularly in low resource or latency sensitive applications.
+
+It can be used. Now let's look at dense retrieval process.
+
+And of course you guessed it right. It's the neural embeddings represent both queries and documents as vectors in the same latent space.
+
+Instead of key overlap with now, this time we rely on semantic similarity, making it robust to rephrasing and lexical variation.
+
+For instance, a user asking about top rated Italian restaurants can retrieve documents that don't use the exact words but express the same concept.
+
+Embeddings are often generated using models like word sentence transformer or domain specific encoders.
+
+Cosine similarity or maximum inner product is then used to find the closest document vectors to the vectors to the query.
+
+Now this approach is definitely more accurate and sparse retrieval than sparse retrieval in many real world settings,
+
+especially when language is informal or queries are vague. This is useful.
+
+The dense methods require significant computational resources for training and indexing, and the results may be harder to interpret.
+
+A famous example on my own. I was looking for a particular product in Amazon, and I couldn't remember the product name or what it does,
+
+but I explained it in my own words and I called, uh, something like screw and resistance.
+
+So screw as in nail hardware. Uh, but I wanted.
+
+I want a flute which can lock the screw in place.
+
+And believe you me in in an LP, this is difficult to solve.
+
+But in word embeddings or dense retrieval, it's so easy because screw will have lots of similar vectors and thread is one of them,
+
+and resistance will have similar words and lock or something close to lock is one of them.
+
+And you found it. Thread lock.
+
+What? I was looking for a product. Thread lock.
+
+Now whitebox generation process.
+
+It allows developers to intervene in the internal structure of the language model, offering flexibility and fine tuning capabilities.
+
+Encoder decoder models like T5 and Bart, the encoder process the input sequences and the decoder generates the output sequence.
+
+We know that attention linking the two decoder on the models like GPT, operate in an autoregressive manner.
+
+So each token depends on the previously generated tokens, of course.
+
+For example, the two white box models can be fine tuned for specific tasks control,
+
+input fusion, or even modify generation strategies based on retrieved content.
+
+They support more advanced form of augmentation, such as intermediate layer integration or reinforcement tuning.
+
+These models are ideal for enterprise or research applications.
+
+We need transparency, traceability, and customization in these areas, and white box access typically requires open source models.
+
+So that's a difficulty of course. Commercial licensing with fine tuning permissions.
+
+Many times we may not get it. Augmentation.
+
+Input layer integration. So it's one of the most straightforward methods.
+
+Incorporating retrieve its retrieved information involves concatenating the query
+
+and the retrieved documents into a single input string sort straightforward,
+
+then processed by the language model. It is widely used in black box systems, where the internal model access is restricted, of course.
+
+So in context, round a real M uh, for example, it simply appends retrieval results to the prompt while the fired.
+
+Encodes each document separately before combining representations.
+
+Wrong ified Ziploc. These are or outlast.
+
+These are the name of the frameworks. So it's better.
+
+Uh, we should look at these papers. And as you can imagine, a huge research is going on in this field.
+
+At the same ripples. Use document query pairs iteratively to produce context rich representations,
+
+so this strategy enhances zero shot performance by giving model more background information without requiring task specific tuning.
+
+Prompt retrieval in this context allows developers to dynamically guide the model without altering its weights.
+
+Making a scalable and cost effective. Another approach augmentation at the output layer.
+
+So output layer integration refines the generated response using retrieved documents after generation begins or even post generation.
+
+So what approaches can alarm? Famous old canal, which blends predictions from the model with similar plastic comments from the retrieval store.
+
+However, this can be shallow as it doesn't allow deep reasoning or structural awareness.
+
+Sophisticated methods like Refit, adaptive semi, semi parametric Elm language model,
+
+and they use gating networks to decide how much retrieve information should influence the final output.
+
+The Como framework integrates.
+
+Uh fusion in decoder strategy to match and refine answers by jointly evaluating generated and retrieved content.
+
+These strategies allow models to adjust and correct their own outputs and of course, their end to end optimization.
+
+Better follow the papers. Of course it's too large, right?
+
+By itself could be a course from this perspective.
+
+These strategies, the loss of models to adjust their own outputs, improving factual consistency, of course.
+
+It's especially useful in tasks requiring verification or multi document synthesis.
+
+After input and output, of course. Intermediate layer.
+
+It's one of the most sophisticated strategies. Why?
+
+Because unlike input or output, it directly embeds the rigid document representations into the internal layers of the language model.
+
+Very effective. Specifically within the transformer architecture.
+
+One prominent implementation is red raw, which introduces a chunked close attention k layer.
+
+So this model allows or attends to the retrieved content during generation.
+
+It enables retrieval to influence the hidden representations of the model, thereby affecting both semantic and structure at deeper levels.
+
+Allows for highly dynamic interactions between retrieval and generation, supporting more coherent long form text generation.
+
+This strategy requires access to the internal workings of the model.
+
+Without model, we cannot do it, of course, but many of these models are available the old models.
+
+However, they cannot be used with the closed source error lamps or APIs like GPT four.
+
+GPT two is available, but that's very little compared to GPT for other frameworks like care and attention e charm.
+
+They explore memory based or entity aware integrations.
+
+So pushing the boundaries of what hybrid systems can achieve in real time reasoning and discourse tracking.
+
+Training. Array retrieval augmented in alarms is particularly challenging due to the need for
+
+integrating retrieval mechanisms without constant retraining of the full model.
+
+So one core idea is to treat the retrieval as a dynamic adapter that can inject current knowledge into the otherwise static alarms.
+
+So for this several methods emerged that require no gradient updates for the alarm itself.
+
+Prompt engineering based methods such as in in context run or er, Cots.
+
+Um, they leverage well structured prompts and query rewriting to incorporate retrieve content.
+
+On the other hand,
+
+retrieval guide or token generation methods like Keenan Allen and Rest use memory stores to guide next token prediction based on past examples.
+
+These systems offer a way to update model behavior without retraining, enabling faster iteration and lower compute costs.
+
+The result is a flexible semi parametric model that learns from both stored data and static neural parameters, of course.
+
+Continuing in this fashion. Various training regimes have emerged for real alarms, depending on how the retriever and generator interact.
+
+The sequential training the R and G are trained one after the other either are first or alarm first.
+
+And retro. Um, it's our art again are examples of the retrieval first systems.
+
+So the receiver is pre-trained using models like Bert or S for sentence Bert and then paired with a generator like T5.
+
+So conversely, in alarm for systems like the K, RR or uprise,
+
+the pre-trained alarms help guide retrieval optimization using attention signals or prompting heuristics.
+
+This allows the retrieval to align better with the generative models latent knowledge and attention patterns.
+
+Some other notable systems are here, like small cap clip and text generation GPT two, highlighting how RAC principles can be applied beyond text.
+
+These core training methods foster synergy between retrieval and generation,
+
+optimizing relevance, fluency, and all of the good stuff that we are trying to reach.
+
+Again, continuing in this fashion, another additional training, uh, is methods strategies independence.
+
+And the other one is joints. The fourth one in independence setups.
+
+The orang are trained separately using their respective objectives.
+
+Retrieval is optimized for ranking, loss or contrastive learning.
+
+While alarms minimize negative log likelihoods during generation.
+
+Sparse retrievers rely on methods like Tf-Idf or Bm25, while dense retrievers use vector based encoders such as DPR and COAG joint training.
+
+So, by contrast, joint training trains both components end to end, allowing gradients from the generation loss to influence the retrieval behavior.
+
+So this is the best optimization methods. An example of this is region, which employs maximum inner product search maps.
+
+In order to update both the document encoder and the generator simultaneously.
+
+Joint training improves alignment between what is retrieved and what the model needs for coherent outputs.
+
+But of course, it's also resource intensive and less modular.
+
+And you have to have the system, the model itself. The choice between these paradigms depends on what the problem you are on.
+
+Of course in like in any other approach in AI.
+
+Another. Uh, topic data, conflict resolution.
+
+So it's a unique challenge arises when retrieve content contradicts the alarm's internal knowledge.
+
+It can happen, of course.
+
+In such cases, the model must reconcile discrepancies, either by prioritizing one source or by presenting multiple perspectives.
+
+Some architectures are designed to weigh the curated context and dynamically decide whether to favor retrieve data or internal knowledge.
+
+For instance, if the user asks about recent events, the model might rely more heavily on retrieval to avoid outdated responses.
+
+Alternatively, it may synthesize a response that highlights conflicting viewpoints or requests.
+
+User classification clarification, feedback loops, and prompt engineering can also influence which data sources emphasized.
+
+And of course, this is natural.
+
+Moreover, user interactions such as flagging outdated or incorrect answers can be incorporated into adaptive retrieval updates.
+
+You can also use reinforcement learning.
+
+The interplay between static and dynamic knowledge sources is central to making aura and alarms trustworthy and responsive.
+
+And clearly these days. The ethical challenges are tough.
+
+Rag helps improve factuality and traceability. It also introduced new ethical concerns.
+
+The use of external databases during inference raises questions about data provenance, copyright, and privacy.
+
+For instance, if personal or sensitive data is retrieved, how does the system ensure it's handled responsibly?
+
+Additionally, bias and fairness remain major concerns. And to some, machine learning is um, is bias in a way.
+
+No matter what you do to model the dataset, everything will be biased according to how you train it and how the data is formed.
+
+And maybe model itself is a bias now,
+
+especially when the retrieval systems amplify certain perspective over others, you can see the problem retrieved.
+
+Documents may themselves be biased. If not properly filtered, the bias will propagate into the generated responses.
+
+Of course, fail retrieval and debiasing techniques such as reranking or adversarial training are active areas of research to address these risks.
+
+Furthermore, transparency about the origin of retrieved data can help users evaluate the credibility of generated answers in deploying rank.
+
+Ethical considerations must be addressed holistically, covering more technical safeguards and political or policy level oversight.
+
+Now, if in fact it may come as a surprise, but late 2024, ChatGPT did not use RAC framework in its core inference engine.
+
+Instead, it relies on a large static language model trained on broad and diverse datasets.
+
+All responses are generated from internal parameters without real time document retrieval.
+
+This means answers are based on knowledge available at the time of training,
+
+which introduces limitations in keeping up with rapidly changing information.
+
+However, retrieval tools can still be layered externally as done in some enterprise applications.
+
+Take the output of ChatGPT and post-process it. So it will simulate Rag like behavior.
+
+The distinction is important when evaluating limitations of the ChatGPT versus custom rack systems built for real time adaptability.
+
+As drag technology is a mature problem now, we are at a very early stage.
+
+Future exams may increasingly incorporate such capabilities.
+
+The future of RAC rapidly evolving.
+
+Driven by advances in both retrieval engine and generation technologies.
+
+Semantic search using transformer based retrievers promises more accurate and context aware document matching.
+
+Multimodal drag models that integrate text, images, and structured data are on the horizon.
+
+Opening doors for use cases in medicine, law, and education.
+
+Domain specific fine tuning and real time updating capabilities will allow systems to adapt on the fly to niche knowledge areas.
+
+Bias mitigation, fairness training, and explainable AI components will be critical to ensuring trustworthy and ethical deployment.
+
+Architecturally, rack systems will become more modular, scalable,
+
+and capable of functioning in low resource or privacy sensitive settings through federated learning.
+
+Integration with human in the loop frameworks will enable dynamic correction and oversight, and most of these are already existing in the GPT.
+
+As of today, these advances unfold.
+
+Raw rag is poised to become a foundational building block in the next generation AI systems.
+
+Some references. Plus all the references that are cited on the slides.
+
+It concludes this lecture. Thank you.
+

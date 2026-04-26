@@ -1,0 +1,223 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+In our go to the embeddings notebook, we focus on dense embeddings and vector representations as foundational components
+
+in modern modern retrieval and retrieval augmented generation like rack systems.
+
+But think of word embeddings, part of any kind of AI model these days.
+
+It begins introducing, uh, Tf-Idf or and the representation the we the way we use in classical NLP.
+
+And then we will demonstrate how to encode a small corpus.
+
+Similarity searches interpret the returned ranked documents, uh,
+
+and toward the end emphasize how embedding based retrieval differs from traditional sparse methods, in this case Tf-Idf.
+
+By the way, we have used TF IDF for decades, and in tf IDF, each word which is the feature of text is represented as an orthogonal vector.
+
+And here the v number v would be the size of the vocabulary.
+
+And in this particular example, each of these are orthogonal even if it is w one calculator w two.
+
+Other cuz they are considered, uh, completely orthogonal.
+
+Well, this worked for decades. Uh, and the machine learning models compensated.
+
+This kind of probably incorrect modeling.
+
+Plus, if you have a million words, unique words, the vocabulary size would be a million.
+
+And imagine working on a real number domain 1 million times 1 million size.
+
+That's not realistic at all. It wouldn't work in large language models.
+
+When we want to create word embeddings, it means in a much lower dimension such as and we want to represent each of these words.
+
+Number one benefit is reducing the dimensions. Number two benefit is bringing words that are.
+
+Synonyms to each other. Close to each other in semantic together.
+
+And in that case, if I have a topic which is composed of, let's say, ten words,
+
+the centroid of those ten words could be the topic vector, but I cannot do that.
+
+If these vectors are orthogonal in the in this kind of representation, say I have ten words w one to w ten.
+
+If I take the centroid you know the centroid cannot be computed.
+
+It's zero the origin because these are orthogonal.
+
+But that centroid could be very effective if I represent it as the topic vector so that I can look at similarities.
+
+Is this topic similar to that topic extract etc.
+
+That kind of computation I could do easily.
+
+There are two approaches to uh uh, generate the word embeddings skip gram and continuous bag of words model.
+
+And of course both of them are dependent on conditional probability.
+
+It means. I ran a context of window.
+
+If the words appear together close to each other, uh, are in the same window.
+
+I consider that a context. In this case, context is five.
+
+And of course, this is very rigid. This approach is from a decade ago.
+
+So we are having we have better methods these these days.
+
+What could be the better method. Actually look at the entire sequence and then use that as a sequence.
+
+But of course I wouldn't be extracting word embedding just like that in this particular example.
+
+The word embeddings are extracted by a particular criteria which is skip gram.
+
+If this is the input vocabulary size, if I have 1 million, the size here is 1 million.
+
+I'm creating a linear layer that goes to the latent space and also word embedding space patterns.
+
+Think of this like an auto encoder, but it is not encoding x.
+
+Uh in order to decode back to the same x but rather input words to the context.
+
+In this particular example, the context is these five words.
+
+It's bag of words. There's no order. And uh, the target is ho.
+
+Who is number three excited here. And.
+
+And the context. This. The man who passes the except who.
+
+So man passes because these two. And I'm not counting that.
+
+That means the man passes. One, two, four, one, two, four are excited when I use all the input information, all the sequences in this fashion.
+
+Uh, this particular matrix learned by the linear layer here is the embedding matrix.
+
+I can take any word and then extract or compute this vector which is size four.
+
+So this vector will be used from there on.
+
+This will be my feature vector. It has two benefits from v to n.
+
+I saved a lot of dimensions 1 million to 100 perhaps seconds.
+
+All the words that appear together in the same context are close to each other in distance or similarity.
+
+Similarly, I could do the, uh. Continuous bag of words.
+
+In the reverse manner, I would input the context and then output the words.
+
+But in that case the context will be inputs one by one.
+
+If the if its size is three, then there will be three inputs to that linear excitation.
+
+And then I will take the average here to compute the vector.
+
+It is similar, but not exactly, uh, reverse of this neural network.
+
+And this neural network is very easy to train.
+
+It's a single layer, one layer here, one layer here, two layer neural network, similar to an auto encoder.
+
+And even the auto encoder. As we have seen, it has more layers than this one.
+
+Now embeddings as features. That's the goal. It's bag of words.
+
+There's no sequences. And uh, this is not handcrafted like for example, WordNet, but rather they are vectors generated from the dataset.
+
+Now I can apply this word to vec and then extract a vector of words for each word and then use it as feature.
+
+But I could also use document to vector like input to an entire document, uh, and then generate the vector, uh properly and then use it.
+
+What's the benefit? Well, I can compare documents. Is this document similar to that document that I'm looking for now?
+
+Uh, we should look at Gensim API. This is one way of doing it, but we don't have to use Gensim.
+
+Uh, it is not a very difficult implementation here.
+
+However, Gensim is also a standard library in Python.
+
+Anaconda. That's not the problem. Here is doc to vec.
+
+And now what I could do is. I could work on a particular document.
+
+In this case, this ABC data set.
+
+And, uh, look at the similarities between computer and science.
+
+Basically, it's very easy to train it, as you see, get the word to work, get the analytical related, uh, libraries and data sets.
+
+Get the sentences were to export sentences.
+
+Minimum count of words is two anything. If it is one, it is draft.
+
+There are four workers. It can run in parallel. Get the list.
+
+ABC has this many sentences. Gensim model has that many words mapped to 100 dimensions.
+
+My feature vectors are done so simple. What's the benefit of this?
+
+Super customized to my data. Is it universal?
+
+No. I could use glove. Stanford glove.
+
+We have looked at this before. Global vectors for road representation.
+
+I don't think they use, uh, skip gram or continuous bag of words.
+
+They have another approach similar to contrastive learning.
+
+Uh, you should read and see what it is, but we could use it as it is.
+
+It's like off the shelf. Super general global vectors for word representation.
+
+And it's many times it's useful. Famous example from slide deck like King.
+
+Um. Man minus ruler would would be uh or minus man.
+
+Plus woman could be queen. I could reach queen by adding and subtracting the word vectors.
+
+Now back to embedding and let's look at Shakespeare's Hamlet.
+
+Get it? Process it. Continuous variable first.
+
+Does it matter? Continuous bag of words or skip gram? No, not at all.
+
+It's a conditional probability. It can be easily reversible, but the output will be different.
+
+Now, given a context, Hamlet's give me all the relative words.
+
+Well, because the set play the context would be hamlet appearing with Ophelia, Angus.
+
+And of course hamlet will be appearing in many contexts. And here's here are the scores.
+
+And of course, uh, if you want to work on pronouns, then you have to process the pronouns.
+
+By the way, what's the alternative? Using sentence transformer A sentence transformer is also an embedding generated from the sentence.
+
+So that's the word to vec. And then let's see how we are doing.
+
+Here's the continuous bag of words skip gram using PCA. We could also use t-SNE.
+
+Hamlet is here. Hamlet is there, so it generates the relations between the words.
+
+It's a good idea to have it on the same scale. As, uh.
+
+But this doesn't conform to that. Probably it would be a better visualization if you do it on the same scale.
+
+Here's another view. Here are some other examples.
+
+And if you are curious about the all that is processed, it's a lot like oh no no no.
+
+From the hamlet. Any NLP could use more preprocessing.
+
+Unfortunately all of these are manual. These are classical approaches.
+
+Now how do we use, uh, the embedding in the transformer at the entrance?
+
+We have looked at this earlier. That concludes our lecture today.
+
+Thank you.
+

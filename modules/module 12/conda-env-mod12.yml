@@ -1,0 +1,28 @@
+# Module 11 environment: use AFTER creating the base env and cloning it.
+#
+# Setup (one-time):
+#   mamba env create -f conda-env.yml
+#   mamba create -n jhu-genai-mod12 --clone jhu-intro-to-genai
+#
+# Then update the module 11 env with any extra deps (this file):
+#   mamba env update -f conda-env-mod12.yml -n jhu-genai-mod12
+#
+# Activate: mamba activate jhu-genai-mod12
+#
+# ep_seq (NMTDataset, GO_token, EOS_token, PAD_token):
+#   Not on PyPI/Conda. Get it from course materials (Canvas/files from instructor)
+#   then either:
+#     pip install /path/to/ep_seq   # if it's a package
+#   or place the ep_seq folder in this directory and add to Python path in the notebook:
+#     import sys; sys.path.insert(0, 'modules/module 11')
+#
+name: jhu-genai-mod12
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - gensim
+  - pip:
+      - sentence-transformers
+      - python-levenshtein
+

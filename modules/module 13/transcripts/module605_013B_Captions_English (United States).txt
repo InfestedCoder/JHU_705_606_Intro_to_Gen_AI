@@ -1,0 +1,441 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Generative agents. We will look at foundations of agents.
+
+Possible role semantics theories of agency generative agents.
+
+And we will see examples in the notebooks.
+
+This module introduces the theoretical and practical underpinnings of intelligent agents, particularly focusing on generative agents.
+
+By the end, students should be able to explain the key agent attributes like autonomy and intentionality,
+
+and distinguish between different forms of intentionality across systems.
+
+We'll also examine how model logic supports the modeling of agents beliefs and desires using possible role semantics.
+
+This sets a foundation for understanding how agents simulate reasoning, behave socially, and handle ethical challenges.
+
+A key goal is to appreciate agents at both cognitive models and practical software components,
+
+especially in settings like chatbots or simulated environments.
+
+Now, an agent fundamentally is in any any entity that perceives its environment and acts to achieve goals.
+
+This perception action cycle is central to many AI systems, from autonomous cars to recommendation engines.
+
+What distinguishes agents is their autonomy.
+
+They operate without constant oversight and they are able to adapt and learn.
+
+In multi-agent systems, agents coordinate or compete, often producing emergent behavior that can't be deduced from individual actions alone.
+
+Generative agents go a step further. They produce a new content, text, images, simulations, and may even exhibit self-reflection.
+
+This makes them useful in scenarios like storytelling, training simulations, and conversational AI.
+
+Foundations of agents. Agents are more than simple input output systems.
+
+Key attributes include autonomy, reactive and proactive social ability, veracity and benevolence, rationality and intentionality.
+
+Now we will see all of these one by one at a high level because we are covering the theory, the autonomy.
+
+Agents acts independently. Reactivity and activeness.
+
+Agents respond to stimuli but also initiates actions.
+
+To fulfill goals. Social ability. They interact.
+
+Veracity and benevolence. Assumptions often used to simplify multi-agent interaction.
+
+Because real world agents, if they follow, if they are the.
+
+If they are benevolent, then it will be difficult to simulate.
+
+But the real world agents may violate this rationality and intentionality.
+
+It is a bridge into cognitive models, helping us explain actions in terms of goals and beliefs.
+
+An example of applying intentionality is interpreting if a user clicks is a belief desired action chain.
+
+The user wants to launch an application belief, so click the corresponding icon and the desired is launching and action is clicking.
+
+This is not just behavioral trace. It queries an embedded mental model.
+
+Now. The agent theory. Intentional systems are explained through beliefs, desires, and rational action.
+
+This abstraction is powerful, explaining predicting complex system behaviors without knowing all the internal mechanics.
+
+For example, attributing beliefs to a thermostat like it believes the room is called is useful even if the device has no actual understanding.
+
+Similarly, in AI modeling systems with body belief.
+
+Bizarre intention.
+
+Those frameworks help us design agents that reason about their states and act purposefully, even if they don't feel desires as humans do.
+
+Grace of intentionality. Now we illustrate then as hierarchy a zero order, no beliefs.
+
+First Order agent has beliefs and desires.
+
+Second order agents can reason about others beliefs.
+
+Theory of mind. Such graduate grade gradation is critical in designing agents from social imams.
+
+A customer service chatbot needs at least first order intentionality and negotiation.
+
+Agent might need second order and reasoning to anticipate other agent's plans.
+
+These levels mirror complexity in human cognition and can be encoded in model logic or probabilistic reasoning frameworks,
+
+and higher order continues in that fashion. Now, the core components of intentional agents they typically integrate perception.
+
+Now this representation reasoning and planning. So beliefs.
+
+The agent. It seems to be true.
+
+Desires. Goals. Preferred States of the worlds.
+
+And intentions. Committed plans of action.
+
+From that perspective, the mechanical explanation of a light switch is like in the slide.
+
+Let's focus more. Belief. Obvious.
+
+Desires. Goals. They are again preferred states or actions to be able to reach those states.
+
+Now intentions. Let's look at intentions a bit more.
+
+It's the committed plans of action. These components are often.
+
+Uh, formalized. Using.
+
+Logic based or rule based systems, or even probabilistic models.
+
+For instance, belief update mechanisms might use Bayesian inference or model logic axioms.
+
+The interaction often make these components having tightly coupled for coherent action planning.
+
+And of course, all these are higher level. However, we are, uh, setting the foundation.
+
+Now let's look at logic and intentional notions.
+
+It formally captures agent cognition. So we rely only on model logic which introduce operators like necessity.
+
+And possibility. In Asian models, this can be interpreted as.
+
+Beefy. Agent believes fee.
+
+Defy. The agency the agent desires.
+
+Fee. And I've.
+
+The agent. Intense fee. Now, these logical systems allow us precise reasoning about what agents know, want, and plan.
+
+So it's essential for verifying protocols, especially in multi-agent systems.
+
+However, applying model logic like always some time or necessity possibility uh in practice include introduce
+
+computational and epistemic challenges such as how agents reason under uncertainty or partial observability.
+
+And as you see in this example, uh, the logic is absolute.
+
+Even there's a syntactic problem here. Like substituting wouldn't work.
+
+Uh, we can solve all of these with second order logic.
+
+Higher order logics. Alternative semantic approaches.
+
+So while modal logic, you know, possibility necessity is the default for modal engagement.
+
+Act attitudes. Syntactic approaches instead focus on the structure of formulas the agent can manipulate.
+
+So without assuming omni signs, these can include deductive rule systems or and action languages.
+
+The describing how intentions evolve or not level representations to distinguish between knowledge and reasoning capacity.
+
+These approaches are useful when modeling resource bounded agents.
+
+Assumptions like logical closure don't hold meaning agents don't instantly deduce all consequences of their beliefs.
+
+That's the logical closure.
+
+Even though the logic values are in a table in the mind of that agent, some knowledge graph, they are not used immediately.
+
+The limitations of possible worlds lead us to alternatives.
+
+Such as implicit belief logic distinguishes between what the agent explicitly knows and what follows from that knowledge.
+
+So explicit implicit belief logic or general awareness logic from Fagin and Halpern.
+
+It focuses on how the agent is even aware of.
+
+To reason about these models, try to better caption humanlike bounded reasoning, avoiding the logical omniscience problem.
+
+So all these approaches try to avoid logical only size problem.
+
+But of course, in practice this is not true. It's an unrealistic assumption that the agent knows all logical consequences of their beliefs.
+
+On the contrary. Many times we don't or we are unable to compute it even though we know it like we cannot answer.
+
+Why did you do it? And then you can say, I don't know.
+
+Even though if you use logic, if you had use logic, you wouldn't do that because knowledge wise you know it.
+
+So they are particularly useful in modeling software at agents or robots operating with limited computational capacity.
+
+A different problem like reduced computational capacity.
+
+The logic might be somewhere in knowledge base, but the agent or the robot doesn't know it.
+
+Some mathematical representation. It's often used model logic and often model through script structures.
+
+Where each node is a possible world and accessibility relations represent epistemic possibilities.
+
+If worlds like a w prime is accessible from W, then the agent considers.
+
+W prime at the other world a plausible alternative given their beliefs.
+
+So. Mathematically, B is true at all W if V holds in all worlds W prime.
+
+Accessible from W. This representation is powerful, but computationally expensive.
+
+It scales poorly with large world sets, leading to development of symbolic or compact models such as belief graphs or set based encodings.
+
+Now let's look at possible world semantics. Introduced by genetical and formalized by Kripke, provides a rigorous way to model epistemic states.
+
+Each possible world encodes a consistent set of truths.
+
+The agent's belief state is represented as a subset of these worlds.
+
+For example, in our. In a poker example, the agent player rules out rules incompatible with their private information.
+
+The framework underlies epistemic logic and is broadly used in AI for belief modeling,
+
+especially in planning diagnosis, game theory, where reasoning about others knowledge is crucial.
+
+Note that epistemic logic is our formal system used to model and reason about knowledge and belief of agents within a logical framework.
+
+Now that is not same with the syntax and semantics of model logic.
+
+We have semantics here necessarily, and possibly operators.
+
+So possible roles and accessible relations can be mapped.
+
+This logic satisfies properties such as k.
+
+Meaning always fee implies psi.
+
+Implies in parentheses. Always Phi implies always psi.
+
+And T. Always fee implies fee as truth.
+
+So that's it. Now we have four and five.
+
+As. Positive introspection and negative introspection.
+
+These axioms define the model systems. In agent's reasoning, we must choose the axioms carefully.
+
+For example, belief might not satisfy T.
+
+If agents can believe falsehoods. Accessibility relations here define which roles are reachable from a given goals.
+
+Properties of are. The relations.
+
+Accessibility. Relations. Uh, can determine the model behavior.
+
+For example, reflexive would be t agent knows what is true and transitive agents know they know.
+
+And Euclidean five agents know what they don't know.
+
+Choosing these affects how realistic the agent's reasoning appears.
+
+For example, bounded rationale teenagers might violate 4 or 5.
+
+In addition to epistemic logic, which models what agents know or believe.
+
+Another important formalism for agent behavior is the ontic logic.
+
+The logic of norms, obligations, and permissions, where epistemic logic uses model operators like J knows and B believes.
+
+The ontic logic introduces model operators such as all fee obligatory.
+
+That fee fee must be done. PE fee permitted that fee.
+
+So fee. May be the. And Effie forbidden that fee.
+
+It is forbidden. Um, fees forbidden.
+
+So fee must not be done. These three operators.
+
+Obligatory. Permitted and forbidden, are critical when modeling agents that operate under rules, laws or ethical constraints.
+
+In multi-agent systems. The ontic logic helps formalize protocols where agents have duties, permissions,
+
+or prohibits prohibitions like access control, contract negation, negotiation, or ethical AI systems.
+
+It has its own model axioms. Of course, it can also interact with epistemic logic.
+
+Actually, any logic system can interact with epistemic logic.
+
+An agent may be obligated to do something like or fee, but not know that fee is obligatory.
+
+So not che. In parenthesis or fee, which raises complex reasoning scenarios.
+
+Now let's look at epistemic logic. It formalizes notions of T, J, and b.
+
+They use similar modal structures. Key differences emerge.
+
+Knowledge is often treated as truth preserving.
+
+If an agent knows fee than fi must be true. Whereas belief allows for falsity.
+
+Agents can believe things that are wrong. The distinction matters for AI systems interacting with uncertain or incomplete data.
+
+In multi-agent settings, we also model nested beliefs such as agent A believes that agent B knows fee.
+
+So this is essential for strategic reasoning and cooperation.
+
+And modern epistemic frameworks can also incorporate common knowledge like facts, facts everyone knows like a Prolog database knowledge database.
+
+For example, we talk about talked about logical omni signs problem.
+
+It highlights a key flaw in standard model logic. Agents are assumed to know or believe all logical consequences of what they know or believe.
+
+But the real agents, especially the computational ones, are resource bound.
+
+Even if they could, they I mean, if they would, they couldn't because they cannot deduce everything instantly.
+
+Now this creates an unrealistic model. For example, chat might know a fact, but fail to derive a valid conclusion from it.
+
+So its fixes involve.
+
+I'm and fixes might involve distinguishing between explicit beliefs, stored and implicit beliefs derivable or shifting like a or in a space,
+
+or syntactic models that limit what the agents can reason about uh, uh, directly.
+
+We have a distinction between knowledge and belief. Now.
+
+An important difference. Belief which may be false from knowledge which must be true.
+
+The distinction is not only philosophical but also computationally impactful.
+
+For example, belief revision systems must allow for updating false beliefs where knowledge based systems might require epistemic verification.
+
+In robotics or autonomous agents acting on beliefs that may be incorrect introduces uncertainty
+
+requiring probabilistic reasoning or Bayesian belief networks to model belief confidence.
+
+There are some alternatives. Possible roles. There are also models.
+
+And of course, all these are small updates. Small differences.
+
+The. It is elegant but impractical for complex reasoning tasks.
+
+The alternatives aim to improve computational tractability and realism.
+
+One of them is. Syntactic approaches that limit the scope of agent inference awareness models,
+
+where agents can only reason about formulas they are aware of, and non-formal, uh, non-normal model logics.
+
+These allow for non-homicide, omniscient or inconsistent belief systems.
+
+So these are alternatives to support bounded agents that reflect the limited reasoning capabilities of software systems or human users.
+
+They're especially useful in dynamic environments. The knowledge evolves and the resources are constrained.
+
+Motivation. For alternatives, uh, are a couple.
+
+Logical omissions is unrealistic. Agents need to perform incremental, goal directed reasoning.
+
+And third, representing all possible goals. It is infeasible at large scale.
+
+The real challenge is balancing semantic richness.
+
+Like capturing nuanced mental states with computational feasibility.
+
+Hybrid models combining symbolic reasoning with data driven learning.
+
+Our active research area in this way. Another approach.
+
+Explicit beliefs. These are stored in agent's database, while implicit beliefs are derived from them through inference rules.
+
+The dissimilar subhumans operate. We don't store all consequences of our knowledge, only what we need.
+
+So this logic, uh. Levesque, choose logic is powerful for modeling systems with limited memory or processing time.
+
+For example,
+
+the robot might explicitly know its current location and the name of an inference engine to derive past goals without memorizing all routes.
+
+General awareness. Well, this model limits reasoning to formulas the agent is aware of.
+
+It addresses logical omniscience by modeling what an agent can even formulate internally.
+
+So this avoids unrealistic assumptions and supports more humanlike reasoning.
+
+It's particularly applicable to user modeling in AI. A system shouldn't assume the user understands or even considers certain facts unless prompted.
+
+This has implication in explainable AI and educational agents.
+
+One more model. Uh, Fagin and Halpern's model.
+
+It builds on the base case ideas, simplifying semantics.
+
+It avoids full omniscience by limiting what agent can deduce.
+
+And it has been critiqued for oversimplification.
+
+Its strength lies in modeling practical reasoning.
+
+Scenarios like Smart Assistant system might only consider a limited set of tasks it knows how to perform, ignoring irrelevant logical derivations.
+
+Continuing in this fashion knowledge deduction model proposes a deductive closure model A bound with a bounded reasoning mechanism.
+
+So each of these models try to improve a one or more missing or weak terms concepts paradigms that the previous model brings or keeps.
+
+Agents in this case have a finite set of inference rules and a deductive engine that applies them.
+
+This framework better models real agents like rule based chatbots.
+
+Inference is not unlimited. It allows an introspection.
+
+Agents can reason about what they can derive, supporting self assessment and meta reasoning.
+
+Matter. Language and syntactic models. Modalities.
+
+Back to the original problem. It allows representing beliefs and, uh, knowledge as first class syntactic objects.
+
+For example, instead of saying agent believes fee.
+
+Uh, the agent stores this thing in a belief list.
+
+So this syntactic view enables agents to manipulate and reason about formulas supporting learning, correction, and adaptation.
+
+It's a stepping stone to build self modifying agents or those capable of reflecting on their own reasoning processes.
+
+It's, uh, definitely generative agent architectures.
+
+Finally let's compare. Possible roles.
+
+Semantically rich. Syntactic models.
+
+They are tractable but may lacked that an awareness deduction models.
+
+It's a balance between expressivity and efficiency.
+
+The choice of model depends on application. High systems like autonomous vehicles may require deep models.
+
+Lightweight chatbots may use simple syntactic frameworks, but in emerging direction,
+
+hybrid models that use data driven techniques for pattern recognition and symbolic systems for reasoning and structure.
+
+Now, a theory of belief and intention are increasingly formalized using model logic, temporal logic, and even probabilistic graphical models.
+
+The formal results, like soundness competitions decidable to guide what can be automated and verified in AI.
+
+Such formal insights are foundational for protocol verification, rational agent modeling, and strategic planning.
+
+For instance, model sigma calculus has reason about belief over time in dynamic systems.
+
+These tools are especially important in safety critical and multiple multi-agent domains.
+

@@ -1,0 +1,175 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Our notebook example here demonstrates two generative agent examples using hugging face models to simulate multi-agent collaboration and reasoning.
+
+The first example two agents alpha and beta.
+
+Engage in an iterative dialog to determine the best landing site on a new planet.
+
+Each agent intends to have domain expertise and evaluating terrain safety or water availability.
+
+Uh, though this is not yet fully realized in the prompts.
+
+By exchanging perspectives, they collaboratively weigh risks like volcanic activity against benefits like water access.
+
+To reach a shared conclusion. We can make these experts through Prompt Engineering golf course.
+
+This showcases how dialog based reasoning among agents can emulate.
+
+It's a collaborative decision making process, and of course, there are several examples from Huggingface.
+
+Uh, it's a good idea to try these. And of course, they are evolving.
+
+Uh, it's getting better and better. Uh, the previous llama, the previous five.
+
+These are much weaker models, but now they can do instruct or they can do chats much easier.
+
+Maybe next year we have to update all of these again.
+
+Now, the instruct variation. It's important to, uh, explain what's the difference between instruct and the regular GPT.
+
+It follows more prompt engineering. So that's a better fine tuned, uh, approach for us.
+
+We don't want a general approach, but rather following the prompt closely because I will make an expert to prompt engineering.
+
+Let's follow. Regular installs.
+
+Uh, we can put this off so that if the data is missing, it won't download.
+
+But if the data is there. Then I can have this.
+
+Some warnings. Probably we should remove them. Perhaps.
+
+But depending on the versions you use or there are warnings.
+
+Lots of reds. Or sometimes there are not. It's an ongoing development with transformers.
+
+Cuda is of course faster, even though it's inference.
+
+And if you want to download bigger models, let's say one of the seven TB or four TB, then you can use a CPU and large memory.
+
+That's easier to, uh, accomplish these days because GPU memory is very expensive.
+
+And since we are using. Uh, inference.
+
+These can work, uh, easily. I mean, if it is five seconds of inference on a GPU, I suspect it could be 20s of inference on a CPU.
+
+Now let's get the one. Be in strike model.
+
+Get model. Get model. Get model. Be typical.
+
+And we set the context. Of course. Uh, in this way, like question and answer as well.
+
+So we will fill the context. This the general interface here.
+
+Simple program. Now I have two ones. Two models.
+
+And why? Because if they, uh, learn what inferencing then I can have two different ones.
+
+And, uh, even though I could use the same model with A and B, because there's no context stored, there's no memory.
+
+It would work. However, it is safer to do this way because. In the near future using rag and memory.
+
+I can actually have Jill and be separately with two models, so it will occupy double the space.
+
+It will occupy a double space. And here is the prompt. Your agent, all for your expertise.
+
+Uh, your agent beta are talking to Agent Alpha.
+
+You can improve the prompt, uh, as you see fit.
+
+And then here is the interaction. So a b a b there on the for.
+
+And here is the communication. In my opinion. It's not that it's much improvement compared to the old methods, and in fact better says, uh, it can.
+
+Builds the final verdicts. Or you can ask a okay beta say is this.
+
+Can you summarize the outcome? Did you make a decision?
+
+It only takes 11 17 seconds. Not bad. Another try with gamma.
+
+I think this is a good model. And here is the outcome.
+
+How would you compare this output to the previous output? Embeddings of course.
+
+Now. Example two logic. Reasoning. What we are doing is.
+
+Uh, in problem two. We are having alpha, beta and gamma, uh, and then a coordination model.
+
+So we have three models. As agents and a fourth model to combine all of that.
+
+And by the way, there are constraints. Unavailable.
+
+Monday. Wednesday. Tuesday. These are, uh, proposed slots.
+
+So can you come up with a. Intersection of availability.
+
+It continues in this fashion. The outcome will be a meeting scheduled.
+
+Such as this one. Reasoning ensures preferences maximize conflicts are avoided.
+
+Unfortunately, because we are using a large language model,
+
+the processing or like tokenization, understanding semantics, we don't have to deal with it.
+
+But we can ask the large language model to process what we understand and come up with a decision.
+
+It's much easier in this fashion. So in a way, we are using the AI agents.
+
+The large language model inside doing the difficult NLP.
+
+Let's follow. There are new versions, of course.
+
+Even now, this particular version is wrong. Two months ago.
+
+And by the way, updating PyTorch, just, uh, open parenthesis.
+
+Updating PyTorch is always risky. Recently, for example, it went into git, and, uh, I mean, you have to use Pip.
+
+It caused some trouble for me. My older systems work with old versions, but newer systems don't.
+
+It's a lot of hassle to work to, to catch, to keep up with the updates in this field.
+
+But that's expected. So. Let's see how the second problem is solved.
+
+By the way. There are many ways of solving it, of course. Auto tokenizer.
+
+Auto model. Model A, model B, uh, in order to reclaim the GPU.
+
+Because we use these before now, I have model A, B, C, and I'm using, uh, Google Gamma.
+
+You can all try these as well. They are small models, but still you need a good GPU for that.
+
+I have 32 gig but it will run on 24.
+
+Uh, but 10 or 12 may not cut it.
+
+You have to check if Float16 is available for these models and then make it smaller.
+
+And here are the prompts. Alpha. Beta. Gamma. These are the constraints.
+
+Uh, you have to check if this fits the problem and then responses reasoning prompts.
+
+And this is the fourth model. So now get to models in this fashion.
+
+Get the tokenizer. This particular example uses the same models for all four.
+
+The prompts are different. And of course, if I use memory or rack, uh, it can they can inter communicate have a conversation.
+
+But that's that may not be necessary because this particular problem is more constraint solving constraint satisfaction.
+
+So you can follow the code three prompts and the individual prompt reasoning agent.
+
+And all of these are gamma nine b.
+
+This is Google. Check the output.
+
+So. It made an error, as you see.
+
+Probably if you play with the models, if you use newer models, it will work also as a practice,
+
+as an exercise, check if the problem is explained correctly here.
+
+The problem is here at all and supposedly towards the 11 hour would work.
+
+That concludes this particular lecture. Thank you.
+

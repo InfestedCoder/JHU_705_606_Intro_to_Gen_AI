@@ -1,0 +1,203 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+This particular Jupyter Notebook provides a comprehensive Hands-On Walkthrough of Retrieval Augmented Generation Rag.
+
+It's a very popular technique.
+
+It augments large language models with non-parametric external knowledge sources to improve factual accuracy and relevance.
+
+This can be coming from databases or we can provide it.
+
+This is related to, of course, prompt engineering because we are kind of engineering the prompt with additional data.
+
+It's an easy update of course, but how you do the augmentation matters.
+
+Now we will set up the environment first and there's some information.
+
+We will use these particular sources.
+
+Sentence transformer is incredibly popular.
+
+Uh, when we look at as you see, 87 million downloads.
+
+This is one of the main ones. It's small. What it does is generate an embedding for the sentence.
+
+And it works, uh, as one of the best converts, each sentence doesn't matter what you pass, uh,
+
+a long sentence, a short sentence, multiple sentences, it will output 384 dimensional vectors.
+
+We need fixed size vectors to be able to do the engineering properly, like transformers, for example.
+
+We have to pass, uh, the dimensions in this way.
+
+So each vector is fixed size. The batch dimension is different.
+
+It's the batch dimension and the feature vector size 384.
+
+Now we are also using other information.
+
+One of them is um squad. It's the data sets and it is coming from Stanford.
+
+This this one is a copy. Uh, and it's a very useful data set.
+
+It's applied in many benchmarks. Now we are also using.
+
+A language model. This is a small one.
+
+There are very strong ones today, and this is also popular 2.3 but it is not that popular because there are new ones.
+
+However, we will use, uh, this particular one. You can easily change this to another one.
+
+This particular notebook should be able to run on your computers easily, even without a GPU.
+
+No problem, because this is small. In other examples.
+
+In this course we have seen 15 billion won five, which would require a very good GPU like torch to go back to memory.
+
+And those are, uh, much stronger than GPT two, probably around GPT 3.5 performance.
+
+Now install them. Get the, uh, meta permission.
+
+Uh, in the previous lectures we have done this set the environments so it will not reload multiple times.
+
+Turn off some warnings as these programs continue.
+
+Um, you will have lots of warnings.
+
+Uh uh. If a particular version works, there's no reason to update.
+
+You might need to log in to the hugging face to be able to get that llama download,
+
+but once it's downloaded, you can also pass the credential to a git.
+
+We know this. We have done this before. Now get the data and get some data.
+
+Uh, one way is exploring what the data has, inspecting and then building some information in this fashion.
+
+We have this many titles. Uh, index two is Florida.
+
+Florida has 45 paragraphs. So we will use these as we go forward.
+
+You can also look at other information. Now consider this like a database.
+
+So I'm getting some information from the database. We have a structure here.
+
+Topic and context. We will populate these as we go.
+
+And here is one topic about Beyonce. Now the class rank alarm.
+
+It has these four steps. Find the best matching topic filter vectorize and then generate the answer using the Ella.
+
+Now the constructor gets the sentence transformer.
+
+This is for embeddings. We need to convert each information to a to an embedding so that we can number one keep it.
+
+Number two represent the information properly.
+
+An embedding can be considered like a latent space.
+
+Patterns about that particular information. Uh piece information phrase external data.
+
+Titles embeddings. So we will encode it.
+
+All of them. Self esteem model. Sentence model.
+
+Get. And now here's the generator llama.
+
+Typical text generation maximum is this much. Now here's the, uh generate answer.
+
+Get the embedding. Continue in this fashion.
+
+Build the context. And then. Pass it.
+
+To the large language model and then output it.
+
+By the way, there are many ways of doing Rag. This is a simple way of doing it, but it is still proper.
+
+A lamb, a rag and lamb. It is not an L.A. lamb rack where the rack can be inside the internet.
+
+We covered all of those. Uh, in the slide decks. In the course.
+
+Now let's use it and see how it performs.
+
+Uh, like I said, there are many ways of building this. This is the minimum you can do.
+
+Uh, you can apply other performance metrics here.
+
+For example, in this particular one we are just passing all the context.
+
+Just like that with word embeddings. Well, maybe I should also rank them and then use force five.
+
+That ranking, performance or ranking metric can be a mixture of several uh uh metrics.
+
+One of them could be cosine theta similarity.
+
+Another can be your own customized similarity metric.
+
+For example, you are working on a particular field, and you want that kind of context to be to go into the actual context here.
+
+Who is the US president? And the analysis is correct.
+
+The best topic from external data set is. No problem because it's to two point 2004.
+
+Uh, and this information is correct. So this is not a problem even without RAC.
+
+This could work. Examine the question of the rack and the lamb builds the context.
+
+You can also add prints here. More prints.
+
+And the best topic, best paragraph and search the context.
+
+Now let's look at this one.
+
+What's the largest state in USA by area? Topic paragraph.
+
+The output is incorrect. So could I improve it?
+
+Because Texas is not the largest. You should read the analysis.
+
+Continue in this fashion. Now we were able to.
+
+Uh, kind of prompt engineer this.
+
+Okay, I got the answer. I could do more prompt engineering with the rise in self reflection, for example.
+
+You said Texas, but is it correct? Did you consider all the, uh, Alaska's, um, creative, uh, all the other states like Alaska?
+
+It's the creativity counts here. In the prompt engineering.
+
+Now here. This is correct. Population of Florida.
+
+This is correct. This is correct.
+
+The best topic is not related. And of course, uh.
+
+Do we know if rag or the lamb knows this answer?
+
+That's one of the things, right? I mean, by the way, that's not our point.
+
+The lamb might know the answer, but I'm augmenting it with the context either previously established or feeding from other sources like database.
+
+That's the rag. We are not expecting. The lamb knows everything.
+
+Just like that. Now you should, uh, continue reading analysis and observations.
+
+The most of these are obvious. Just a summary of our observations.
+
+Rag Islam is better than alone. Well.
+
+Yes I know. Probably Raquel Lemon's better in general.
+
+Now, here's another approach. Domain specific flexibility.
+
+It's Lama Shah. Ask the question, tokenize and then generate.
+
+The previous model was, uh, the rag, but now we are using this particular one.
+
+We can find many examples where RAC improves the pure LSM outputs.
+
+But of course, all these experiments might have different results with the different versions of the models.
+
+If you change this llama to another one or update the llama at another time, you might have different answers.
+
+This concludes our demonstration of ragu the lamb. Thank you.
+

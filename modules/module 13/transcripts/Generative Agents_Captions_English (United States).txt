@@ -1,0 +1,19 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Welcome to the session on Generative Agents,
+
+where we explore the principles and applications of AI agents capable of simulating believable human behavior.
+
+This module examines agent theory, covering autonomy, intentionality, and attributes such as rationality and social ability.
+
+We will examine the mechanisms that power generative agents, including memory systems for detailed observations,
+
+reflection for higher order reasoning, and planning frameworks for consistent actions.
+
+Applications range from chat bots into virtual assistants to creative agents producing art and music,
+
+as well as simulating agents for research and training. Join us!
+
+We will explore how these systems are shaping the future of human AI interaction,
+
+along with the ethical considerations and technical challenges they present.
+

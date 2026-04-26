@@ -1,0 +1,19 @@
+[Auto-generated transcript. Edits may have been applied for clarity.]
+Welcome to the session on retrieval augmented generation.
+
+Right. An advanced approach that combines large language models with external knowledge retrieval to improve the accuracy,
+
+relevance, and contextual grounding of AI generated responses.
+
+In this module, we will explore Rack's key components, including retrieval mechanisms, augmentation strategies, and response generation.
+
+We will also discuss the distinctions between sparse and dense retrieval techniques.
+
+The use of vector embeddings like dirt and Glo,
+
+and how modular architectures enhance rack pipelines by addressing challenges like hallucination and data conflicts.
+
+Rag represents a practical solution to integrating real time domain specific knowledge into generative AI systems,
+
+making them more reliable and versatile.
+
