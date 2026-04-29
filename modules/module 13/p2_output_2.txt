@@ -1,0 +1,16 @@
+1. Agent responses
+
+Alpha:
+I am unavailable Monday and prefer mornings from 9 AM–12 PM. I can meet Tuesday, Wednesday, Thursday, or Friday between 9 AM and 12 PM. My strongest options are Tuesday 10 AM, Wednesday 11 AM, or Thursday 10 AM.
+
+Beta:
+I am unavailable Wednesday and prefer afternoons from 1 PM–4 PM. I can meet Monday, Tuesday, Thursday, or Friday between 1 PM and 4 PM. My strongest options are Tuesday 1 PM, Thursday 2 PM, or Friday 3 PM.
+
+Gamma:
+I am unavailable Tuesday and prefer late mornings from 11 AM–1 PM. I can meet Monday, Wednesday, Thursday, or Friday between 11 AM and 1 PM. My strongest options are Wednesday 11 AM, Thursday 12 PM, or Friday 11 AM.
+
+2. Reasoning Agent response
+
+A fully preferred overlap does not exist because Alpha prefers 9 AM–12 PM, Beta prefers 1 PM–4 PM, and Gamma prefers 11 AM–1 PM. The best shared day is Thursday, since none of the agents are unavailable then.
+
+The best compromise time is Thursday at 12 PM. This fits Alpha’s morning preference at the edge, fits Gamma’s late-morning preference exactly, and is close to Beta’s afternoon preference.
