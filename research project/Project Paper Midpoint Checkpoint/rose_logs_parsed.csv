@@ -1,0 +1,558 @@
+run_name,ramsey_r,ramsey_s,ramsey_n,status_dual_bound,status_num_solution_nonzeros_binary,status_num_solution_nonzeros_continuous,status_num_solution_nonzeros_integer,status_objective,status_primal_bound,status_solution_status,status_termination_reason,metric_num_boxes,metric_num_burls,metric_num_cores,metric_num_cuts_applied,metric_num_cuts_generated,metric_num_lp_iterations,metric_num_nodes_leaves,metric_num_nodes_parent,metric_num_nodes_processed,metric_num_nodes_pruned,metric_num_nodes_total,metric_num_nodes_unprocessed,metric_num_solutions_found,metric_time_zero_epoch_seconds,metric_timeline_init_seconds,metric_timeline_postsolve_seconds,metric_timeline_presolve_seconds,metric_timeline_solve_seconds,metric_timeline_total_seconds,problem_known_objective,problem_name,problem_num_constraints,problem_num_constraints_aggregation,problem_num_constraints_binary_packing,problem_num_constraints_cardinality,problem_num_constraints_empty,problem_num_constraints_equation_knapsack,problem_num_constraints_free,problem_num_constraints_general,problem_num_constraints_integer_knapsack,problem_num_constraints_invariant_knapsack,problem_num_constraints_knapsack,problem_num_constraints_mixed_binary,problem_num_constraints_precedence,problem_num_constraints_set_covering,problem_num_constraints_set_packing,problem_num_constraints_set_partitioning,problem_num_constraints_singleton,problem_num_constraints_variable_bound,problem_num_nonzeros,problem_num_presolved_constraints,problem_num_presolved_nonzeros,problem_num_presolved_variables,problem_num_presolved_variables_binary,problem_num_presolved_variables_continuous,problem_num_presolved_variables_integer,problem_num_variables,problem_num_variables_binary,problem_num_variables_continuous,problem_num_variables_integer,problem_objective_sense,detail_dive_num_entered,detail_dive_num_infeasible_domain,detail_dive_num_infeasible_lp,detail_dive_num_pruned,detail_dive_num_success,detail_domainprop_num_calls,detail_domainprop_num_cons_propagated,detail_domainprop_num_infeasible,detail_domainprop_num_obj_propagated,detail_domainprop_num_passes_completed,detail_domainprop_num_redcost_propagated,detail_domainprop_num_reset,detail_domainprop_num_runaway_bouns,detail_domainprop_num_vars_propagated,detail_first_time_feasible_seconds,detail_first_time_gap_10_percent_seconds,detail_first_time_gap_1_percent_seconds,detail_first_time_gap_2_percent_seconds,detail_first_time_gap_5_percent_seconds,detail_nodes_branched,detail_nodes_cut,detail_nodes_post_lp_infeasible,detail_nodes_post_lp_integer,detail_nodes_post_lp_leaf,detail_nodes_post_lp_pruned,detail_nodes_pre_lp_infeasible,detail_nodes_pre_lp_integer,detail_nodes_pre_lp_leaf,detail_nodes_pre_lp_pruned,detail_timeslice_burl_branch_and_bound_seconds,detail_timeslice_burl_cuts_seconds,detail_timeslice_burl_dive_seconds,detail_timeslice_burl_heuristics_seconds,detail_timeslice_burl_solve_seconds,detail_timeslice_burl_strong_branch_seconds,detail_timeslice_burl_total_seconds,bounds_num_updates,bounds_final_dual,bounds_final_primal,bounds_first_timestamp,bounds_last_timestamp,bounds_duration,bounds_origin_none_count,stdout_clean,root_lp_objective,root_lp_winner,stages_observed,num_stages_observed,original_constraints,original_variables,original_nonzeros,final_status_log,final_objective_log,termination_message,solved_in_presolve,derived_solve_fraction,derived_presolve_fraction,derived_cut_efficiency,derived_presolve_var_reduction,derived_presolve_con_reduction,derived_nodes_per_second,derived_is_optimal,derived_has_solution,detail_cut_cover_applied,detail_cut_cover_created,detail_cut_cover_evaluate_seconds,detail_cut_cover_excluded_by_density,detail_cut_cover_excluded_by_dynamic_range,detail_cut_cover_excluded_by_efficacy,detail_cut_cover_excluded_by_obj_parallelism,detail_cut_cover_generate_seconds,detail_cut_cover_not_suitable,detail_cut_cover_total_seconds,detail_cut_gomory_applied,detail_cut_gomory_created,detail_cut_gomory_evaluate_seconds,detail_cut_gomory_excluded_by_density,detail_cut_gomory_excluded_by_dynamic_range,detail_cut_gomory_excluded_by_efficacy,detail_cut_gomory_excluded_by_obj_parallelism,detail_cut_gomory_generate_seconds,detail_cut_gomory_not_suitable,detail_cut_gomory_total_seconds,detail_cut_mir_applied,detail_cut_mir_created,detail_cut_mir_evaluate_seconds,detail_cut_mir_excluded_by_density,detail_cut_mir_excluded_by_dynamic_range,detail_cut_mir_excluded_by_efficacy,detail_cut_mir_excluded_by_obj_parallelism,detail_cut_mir_generate_seconds,detail_cut_mir_not_suitable,detail_cut_mir_total_seconds,detail_cut_strong_cg_applied,detail_cut_strong_cg_created,detail_cut_strong_cg_evaluate_seconds,detail_cut_strong_cg_excluded_by_density,detail_cut_strong_cg_excluded_by_dynamic_range,detail_cut_strong_cg_excluded_by_efficacy,detail_cut_strong_cg_excluded_by_obj_parallelism,detail_cut_strong_cg_generate_seconds,detail_cut_strong_cg_not_suitable,detail_cut_strong_cg_total_seconds,detail_heuristic_analogsat_calls,detail_heuristic_analogsat_found_feasible_solutions,detail_heuristic_analogsat_iterations,detail_heuristic_analogsat_total_seconds,detail_heuristic_clique_heuristic_calls,detail_heuristic_clique_heuristic_found_feasible_solutions,detail_heuristic_clique_heuristic_iterations,detail_heuristic_clique_heuristic_total_seconds,detail_heuristic_feasibility_jump_calls,detail_heuristic_feasibility_jump_found_feasible_solutions,detail_heuristic_feasibility_jump_iterations,detail_heuristic_feasibility_jump_total_seconds,detail_heuristic_rens_calls,detail_heuristic_rens_found_feasible_solutions,detail_heuristic_rens_iterations,detail_heuristic_rens_total_seconds,detail_heuristic_trivial_calls,detail_heuristic_trivial_found_feasible_solutions,detail_heuristic_trivial_iterations,detail_heuristic_trivial_total_seconds,bounds_origin_heuristic_count,presolved_constraints_log,presolved_variables_log,presolved_nonzeros_log,detail_heuristic_advanced_rounding_calls,detail_heuristic_advanced_rounding_found_feasible_solutions,detail_heuristic_advanced_rounding_iterations,detail_heuristic_advanced_rounding_total_seconds,detail_heuristic_cuopt_mip_calls,detail_heuristic_cuopt_mip_found_feasible_solutions,detail_heuristic_cuopt_mip_iterations,detail_heuristic_cuopt_mip_running_seconds,detail_heuristic_cuopt_mip_total_seconds,detail_heuristic_cuopt_mip_waiting_for_root_seconds,detail_heuristic_inner_set_calls,detail_heuristic_inner_set_found_feasible_solutions,detail_heuristic_inner_set_iterations,detail_heuristic_inner_set_total_seconds,detail_heuristic_shifting_calls,detail_heuristic_shifting_found_feasible_solutions,detail_heuristic_shifting_iterations,detail_heuristic_shifting_total_seconds,detail_heuristic_simple_rounding_calls,detail_heuristic_simple_rounding_found_feasible_solutions,detail_heuristic_simple_rounding_iterations,detail_heuristic_simple_rounding_total_seconds
+ramsey_r3_s3_n3,3,3,3,,1,1,0,0.0,,optimal,finished,1,64,64,0,0,0,0,0,0,0,0,0,0,1773605057.532929,0.003827991,0.0,0.026104836000000003,0.0,0.058653088000000006,,ramsey_r3_s3_n3,3,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,1,0,7,0,0,0,0,0,0,4,3,1,0,minimize,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.226747352,1,,,0.034379742000000005,0.034379742000000005,0.0,1,"[    0.028]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.028]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.032]:[              banner.cpp:   67]:        ▼         _____                
+[    0.032]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.032]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.032]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.032]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.032]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.032]:[              banner.cpp:   73]:        ▲       
+[    0.032]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.032]:[              banner.cpp:   83]: Host: rose-worker-job-3a11b598-e196-4dd7-8981-0db988e02ec6-wsbr9
+[    0.033]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s3_n3
+[    0.033]:[         head_client.cpp:  398]: Sense: minimize
+[    0.033]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.033]:[         head_client.cpp:  400]: Original:  3 x 4, nonz: 7
+[    0.034]:[         head_client.cpp:  479]: Problem solved at the Head in Highs
+[    0.034]:[   head_client_state.cpp:   95]: Terminating
+[    0.058]:[   head_client_state.cpp:  104]: Exiting
+[    0.058]:[         head_client.cpp:  236]: Head has solved the problem locally via highs presolve
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    0.058]           inf          -inf      nan%              0/0       0/0    3 0 0 1 0
+[    0.058]:[         head_client.cpp:  290]: Solution validation OK
+[    0.058]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    0.058]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    0.059]:[         head_client.cpp:  320]: Termination reason: finished,  Message: Finished in Head by Highs
+[    0.059]:[         head_client.cpp:  712]: Final    objective: 0, status: optimal
+",,,,0,3,4,7,optimal,0.0,Finished in Head by Highs,1,0.0,0.4450718093478727,,1.0,1.0,,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+ramsey_r3_s3_n5,3,3,5,-0.0,5,1,0,0.0,0.0,optimal,finished,1,64,64,0,10,9,1,1,2,0,3,1,5,1773605065.478461,0.0035396610000000004,0.00027431300000000004,0.0017716250000000002,0.028901849,0.060182076,,ramsey_r3_s3_n5,21,0,0,0,0,0,0,0,0,10,0,0,0,10,0,0,1,0,61,10,30,10,10,0,0,11,10,1,0,minimize,0,0,0,0,0,3,20,1,3,3,0,0,0,0,0.02173982,0.026998378,0.026998503,0.026998465000000003,0.026998428,1,0,0,0,0,0,1,0,1,0,3.8053e-05,0.002856423,0.047112671,0.0021582420000000003,0.000226469,0.0,0.258465192,3,-0.0,0.0,0.031051580000000002,0.059931847,0.028880267,1,"[    0.026]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.026]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.029]:[              banner.cpp:   67]:        ▼         _____                
+[    0.029]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.029]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.029]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.029]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.029]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.029]:[              banner.cpp:   73]:        ▲       
+[    0.029]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.029]:[              banner.cpp:   83]: Host: rose-worker-job-e53fc5a5-7a76-40d7-b744-23fc0a177bef-9sqjj
+[    0.030]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s3_n5
+[    0.030]:[         head_client.cpp:  398]: Sense: minimize
+[    0.030]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.030]:[         head_client.cpp:  400]: Original:  21 x 11, nonz: 61
+[    0.031]:[         head_client.cpp:  471]: Presolved: 10 x 10, nonz: 30
+[    0.031]:[         head_client.cpp:  473]: Presolved objective offset: 0.000000
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  box burl method
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ---- -------------------------
+[    0.054]          -inf         0.000      inf%     fjump    2/2       0/0    0 0 0 0 0 contest
+[    0.054]          -inf         0.000      inf%              2/2       0/0    0 0 0 0 0 contest
+[    0.055]          -inf         0.000      inf%              2/2       0/0    0 0 0 0 0 contest    1   52 highs
+[    0.055]          -inf         0.000      inf%              2/2       0/0    0 0 0 0 0 contest    1   59 cuopt
+[    0.055]:[        root_contest.cpp:  111]: Root LP contest winner: cuopt, status: optimal, on box 1, objective: -0
+[    0.055]:[        root_contest.cpp:  177]: Selected method for branch: cuopt
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass requested responded  created selected     kept    total int_fix
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- --------- --------- -------- -------- -------- -------- -------
+[    0.055]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 1    cuts
+[    0.056]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0    cuts    1      30        30         0        0        0        0        0
+[    0.056]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0    cuts    1      30        30         0
+[    0.056]:[    root_cut_manager.cpp:  208]: No change, aborting cut loop.
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  done
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- -----
+[    0.056]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0 strongb     0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass  done avg.len nodesol  infeas    feas
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ----- ------- ------- ------- -------
+[    0.056]        -0.000         0.000     0.00%              0/4       2/60   1 3 0 0 0    dive    0     0       0       0       0       0
+[    0.057]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0    dive    1  1000       1    1000    1000       0
+[    0.058]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0    dive    2  1000       1    1000    1000       0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage    solved    pruned      leaf       inQ     cuts
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- --------- --------- --------- --------- --------
+[    0.059]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0  branch         0         0         0         0     0.00
+[    0.059]:[head_branching_controlle:  132]: Mip Gap threshold reached!!
+[    0.059]:[   head_client_state.cpp:   95]: Terminating
+[    0.060]:[   head_client_state.cpp:  104]: Exiting
+[    0.060]:[         head_client.cpp:  595]: Head proceeding to postsolve the current solution (10x10)
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    0.060]        -0.000         0.000     0.00%              0/4       0/60   0 0 0 0 0
+[    0.060]:[         head_client.cpp:  290]: Solution validation OK
+[    0.060]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    0.060]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    0.060]:[         head_client.cpp:  320]: Termination reason: finished,  Message: Mip Gap threshold reached!!
+[    0.060]:[         head_client.cpp:  712]: Final    objective: 0, status: optimal
+",-0.0,cuopt,"branch,contest,cuts,dive,strongb",5,21,11,61,optimal,0.0,Mip Gap threshold reached!!,0,0.480240146584508,0.029437751532532714,0.0,0.09090909090909094,0.5238095238095238,103.79958735512042,1,1,0,0,0.0,0,0,0,0,0.0,10,0.00011151300000000001,0,10,4.342e-06,10,0,0,0,0.00010898300000000002,0,0.000114345,0,0,0.0,0,0,0,0,4.424e-06,10,4.454000000000001e-06,0,0,0.0,0,0,0,0,0.0,0,0.0,1,1,60,0.0005656690000000001,0,0,0,0.0,1,1,8,0.000581893,0,0,0,0.0,1,0,0,1.8023e-05,2,10,10,30,,,,,,,,,,,,,,,,,,,,,,
+ramsey_r3_s3_n6,3,3,6,,,,,,,no_solution,finished,1,64,64,0,18,37741,20,19,39,0,39,0,0,1773605055.831693,0.0038899850000000003,0.000313151,0.002377231,1.186417686,1.220350475,,ramsey_r3_s3_n6,41,0,0,0,0,0,0,0,0,20,0,0,0,20,0,0,1,0,121,20,60,15,15,0,0,16,15,1,0,minimize,0,0,0,0,0,77,1074,20,39,115,0,0,0,234,0.0,0.0,0.0,0.0,0.0,19,0,0,0,0,0,20,0,20,0,0.000139681,0.05432358300000001,0.26283901500000006,0.629577381,0.002209859,0.0,70.73790921700001,3,-0.0,,0.033673166000000004,1.220042698,1.186369532,3,"[    0.027]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.027]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.031]:[              banner.cpp:   67]:        ▼         _____                
+[    0.031]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.031]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.031]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.031]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.031]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.031]:[              banner.cpp:   73]:        ▲       
+[    0.031]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.031]:[              banner.cpp:   83]: Host: rose-worker-job-68467cfa-2de7-48d8-a3c2-0158159249a0-8frgp
+[    0.032]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s3_n6
+[    0.032]:[         head_client.cpp:  398]: Sense: minimize
+[    0.032]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.032]:[         head_client.cpp:  400]: Original:  41 x 16, nonz: 121
+[    0.034]:[         head_client.cpp:  471]: Presolved: 20 x 15, nonz: 60
+[    0.034]:[         head_client.cpp:  473]: Presolved objective offset: 0.000000
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  box burl method
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ---- -------------------------
+[    0.173]          -inf           inf      nan%              0/0       0/0    1 0 0 0 0 contest
+[    0.173]          -inf           inf      nan%              0/0       0/0    1 0 0 0 0 contest    1   34 highs
+[    0.173]          -inf           inf      nan%              0/0       0/0    1 0 0 0 0 contest    1   63 cuopt
+[    0.174]:[        root_contest.cpp:  111]: Root LP contest winner: cuopt, status: optimal, on box 1, objective: -0
+[    0.174]:[        root_contest.cpp:  177]: Selected method for branch: cuopt
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass requested responded  created selected     kept    total int_fix
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- --------- --------- -------- -------- -------- -------- -------
+[    0.174]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 1    cuts
+[    0.175]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    1      52        52         2        0        0        0        0
+[    0.175]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    1      52        52         2
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    2      32        32         2        0        0        0        0
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    2      32        32         2
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    3      32        32         2        0        0        0        0
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    3      32        32         2
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    4      32        32         2        0        0        0        0
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    4      32        32         2
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    5      32        32         2        0        0        0        0
+[    0.176]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    5      32        32         2
+[    0.177]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    6      32        32         2        0        0        0        0
+[    0.177]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    6      32        32         2
+[    0.177]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    7      32        32         2        0        0        0        0
+[    0.177]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    7      32        32         2
+[    0.177]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    8      32        32         2        0        0        0        0
+[    0.177]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    8      32        32         2
+[    0.178]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    9      32        32         2        0        0        0        0
+[    0.178]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts    9      32        32         2
+[    0.178]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   10      32        32         2        0        0        0        0
+[    0.178]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   10      32        32         2
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass requested responded  created selected     kept    total int_fix
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- --------- --------- -------- -------- -------- -------- -------
+[    0.178]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   11      32        32         2        0        0        0        0
+[    0.178]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   11      32        32         2
+[    0.179]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   12      32        32         2        0        0        0        0
+[    0.179]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   12      32        32         2
+[    0.179]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   13      32        32         2        0        0        0        0
+[    0.179]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   13      32        32         2
+[    0.179]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   14      32        32         2        0        0        0        0
+[    0.179]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   14      32        32         2
+[    0.180]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   15      32        32         2        0        0        0        0
+[    0.180]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   15      32        32         2
+[    0.180]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   16      32        32         2        0        0        0        0
+[    0.180]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   16      32        32         2
+[    0.180]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   17      32        32         2        0        0        0        0
+[    0.180]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   17      32        32         2
+[    0.180]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   18      32        32         2        0        0        0        0
+[    0.181]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   18      32        32         2
+[    0.181]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   19      32        32         2        0        0        0        0
+[    0.181]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   19      32        32         2
+[    0.181]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   20      32        32         2        0        0        0        0
+[    0.181]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    cuts   20      32        32         2
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  done
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- -----
+[    0.181]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0 strongb     0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass  done avg.len nodesol  infeas    feas
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ----- ------- ------- ------- -------
+[    0.181]        -0.000           inf      nan%              1/4       1/60   2 2 0 0 0    dive    0     0       0       0       0       0
+[    0.190]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    dive    1  1000       2    2000       0       0
+[    0.204]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0    dive    2  1000       5    4682     924       0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage    solved    pruned      leaf       inQ     cuts
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- --------- --------- --------- --------- --------
+[    0.218]        -0.000           inf      nan%              1/4       1/60   1 0 0 0 0  branch         0         0         0         0     0.00
+[    1.218]        -0.000           inf      nan%              1/4       0/60   0 0 0 0 0  branch         0         0         0         1     0.00
+[    1.219]:[head_branching_controlle:  141]: Head thinks there are no more nodes!!
+[    1.219]:[   head_client_state.cpp:   95]: Terminating
+[    1.220]:[   head_client_state.cpp:  104]: Exiting
+[    1.220]:[         head_client.cpp:  611]: Problem finished with no valid solution. (0x0)
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    1.220]           inf           inf      nan%              0/0       0/0    0 0 0 0 0
+[    1.220]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    1.220]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    1.220]:[         head_client.cpp:  320]: Termination reason: finished,  Message: Head thinks there are no more nodes!!
+[    1.220]:[         head_client.cpp:  712]: Final    objective: -nan, status: no_solution
+",-0.0,cuopt,"branch,contest,cuts,dive,strongb",5,41,16,121,no_solution,nan,Head thinks there are no more nodes!!,0,0.9721942264168004,0.0019479903918585356,0.0,0.0625,0.5121951219512195,32.87206559730938,0,0,0,0,0.0,0,0,0,0,0.0,33,0.000528192,3,18,7.417000000000001e-06,15,0,0,0,0.00012497100000000003,0,0.000134218,0,0,0.0,0,0,0,0,1.032e-06,1,1.032e-06,0,0,0.0,0,0,0,0,0.0,0,0.0,1,0,100000,0.298622814,0,0,0,0.0,9,0,90000,0.322284446,0,0,0,0.0,1,0,0,2.7590000000000002e-05,,20,15,60,1,0,3,7.33e-06,0,0,0,0.00029320800000000004,0.00029341100000000004,3.2e-08,1,0,0,0.0007624130000000001,1,0,13,1.1258000000000001e-05,0,0,0,2.2179999999999998e-06
+ramsey_r3_s4_n4,3,4,4,-0.0,1,1,0,0.0,0.0,optimal,finished,1,64,64,0,0,0,1,0,1,0,1,0,7,1773605072.031803,0.0037676000000000003,0.0005432050000000001,0.0018665670000000002,0.025072001,0.059896926,,ramsey_r3_s4_n4,6,0,0,0,0,0,0,0,0,4,0,0,0,1,0,0,1,0,19,5,18,6,6,0,0,7,6,1,0,minimize,0,0,0,0,0,1,5,0,1,1,0,0,0,0,0.021696323,0.026836048,0.026836182,0.026836141,0.026836102,0,0,0,1,1,0,0,0,0,0,0.0,0.0,0.0,0.0008559150000000001,0.000469475,0.0,0.4337829109999999,3,-0.0,0.0,0.034330558000000004,0.059383629,0.025053070999999996,1,"[    0.028]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.028]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.032]:[              banner.cpp:   67]:        ▼         _____                
+[    0.032]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.032]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.032]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.032]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.032]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.032]:[              banner.cpp:   73]:        ▲       
+[    0.032]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.032]:[              banner.cpp:   83]: Host: rose-worker-job-ba5b37d6-04f1-43fc-9cc5-a2297332cd1f-x7pq8
+[    0.033]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s4_n4
+[    0.033]:[         head_client.cpp:  398]: Sense: minimize
+[    0.033]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.033]:[         head_client.cpp:  400]: Original:  6 x 7, nonz: 19
+[    0.034]:[         head_client.cpp:  471]: Presolved: 5 x 6, nonz: 18
+[    0.034]:[         head_client.cpp:  473]: Presolved objective offset: 0.000000
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  box burl method
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ---- -------------------------
+[    0.058]          -inf         0.000      inf%     fjump    1/1       0/0    0 0 0 0 0 contest
+[    0.058]          -inf         0.000      inf%              1/1       0/0    0 0 0 0 0 contest
+[    0.058]          -inf         0.000      inf%              1/1       0/0    0 0 0 0 0 contest    1   38 highs
+[    0.058]          -inf         0.000      inf%              1/1       0/0    0 0 0 0 0 contest    1   59 cuopt
+[    0.058]:[        root_contest.cpp:  111]: Root LP contest winner: cuopt, status: optimal, on box 1, objective: -0
+[    0.058]:[        root_contest.cpp:  177]: Selected method for branch: cuopt
+[    0.058]:[   head_client_state.cpp:   95]: Terminating
+[    0.059]:[   head_client_state.cpp:  104]: Exiting
+[    0.059]:[         head_client.cpp:  595]: Head proceeding to postsolve the current solution (5x6)
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    0.059]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 1
+[    0.059]:[         head_client.cpp:  290]: Solution validation OK
+[    0.059]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    0.059]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    0.060]:[         head_client.cpp:  320]: Termination reason: finished,  Message: LP solved, MIP infeasible/unbounded/no_solution, or MIP with integral solution found by LP method
+[    0.060]:[         head_client.cpp:  712]: Final    objective: 0, status: optimal
+",-0.0,cuopt,"branch,contest",2,6,7,19,optimal,0.0,"LP solved, MIP infeasible/unbounded/no_solution, or MIP with integral solution found by LP method",0,0.4185857718307614,0.031162984891745533,,0.1428571428571429,0.16666666666666663,39.885129232405504,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,0,0,2.279e-06,0,0,0,0.0,1,1,2,0.00036973,,,,,1,0,0,1.9810000000000002e-05,2,5,6,18,,,,,,,,,,,1,5,0,0.0009944420000000001,,,,,,,,
+ramsey_r3_s4_n5,3,4,5,-0.0,2,1,0,0.0,0.0,optimal,finished,1,64,64,0,0,1,1,0,1,0,1,0,2,1773605058.719647,0.003528877,0.000228203,0.00220907,0.02443578,0.057027341,,ramsey_r3_s4_n5,16,0,0,0,0,0,0,0,0,10,0,0,0,5,0,0,1,0,61,15,60,10,10,0,0,11,10,1,0,minimize,0,0,0,0,0,1,15,0,1,1,0,0,0,0,0.021868823000000003,0.027101103,0.027101228,0.027101188000000002,0.027101151,0,0,0,1,1,0,0,0,0,0,0.0,0.0,0.0,0.001454447,0.0005053810000000001,0.0,0.14643863900000004,3,-0.0,0.0,0.032412817000000003,0.056830929,0.024418112,1,"[    0.026]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.026]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.030]:[              banner.cpp:   67]:        ▼         _____                
+[    0.030]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.030]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.030]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.030]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.030]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.030]:[              banner.cpp:   73]:        ▲       
+[    0.030]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.030]:[              banner.cpp:   83]: Host: rose-worker-job-3c4e122f-220c-4ace-9de2-1e3aac4e4515-jltkx
+[    0.031]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s4_n5
+[    0.031]:[         head_client.cpp:  398]: Sense: minimize
+[    0.031]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.031]:[         head_client.cpp:  400]: Original:  16 x 11, nonz: 61
+[    0.032]:[         head_client.cpp:  471]: Presolved: 15 x 10, nonz: 60
+[    0.032]:[         head_client.cpp:  473]: Presolved objective offset: 0.000000
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  box burl method
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ---- -------------------------
+[    0.056]          -inf         0.000      inf%     fjump    2/4       0/0    0 0 0 0 0 contest
+[    0.056]          -inf         0.000      inf%              2/4       0/0    0 0 0 0 0 contest
+[    0.056]          -inf         0.000      inf%              2/4       0/0    0 0 0 0 0 contest    1   56 highs
+[    0.056]          -inf         0.000      inf%              2/4       0/0    0 0 0 0 0 contest    1   63 cuopt
+[    0.056]:[        root_contest.cpp:  111]: Root LP contest winner: cuopt, status: optimal, on box 1, objective: -0
+[    0.056]:[        root_contest.cpp:  177]: Selected method for branch: cuopt
+[    0.056]:[   head_client_state.cpp:   95]: Terminating
+[    0.057]:[   head_client_state.cpp:  104]: Exiting
+[    0.057]:[         head_client.cpp:  595]: Head proceeding to postsolve the current solution (15x10)
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    0.057]        -0.000         0.000     0.00%              0/4       2/60   0 0 0 0 1
+[    0.057]:[         head_client.cpp:  290]: Solution validation OK
+[    0.057]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    0.057]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    0.057]:[         head_client.cpp:  320]: Termination reason: finished,  Message: LP solved, MIP infeasible/unbounded/no_solution, or MIP with integral solution found by LP method
+[    0.057]:[         head_client.cpp:  712]: Final    objective: 0, status: optimal
+",-0.0,cuopt,"branch,contest",2,16,11,61,optimal,0.0,"LP solved, MIP infeasible/unbounded/no_solution, or MIP with integral solution found by LP method",0,0.42849236123423673,0.03873703317150978,,0.09090909090909094,0.0625,40.92359646387388,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,0,0,0.0,,,,,,,,,,,,,2,15,10,60,,,,,,,,,,,1,0,0,0.001224676,,,,,,,,
+ramsey_r3_s4_n6,3,4,6,-0.0,3,1,0,0.0,0.0,optimal,finished,1,64,64,0,7,9,1,1,2,0,3,1,4,1773605075.389958,0.0035361710000000003,0.000309726,0.0023906970000000002,0.148540176,0.181377224,,ramsey_r3_s4_n6,36,0,0,0,0,0,0,0,0,20,0,0,0,15,0,0,1,0,151,35,150,15,15,0,0,16,15,1,0,minimize,0,0,0,0,0,3,70,1,3,3,0,0,0,0,0.022217184,0.146323844,0.146324053,0.146324008,0.146323963,1,0,0,0,0,0,1,0,1,0,3.3551000000000005e-05,0.007029342,0.024455198000000004,0.004606673,0.00030384000000000005,0.0,1.958860446,3,-0.0,0.0,0.032585678,0.18109914100000002,0.148513463,1,"[    0.026]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.026]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.030]:[              banner.cpp:   67]:        ▼         _____                
+[    0.030]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.030]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.030]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.030]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.030]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.030]:[              banner.cpp:   73]:        ▲       
+[    0.030]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.030]:[              banner.cpp:   83]: Host: rose-worker-job-b10edf43-4cd8-4d2d-862c-94c107fbcf76-jfjcj
+[    0.031]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s4_n6
+[    0.031]:[         head_client.cpp:  398]: Sense: minimize
+[    0.031]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.031]:[         head_client.cpp:  400]: Original:  36 x 16, nonz: 151
+[    0.032]:[         head_client.cpp:  471]: Presolved: 35 x 15, nonz: 150
+[    0.032]:[         head_client.cpp:  473]: Presolved objective offset: 0.000000
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  box burl method
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ---- -------------------------
+[    0.175]          -inf         0.000      inf%     fjump    2/2       0/0    0 0 0 0 0 contest
+[    0.175]          -inf         0.000      inf%              2/2       0/0    0 0 0 0 0 contest
+[    0.175]          -inf         0.000      inf%              2/2       0/0    0 0 0 0 0 contest    1    8 highs
+[    0.175]          -inf         0.000      inf%              2/2       0/0    0 0 0 0 0 contest    1   62 cuopt
+[    0.175]:[        root_contest.cpp:  111]: Root LP contest winner: cuopt, status: optimal, on box 1, objective: -0
+[    0.175]:[        root_contest.cpp:  177]: Selected method for branch: cuopt
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass requested responded  created selected     kept    total int_fix
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- --------- --------- -------- -------- -------- -------- -------
+[    0.176]        -0.000         0.000     0.00%              0/4       1/60   0 0 0 0 1    cuts
+[    0.177]        -0.000         0.000     0.00%              0/4       1/60   0 0 0 0 0    cuts    1      77        77         0        0        0        0        0
+[    0.177]        -0.000         0.000     0.00%              0/4       1/60   0 0 0 0 0    cuts    1      77        77         0
+[    0.177]:[    root_cut_manager.cpp:  208]: No change, aborting cut loop.
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  done
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- -----
+[    0.177]        -0.000         0.000     0.00%              0/4       1/60   0 0 0 0 0 strongb     0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass  done avg.len nodesol  infeas    feas
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ----- ------- ------- ------- -------
+[    0.177]        -0.000         0.000     0.00%              0/4       1/60   1 3 0 0 0    dive    0     0       0       0       0       0
+[    0.178]        -0.000         0.000     0.00%              0/4       1/60   0 0 0 0 0    dive    1  1000       1    1000    1000       0
+[    0.179]        -0.000         0.000     0.00%              0/4       1/60   0 0 0 0 0    dive    2  1000       1    1000    1000       0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage    solved    pruned      leaf       inQ     cuts
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- --------- --------- --------- --------- --------
+[    0.180]        -0.000         0.000     0.00%              0/4       1/60   0 0 0 0 0  branch         0         0         0         0     0.00
+[    0.180]:[head_branching_controlle:  132]: Mip Gap threshold reached!!
+[    0.181]:[   head_client_state.cpp:   95]: Terminating
+[    0.181]:[   head_client_state.cpp:  104]: Exiting
+[    0.181]:[         head_client.cpp:  595]: Head proceeding to postsolve the current solution (35x15)
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    0.181]        -0.000         0.000     0.00%              0/4       0/60   0 0 0 0 0
+[    0.181]:[         head_client.cpp:  290]: Solution validation OK
+[    0.181]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    0.181]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    0.181]:[         head_client.cpp:  320]: Termination reason: finished,  Message: Mip Gap threshold reached!!
+[    0.181]:[         head_client.cpp:  712]: Final    objective: 0, status: optimal
+",-0.0,cuopt,"branch,contest,cuts,dive,strongb",5,36,16,151,optimal,0.0,Mip Gap threshold reached!!,0,0.8189571585900994,0.013180800473603016,0.0,0.0625,0.02777777777777779,20.196556115565663,1,1,0,0,0.0,0,0,0,0,0.0,35,0.00036940799999999994,0,7,3.278e-06,7,0,0,0,8.632199999999999e-05,0,9.0317e-05,0,0,0.0,0,0,0,0,1.0270999999999999e-05,35,1.0338e-05,0,0,0.0,0,0,0,0,0.0,0,0.0,1,0,0,1.883e-06,0,0,0,0.0,1,1,4,0.0007620950000000001,,,,,1,0,0,4.0788e-05,2,35,15,150,1,0,3,9.268e-06,0,0,0,0.000253659,0.000253888,3.2e-08,1,0,0,0.001617914,1,0,8,1.6311e-05,0,0,0,1.6730000000000001e-06
+ramsey_r3_s4_n8,3,4,8,0.0,11,1,0,0.0,0.0,optimal,finished,1,64,64,0,28,0,1,1,2,0,3,1,1,1773605063.9779348,0.003826266,0.00069649,0.002880797,0.03524368,0.069059642,,ramsey_r3_s4_n8,127,0,0,0,0,0,0,0,0,56,0,0,0,70,0,0,1,0,589,126,588,28,28,0,0,29,28,1,0,minimize,0,0,0,0,0,3,252,1,3,3,0,0,0,0,0.027367379,0.028399024000000002,0.028399191,0.028399124,0.028399087000000003,1,0,0,0,0,0,1,0,1,0,3.9355000000000005e-05,0.075886668,0.250915197,0.031659218,0.001461746,0.0,1.0077344770000003,3,0.0,0.0,0.033287409000000004,0.068433773,0.035146364,1,"[    0.026]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.026]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.030]:[              banner.cpp:   67]:        ▼         _____                
+[    0.030]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.030]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.030]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.030]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.030]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.030]:[              banner.cpp:   73]:        ▲       
+[    0.030]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.030]:[              banner.cpp:   83]: Host: rose-worker-job-e53551eb-5cf3-4d5c-b171-cf1745c160ab-wtc9n
+[    0.031]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s4_n8
+[    0.031]:[         head_client.cpp:  398]: Sense: minimize
+[    0.031]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.031]:[         head_client.cpp:  400]: Original:  127 x 29, nonz: 589
+[    0.033]:[         head_client.cpp:  471]: Presolved: 126 x 28, nonz: 588
+[    0.033]:[         head_client.cpp:  473]: Presolved objective offset: 0.000000
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  box burl method
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ---- -------------------------
+[    0.056]          -inf           inf      nan%              0/0       0/0    0 0 0 1 0 contest
+[    0.057]          -inf         0.000      inf%     fjump    1/4       0/60   0 0 0 1 0 contest    1   47 highs
+[    0.057]          -inf         0.000      inf%              1/4       0/60   0 0 0 1 0 contest    1   62 cuopt
+[    0.058]:[        root_contest.cpp:  111]: Root LP contest winner: highs, status: optimal, on box 1, objective: 0
+[    0.058]:[        root_contest.cpp:  177]: Selected method for branch: highs
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass requested responded  created selected     kept    total int_fix
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- --------- --------- -------- -------- -------- -------- -------
+[    0.058]         0.000         0.000     0.00%              0/4       2/60   0 0 0 0 1    cuts
+[    0.060]         0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0    cuts    1     280       280         0        0        0        0        0
+[    0.060]         0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0    cuts    1     280       280         0
+[    0.060]:[    root_cut_manager.cpp:  208]: No change, aborting cut loop.
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  done
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- -----
+[    0.060]         0.000         0.000     0.00%              0/4       2/60   0 0 0 0 0 strongb     0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass  done avg.len nodesol  infeas    feas
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ----- ------- ------- ------- -------
+[    0.060]         0.000         0.000     0.00%              0/4       2/60   1 3 0 0 0    dive    0     0       0       0       0       0
+[    0.062]         0.000         0.000     0.00%              0/4       2/60   0 3 0 0 0    dive    1  1000       1    1000    1000       0
+[    0.064]         0.000         0.000     0.00%              0/4       2/60   0 3 0 0 0    dive    2  1000       1    1000    1000       0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage    solved    pruned      leaf       inQ     cuts
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- --------- --------- --------- --------- --------
+[    0.065]         0.000         0.000     0.00%              0/4       2/60   0 3 0 0 0  branch         0         0         0         0     0.00
+[    0.066]:[head_branching_controlle:  132]: Mip Gap threshold reached!!
+[    0.066]:[   head_client_state.cpp:   95]: Terminating
+[    0.068]:[   head_client_state.cpp:  104]: Exiting
+[    0.068]:[         head_client.cpp:  595]: Head proceeding to postsolve the current solution (126x28)
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    0.068]         0.000         0.000     0.00%              3/4       0/60   0 3 0 0 0
+[    0.069]:[         head_client.cpp:  290]: Solution validation OK
+[    0.069]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    0.069]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    0.069]:[         head_client.cpp:  320]: Termination reason: finished,  Message: Mip Gap threshold reached!!
+[    0.069]:[         head_client.cpp:  712]: Final    objective: 0, status: optimal
+",0.0,highs,"branch,contest,cuts,dive,strongb",5,127,29,589,optimal,0.0,Mip Gap threshold reached!!,0,0.5103368476772584,0.04171462400572537,0.0,0.03448275862068961,0.007874015748031482,85.12164450477363,1,1,0,0,0.0,0,0,0,0,0.0,126,0.00039432,0,28,9.441e-06,28,0,0,0,0.0005007519999999999,0,0.000513007,0,0,0.0,0,0,0,0,1.9646e-05,126,1.97e-05,0,0,0.0,0,0,0,0,0.0,0,0.0,1,0,0,1.8450000000000001e-06,0,0,0,0.0,1,1,14,0.005431512,0,0,0,0.0,1,0,0,0.000107683,2,126,28,588,1,0,7,2.9094000000000003e-05,0,0,0,0.00038032800000000004,0.00038050800000000005,3.3000000000000004e-08,1,0,0,0.003435968,1,0,29,8.5201e-05,0,0,0,1.517e-06
+ramsey_r3_s4_n9,3,4,9,,,,,,,no_solution,finished,1,64,64,0,36,21,12481,12477,24958,0,24955,-3,0,1773605056.2823749,0.003952579,0.0008747560000000001,0.0033864100000000003,1.266567068,1.3034116340000002,,ramsey_r3_s4_n9,211,0,0,0,0,0,0,0,0,84,0,0,0,126,0,0,1,0,1009,210,1008,36,36,0,0,37,36,1,0,minimize,1540,963,577,0,0,49915,9017502,12481,24958,74872,0,0,0,644156,0.0,0.0,0.0,0.0,0.0,12477,0,0,0,0,0,12481,0,12481,0,0.32425965199999995,0.18528173399999998,2.6246427060000004,3.244255993,5.269918329000003,0.0,77.88874894400001,3,0.0,,0.036111889,1.302544833,1.266432944,3,"[    0.028]:[      layout_manager.cpp:  246]: Box Assignments:
+[    0.028]:[      layout_manager.cpp:  249]: Box client 1 assigned to rank 0, domain 0, burls 64
+[    0.032]:[              banner.cpp:   67]:        ▼         _____                
+[    0.032]:[              banner.cpp:   68]:    ▴ ▾   ▾ ▴    |  __ \               
+[    0.032]:[              banner.cpp:   69]:  ▴  ▴  ▾  ▴  ▴  | |__) |___  ___  ___ 
+[    0.032]:[              banner.cpp:   70]: ▶  ▸       ◂  ◀ |  _  // _ \/ __|/ _ \
+[    0.032]:[              banner.cpp:   71]:  ▾  ▾  ▴  ▾  ▾  | | \ \ (_) \__ \  __/
+[    0.032]:[              banner.cpp:   72]:    ▾ ▴   ▴ ▾    |_|  \_\___/|___/\___|
+[    0.032]:[              banner.cpp:   73]:        ▲       
+[    0.032]:[              banner.cpp:   77]: Version: 5.18.2-release-2-g44b7ec85e
+[    0.032]:[              banner.cpp:   83]: Host: rose-worker-job-37f322cd-6fbd-4f6f-b2fe-51e5770c2a00-bklmr
+[    0.034]:[         head_client.cpp:  397]: Problem loaded: ramsey_r3_s4_n9
+[    0.034]:[         head_client.cpp:  398]: Sense: minimize
+[    0.034]:[         head_client.cpp:  399]: Objective offset: 0.000000
+[    0.034]:[         head_client.cpp:  400]: Original:  211 x 37, nonz: 1009
+[    0.036]:[         head_client.cpp:  471]: Presolved: 210 x 36, nonz: 1008
+[    0.036]:[         head_client.cpp:  473]: Presolved objective offset: 0.000000
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  box burl method
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ---- -------------------------
+[    0.058]          -inf           inf      nan%              0/0       0/0    1 0 0 1 0 contest
+[    0.058]          -inf           inf      nan%              0/0       0/0    1 0 0 1 0 contest    1   52 highs
+[    0.058]          -inf           inf      nan%              0/0       0/0    1 0 0 1 0 contest    1   44 cuopt
+[    0.060]:[        root_contest.cpp:  111]: Root LP contest winner: highs, status: optimal, on box 1, objective: 0
+[    0.060]:[        root_contest.cpp:  177]: Selected method for branch: highs
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass requested responded  created selected     kept    total int_fix
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- --------- --------- -------- -------- -------- -------- -------
+[    0.060]         0.000           inf      nan%              1/4       2/60   0 0 0 1 1    cuts
+[    0.063]         0.000           inf      nan%              1/4       2/60   0 0 0 1 0    cuts    1     456       456         0        0        0        0        0
+[    0.063]         0.000           inf      nan%              1/4       2/60   0 0 0 1 0    cuts    1     456       456         0
+[    0.063]:[    root_cut_manager.cpp:  208]: No change, aborting cut loop.
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage  done
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- -----
+[    0.063]         0.000           inf      nan%              1/4       2/60   0 0 0 1 0 strongb     0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage pass  done avg.len nodesol  infeas    feas
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- ---- ----- ------- ------- ------- -------
+[    0.064]         0.000           inf      nan%              1/4       2/60   1 2 0 1 0    dive    0     0       0       0       0       0
+[    0.098]         0.000           inf      nan%              1/4       2/60   0 3 0 1 0    dive    1  1000       2    2000       0       0
+[    0.162]         0.000           inf      nan%              1/4       2/60   0 3 0 1 0    dive    2  1000       5    4997       5       0
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .   stage    solved    pruned      leaf       inQ     cuts
+----------- ------------- ------------- --------- --------- --------- --------- --------- ------- --------- --------- --------- --------- --------
+[    0.299]         0.000           inf      nan%              1/4       2/60   0 3 0 1 0  branch         0         0         0         0     0.00
+[    1.299]         0.000           inf      nan%              4/4       0/60   0 0 0 2 0  branch         0         0         0         1     0.00
+[    1.300]:[head_branching_controlle:  141]: Head thinks there are no more nodes!!
+[    1.300]:[   head_client_state.cpp:   95]: Terminating
+[    1.303]:[   head_client_state.cpp:  104]: Exiting
+[    1.303]:[         head_client.cpp:  611]: Problem finished with no valid solution. (0x0)
+
+                                                                                r R R F e
+                                                                                o E I J t
+                                                                                o N N m c
+       time      dual obj    primal obj       gap    origin    Pburls    Dburls t S S p .
+----------- ------------- ------------- --------- --------- --------- --------- ---------
+[    1.303]           inf           inf      nan%              0/0       0/0    0 0 0 2 0
+[    1.303]:[  mpi_messenger_send.cpp:   54]: Client 0 wants to send to client 1, but target already closed.
+[    1.303]:[             message.cpp:   45]: Cannot Send:   src: -1    dst:  1    size:        0    channel: messenger           tag: last_message    
+[    1.303]:[         head_client.cpp:  320]: Termination reason: finished,  Message: Head thinks there are no more nodes!!
+[    1.303]:[         head_client.cpp:  712]: Final    objective: -nan, status: no_solution
+",0.0,highs,"branch,contest,cuts,dive,strongb",5,211,37,1009,no_solution,nan,Head thinks there are no more nodes!!,0,0.9717322102711874,0.0025981124547795774,0.0,0.027027027027026973,0.004739336492891044,19702.865036121402,0,0,0,0,0.0,0,0,0,0,0.0,210,0.000403106,0,36,1.3908000000000003e-05,36,0,0,0,0.000739102,0,0.0007566130000000001,0,0,0.0,0,0,0,0,3.2845e-05,210,3.2972e-05,0,0,0.0,0,0,0,0,0.0,0,0.0,1,0,0,2.449e-06,0,0,0,0.0,2,0,5707,2.1455492410000003,0,0,0,0.0,1,0,0,0.000171385,,210,36,1008,1541,0,5069,0.04041785200000001,0,0,0,0.00041484100000000005,0.000415066,3.5e-08,1,0,0,0.005239999,757,0,8335,0.036676944,0,0,0,0.001119167

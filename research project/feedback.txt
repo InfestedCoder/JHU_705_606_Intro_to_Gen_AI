@@ -1,0 +1,29 @@
+Feb 23 at 9:44am
+(topic) Generative AI Copilot for Diagnosing Optimization Solver Performance
+
+Topic (39/40): Very practical and technically interesting.
+
+Originality (19/20): Applying generative diagnostics to solver logs is creative and useful.
+
+Organization (19/20): Clear breakdown of hypotheses, method, and dataset.
+
+References (9/10): Good survey grounding.
+
+Dataset and practicality (9/10): Solver logs + expert labels are realistic and measurable.
+
+Notes: Define a structured evaluation rubric for diagnosis quality, not just classification accuracy.
+
+- Erhan Guven
+
+
+
+
+
+Erhan Guven , Mar 23 at 8:06pm
+very good!
+
+ 
+
+- add concrete examples of generated diagnostics
+- tighten evaluation (human rubric definition)
+
