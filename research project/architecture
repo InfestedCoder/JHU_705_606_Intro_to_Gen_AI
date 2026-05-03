@@ -1,0 +1,94 @@
+digraph solver_log_copilot_pipeline {
+	graph [dpi=300]
+	nodesep=0.55 rankdir=TB ranksep=0.65 splines=true
+	node [fontname=Helvetica fontsize=13 shape=box style=rounded]
+	edge [arrowsize=0.8 fontname=Helvetica fontsize=10]
+	A [label="Raw Solver Logs
+(JSON metrics + stdout)" fillcolor="#d5e8d4" style="filled,rounded"]
+	B [label="Parser
+(parse_rose_logs_v2.py)" fillcolor="#dae8fc" style="filled,rounded"]
+	C [label="SolverLogFeatures
+(25 numerical features,
+log1p + StandardScaler)" fillcolor="#dae8fc" style="filled,rounded"]
+	D1 [label="Heuristic Rules
+(5 thresholded rules)" fillcolor="#dae8fc" style="filled,rounded"]
+	D2 [label="PyTorch Classifier
+(MLP, 6,149 params,
+BCE + WeightedRandomSampler)" fillcolor="#dae8fc" style="filled,rounded"]
+	L [label="Bottleneck Labels
+(weak_root_lp, excessive_branching,
+ineffective_cuts, degeneracy,
+presolve_weakness)" fillcolor="#fff2cc" style="filled,rounded"]
+	KB [label="Knowledge Base
+(12 docs, 6 topics)" fillcolor="#e8e8e8" style="filled,rounded"]
+	E [label="SentenceTransformer
+(all-MiniLM-L6-v2)" fillcolor="#dae8fc" style="filled,rounded"]
+	R [label="Label-Conditioned
+Retrieval (top-k)" fillcolor="#dae8fc" style="filled,rounded"]
+	F [label="Llama-3.2-1B-Instruct
+(chat template)" fillcolor="#dae8fc" style="filled,rounded"]
+	G [label="Diagnostic Report
+(one paragraph)" fillcolor="#fff2cc" style="filled,rounded"]
+	EV [label="30-run Hand-Reviewed
+Gold Subset" fillcolor="#f8cecc" style="filled,rounded"]
+	A -> B
+	B -> C
+	C -> D1
+	C -> D2
+	D1 -> L
+	D2 -> L
+	KB -> E
+	E -> R
+	L -> R [label="filter by topic" style=dashed]
+	R -> F
+	F -> G
+	EV -> L [label=evaluates color="#888888" fontcolor="#888888" style=dashed]
+	EV -> G [color="#888888" fontcolor="#888888" style=dashed]
+	L0 [label=Input fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L1 [label="Stage 1: Parse" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L2 [label="Stage 2: Features" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L3 [label="Stage 3: Detect" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L4 [label="Stage 4: Diagnose" fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L5 [label=Output fontcolor=gray fontname="Helvetica-Oblique" fontsize=10 shape=plaintext]
+	L0 -> L1 [style=invis]
+	L1 -> L2 [style=invis]
+	L2 -> L3 [style=invis]
+	L3 -> L4 [style=invis]
+	L4 -> L5 [style=invis]
+	{
+		rank=same
+		L0
+		A
+	}
+	{
+		rank=same
+		L1
+		B
+	}
+	{
+		rank=same
+		L2
+		C
+	}
+	{
+		rank=same
+		L3
+		D1
+		D2
+		KB
+		E
+	}
+	{
+		rank=same
+		L4
+		L
+		R
+		EV
+	}
+	{
+		rank=same
+		L5
+		F
+		G
+	}
+}

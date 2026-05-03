@@ -39,6 +39,20 @@ from typing import Iterable
 
 # --- helpers -----------------------------------------------------------------
 
+# Map raw directory names to readable display names that capture the actual
+# behavioral difference between the two solver configurations:
+#   * auto_config_basic (staging build, +44% nodes)        -> branching_heavy
+#   * default_config 2  (release build, +13% incumbents)   -> heuristic_heavy
+# The ``rose_logs`` flat-layout subdirectory holds the 8 Ramsey runs from the
+# midpoint checkpoint; we relabel it ``ramsey`` to distinguish problem source
+# from solver configuration. Directory names are preserved on disk for
+# provenance.
+CONFIG_NAME_MAP = {
+    "auto_config_basic": "branching_heavy",
+    "default_config 2": "heuristic_heavy",
+    "rose_logs": "ramsey",
+}
+
 ANSI_RE = re.compile(r"\x1b\[[0-9;]*m")
 
 
@@ -327,7 +341,8 @@ def discover_runs(rose_logs_root: Path) -> Iterable[tuple[str, Path]]:
         )
 
         if looks_like_config and nested_ids:
-            config_name = entry.name.removesuffix(".json").strip()
+            raw_name = entry.name.removesuffix(".json").strip()
+            config_name = CONFIG_NAME_MAP.get(raw_name, raw_name)
             for run_id_dir in sorted(nested_ids):
                 if run_id_dir.name.startswith("."):
                     continue
@@ -342,7 +357,8 @@ def discover_runs(rose_logs_root: Path) -> Iterable[tuple[str, Path]]:
         # is the "config" (use a generic 'flat' tag if the parent looks like
         # the rose_logs root itself).
         if (entry / "status.json").exists():
-            config_name = rose_logs_root.name.removesuffix(".json").strip() or "flat"
+            raw_name = rose_logs_root.name.removesuffix(".json").strip() or "flat"
+            config_name = CONFIG_NAME_MAP.get(raw_name, raw_name)
             yield config_name, entry
 
 
